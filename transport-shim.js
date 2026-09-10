@@ -9,17 +9,21 @@
   const nativeFetch = window.fetch.bind(window);
   const encoded = {
     'data/weigand-osm-v0.24.geojson.gz': [
-      'data/transport/full-01.b64','data/transport/full-02.b64',
-      'data/transport/full-03.b64','data/transport/full-04.b64'
+      'data/transport/full-01.b64','data/transport/full-gap.b64',
+      'data/transport/full-02.b64','data/transport/full-03.b64',
+      'data/transport/full-04.b64'
     ],
     'data/weigand-osm-v0.24-strict.geojson.gz': [
-      'data/transport/strict-01.b64','data/transport/strict-02.b64',
+      'data/transport/strict-prefix-1.b64','data/transport/strict-prefix-2.b64',
+      'data/transport/strict-prefix-3.b64','data/transport/strict-02.b64',
       'data/transport/strict-03.b64','data/transport/strict-04.b64'
     ],
     'data/weigand-osm-v0.24-no-geometry.csv.gz': ['data/transport/noGeometry.b64'],
     'data/weigand-osm-v0.24-semantic-225.csv.gz': [
-      'data/transport/semantic-01.b64','data/transport/semantic-02.b64',
-      'data/transport/semantic-03.b64','data/transport/semantic-04.b64'
+      'data/transport/semantic-01.b64','data/transport/semantic-gap-1.b64',
+      'data/transport/semantic-gap-2.b64','data/transport/semantic-02.b64',
+      'data/transport/semantic03-1.b64','data/transport/semantic03-2.b64',
+      'data/transport/semantic03-3.b64','data/transport/semantic-04.b64'
     ]
   };
   const cache = new Map();
