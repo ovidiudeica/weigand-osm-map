@@ -12,7 +12,8 @@ const FIELDS = {
   name: ['name', 'nume', 'Name', 'localitate', 'toponim'],
   id: ['WG_LOC', 'ID', 'id'], layer: ['strat', 'Strat', 'layer', 'Layer'],
   description: ['description', 'descriere', 'Description'],
-  sources: ['sources', 'surse', 'Sources', 'source']
+  sources: ['sources', 'surse', 'Sources', 'source', 'Source'],
+  notes: ['Notes', 'notes'], osmURL: ['OSMURL']
 };
 const normalize = value => String(value ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
 function field(properties, key) {
@@ -29,7 +30,9 @@ function layerIndex(properties) {
 function osmURL(properties) {
   const type = field(properties, 'OSMType').toLowerCase().trim();
   const id = field(properties, 'OSMID').trim();
-  return /^(node|way|relation)$/.test(type) && /^[1-9]\d*$/.test(id) ? `https://www.openstreetmap.org/${type}/${id}` : null;
+  if (/^(node|way|relation)$/.test(type) && /^[1-9]\d*$/.test(id)) return `https://www.openstreetmap.org/${type}/${id}`;
+  const url = field(properties, 'osmURL').trim();
+  return /^https:\/\/www\.openstreetmap\.org\/(node|way|relation)\/[1-9]\d*$/.test(url) ? url : null;
 }
 function element(tag, text, className) {
   const node = document.createElement(tag);
@@ -41,7 +44,7 @@ function details(properties) {
   const box = element('div');
   box.append(element('h3', field(properties, 'name') || field(properties, 'id') || 'Nume nespecificat'));
   const list = element('dl');
-  for (const [label, key] of [['WG_LOC / ID', 'id'], ['Strat', 'layer'], ['OSMStatus', 'OSMStatus'], ['PointType', 'PointType'], ['OSMType', 'OSMType'], ['OSMID', 'OSMID'], ['Descriere', 'description'], ['Surse', 'sources']]) {
+  for (const [label, key] of [['WG_LOC / ID', 'id'], ['Strat', 'layer'], ['OSMStatus', 'OSMStatus'], ['PointType', 'PointType'], ['OSMType', 'OSMType'], ['OSMID', 'OSMID'], ['OSMURL (sursă)', 'osmURL'], ['Descriere', 'description'], ['Surse', 'sources'], ['Note', 'notes']]) {
     list.append(element('dt', label), element('dd', field(properties, key) || 'Nespecificat'));
   }
   box.append(list);

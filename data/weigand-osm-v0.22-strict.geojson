@@ -1,0 +1,3270 @@
+{
+  "type": "FeatureCollection",
+  "name": "Weigand 1907 v0.22 — OSM strict",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0016",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.63863,
+          44.15189
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0016",
+        "Name": "Bregovo",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488870",
+        "OSMURL": "https://www.openstreetmap.org/node/273488870",
+        "Description": "Balevo este trimis de Weigand la Breagovo (p. 31). Breagovo cu Balevo este descris ca o comună românească mare și prosperă, la 30 km nord-vest de Widdin, pe Timok, cu 4.503 români și 161 bulgari; dintre bulgari, jumătate foloseau româna ca limbă de casă (p. 31-32).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/13811508",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273488870 pentru Bregovo, cu place=town; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.469 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0015",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.8772,
+          43.9857
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0015",
+        "Name": "Vidin",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "31058196",
+        "OSMURL": "https://www.openstreetmap.org/node/31058196",
+        "Description": "Orașul Widdin avea, între 15.791 locuitori, 958 români; în zilele de târg orașul era plin de români (p. 31).",
+        "PointType": "localitate moderna OSM; place=city",
+        "Source": "https://mapcarta.com/Vidin",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 31058196 pentru Vidin, cu place=city; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 1.087 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0017",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.62954,
+          44.05408
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0017",
+        "Name": "Deleyna",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273818075",
+        "OSMURL": "https://www.openstreetmap.org/node/273818075",
+        "Description": "Deleina este menționată ca o comună românească, la 20 km vest de Widdin, cu 645 locuitori (p. 32).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13810338",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273818075 pentru Deleina, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.475 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0031",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.7196,
+          44.0025
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0031",
+        "Name": "Druzhba",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273881371",
+        "OSMURL": "https://www.openstreetmap.org/node/273881371",
+        "Description": "Molalfa este menționat ca sat românesc cu 641 locuitori, aparținând comunei Gärci (p. 32).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25267014",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273881371 pentru Druzhba, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.068 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0018",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.84734,
+          44.1355
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0018",
+        "Name": "Florentin",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273815083",
+        "OSMURL": "https://www.openstreetmap.org/node/273815083",
+        "Description": "Florentin este menționat ca sat românesc prosper, cu 747 locuitori, aparținând comunei Negovanofci (p. 32).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13808864",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273815083 pentru Florentin, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.073 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0019",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.7611,
+          44.09722
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0019",
+        "Name": "Gamzovo",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273875653",
+        "OSMURL": "https://www.openstreetmap.org/node/273875653",
+        "Description": "Gänzovo este menționat ca o comună românească, la 15 km nord-vest de Widdin, cu 1.770 locuitori (p. 32).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13807636",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273875653 pentru Gamzovo, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.043 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0021",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.96794,
+          44.09124
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0021",
+        "Name": "Gomotartsi",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273817679",
+        "OSMURL": "https://www.openstreetmap.org/node/273817679",
+        "Description": "Gomotar sau Gomotarci este menționat ca o comună românească, la 12 km nord de Widdin, pe Dunăre, cu 1.400 locuitori (p. 32).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13808244",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273817679 pentru Gomotartsi, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.358 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0020",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.75285,
+          44.02989
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0020",
+        "Name": "Gradets",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273873734",
+        "OSMURL": "https://www.openstreetmap.org/node/273873734",
+        "Description": "Gärci este menționat ca o comună mixtă, la 10 km vest de Widdin, cu 2.053 bulgari și 240 români, românii fiind în curs de bulgarizare (p. 32).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13807856",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273873734 pentru Gradets, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.134 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0024",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.6659,
+          44.0043
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0024",
+        "Name": "Kalenik",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273816037",
+        "OSMURL": "https://www.openstreetmap.org/node/273816037",
+        "Description": "Kalenik este menționat ca sat românesc cu 603 locuitori, aparținând comunei Gärci (p. 32).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25267016",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273816037 pentru Kalenik, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.196 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0025",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.87244,
+          44.037
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0025",
+        "Name": "Kapitanovtsi",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273881268",
+        "OSMURL": "https://www.openstreetmap.org/node/273881268",
+        "Description": "Kapitanofci este menționat ca o comună românească, foarte aproape de Widdin, cu 1.244 locuitori (p. 32).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13806954",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273881268 pentru Kapitanovtsi, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.322 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0029",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.0287,
+          44.0716
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0029",
+        "Name": "Koshava",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273872886",
+        "OSMURL": "https://www.openstreetmap.org/node/273872886",
+        "Description": "Kosava este menționată ca o comună românească, la 15 km nord-est de Widdin, pe Dunăre, cu 946 locuitori (p. 32).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25266998",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273872886 pentru Koshava, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.657 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0028",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.63645,
+          44.09884
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0028",
+        "Name": "Kosovo",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273881281",
+        "OSMURL": "https://www.openstreetmap.org/node/273881281",
+        "Description": "Kosovo este menționat ca sat românesc la 5 km nord de Deleina, de care aparține, cu 629 locuitori (p. 32).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13805898",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273881281 pentru Kosovo, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.298 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0027",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.60484,
+          44.1017
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0027",
+        "Name": "Kovilovo",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "835996224",
+        "OSMURL": "https://www.openstreetmap.org/node/835996224",
+        "Description": "Koilovo este menționat ca sat românesc cu 697 locuitori, aparținând comunei Rakitnica, pe Timok; are pădure și vii bune (p. 32).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13924016",
+        "Notes": "Lot OSM 03, sector de frontieră istorică Bulgaria–Serbia. Mapcarta expune OpenStreetMap node 835996224 pentru Kovilovo, place=village. Coordonata OSM este separată de MYMAPS; avertismentul Bulgaria 1907 / azi Serbia rămâne în master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0030",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.96793,
+          44.03177
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0030",
+        "Name": "Kutovo",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273874352",
+        "OSMURL": "https://www.openstreetmap.org/node/273874352",
+        "Description": "Kutovo este menționată ca o comună românească prosperă, la 10 km vest de Widdin, aproape de Dunăre, cu 1.051 locuitori (p. 32).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13805178",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273874352 pentru Kutovo, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.546 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0022",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.8265,
+          44.0739
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0022",
+        "Name": "Mayor Uzunovo",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273874396",
+        "OSMURL": "https://www.openstreetmap.org/node/273874396",
+        "Description": "Halvadzi este menționat ca sat românesc cu 666 locuitori, la sud-vest de comuna bulgară Cungrus, aflată la 10 km nord de Widdin (p. 32).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25267012",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273874396 pentru Major Uzunovo, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.241 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0023",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.85794,
+          44.09089
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0023",
+        "Name": "Negovanovtsi",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273880890",
+        "OSMURL": "https://www.openstreetmap.org/node/273880890",
+        "Description": "Negovanofci este menționată ca o comună românească, cu 1.050 locuitori, la 10 km nord de Widdin (p. 32).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13803346",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273880890 pentru Negovanovtsi, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.538 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0033",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.78392,
+          44.16212
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0033",
+        "Name": "Novo Selo",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488696",
+        "OSMURL": "https://www.openstreetmap.org/node/273488696",
+        "Description": "Novo-Selo, în Kreis Widdin, pe Dunăre, este descris cu populație mixtă: fondul îl formau sârbii imigrați, apoi au venit bulgari din diferite părți și români; statistica dă 3.675 bulgari și 19 români, dar Weigand spune că, după informațiile sale, românii trebuiau să fie mult mai numeroși (p. 32-33).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13803096",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273488696 pentru Novo Selo, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.450 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0026",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.90322,
+          44.03221
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0026",
+        "Name": "Pokrayna",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273877055",
+        "OSMURL": "https://www.openstreetmap.org/node/273877055",
+        "Description": "Kirim-bei este menționat ca o comună românească înaintea porților Widdinului, cu 1.687 locuitori (p. 32).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13801982",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273877055 pentru Pokraina, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.420 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0032",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.8788,
+          44.1147
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0032",
+        "Name": "Yasen",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273813981",
+        "OSMURL": "https://www.openstreetmap.org/node/273813981",
+        "Description": "Iasen este menționat ca sat românesc cu 648 locuitori, aparținând de Negovanofci (p. 32).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25267044",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273813981 pentru Jasen, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.099 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0049",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.94168,
+          44.0276
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0049",
+        "Name": "Antimovo",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273879215",
+        "OSMURL": "https://www.openstreetmap.org/node/273879215",
+        "Description": "Sef este menționat ca sat românesc cu 739 locuitori, aparținând comunei Kutovo (p. 33).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13796262",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273879215 pentru Antimovo, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.356 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0039",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.499,
+          43.9985
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0039",
+        "Name": "Borilovets",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273872858",
+        "OSMURL": "https://www.openstreetmap.org/node/273872858",
+        "Description": "Borilovec este menționat ca sat românesc, la 31 km vest de Widdin, cu 611 locuitori, aparținând comunei Sisenci (p. 33).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25266966",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273872858 pentru Borilovec, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.110 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0041",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.54626,
+          44.06527
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0041",
+        "Name": "Crnomasnica",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "835995912",
+        "OSMURL": "https://www.openstreetmap.org/node/835995912",
+        "Description": "Cernomasnica este menționată ca o comună românească, cu 707 locuitori, pe Timok, la 26 km vest de Widdin (p. 33).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13929200",
+        "Notes": "Lot OSM 03, sector de frontieră istorică Bulgaria–Serbia. Mapcarta expune OpenStreetMap node 835995912 pentru Crnomasnica, place=village. Coordonata OSM este separată de MYMAPS; avertismentul Bulgaria 1907 / azi Serbia rămâne în master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0040",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.61709,
+          44.00493
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0040",
+        "Name": "Dolni Boshnyak",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273874967",
+        "OSMURL": "https://www.openstreetmap.org/node/273874967",
+        "Description": "Bosniak este menționat ca sat românesc cu 253 locuitori, aparținând comunei Car-Petrovo (p. 33).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/N273874967",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273874967 pentru Dolni Boshniak, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.051 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0045",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.38347,
+          44.02126
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0045",
+        "Name": "Gradskovo",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "1385422544",
+        "OSMURL": "https://www.openstreetmap.org/node/1385422544",
+        "Description": "Gradskof este menționată ca o comună românească, cu 1.370 locuitori, pe Timok, la 40 km exact vest de Widdin (p. 33).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13926108",
+        "Notes": "Lot OSM 03, sector de frontieră istorică Bulgaria–Serbia. Mapcarta expune OpenStreetMap node 1385422544 pentru Gradskovo, place=village. Coordonata OSM este separată de MYMAPS; avertismentul Bulgaria 1907 / azi Serbia rămâne în master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0046",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.39719,
+          43.973
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0046",
+        "Name": "Halovo",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "835996028",
+        "OSMURL": "https://www.openstreetmap.org/node/835996028",
+        "Description": "Halovo este menționată ca o comună românească, la 6 km sud de Gradskof, în apropierea Timokului, cu 1.266 locuitori; Weigand o numește cea mai sudică comună curat românească din districtul Widdin (p. 33).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13925800",
+        "Notes": "Lot OSM 03, sector de frontieră istorică Bulgaria–Serbia. Mapcarta expune OpenStreetMap node 835996028 pentru Halovo, place=village. Coordonata OSM este separată de MYMAPS; avertismentul Bulgaria 1907 / azi Serbia rămâne în master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0042",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.58797,
+          44.02283
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0042",
+        "Name": "Kanits",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273817350",
+        "OSMURL": "https://www.openstreetmap.org/node/273817350",
+        "Description": "Funden este trimis de Weigand la Rabrovo (p. 33). Cătunul Funden aparținea de Rabrovo și avea 113 locuitori români (p. 33).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13806988",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273817350 pentru Kanits, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.042 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0035",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.6698,
+          44.1933
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0035",
+        "Name": "Kudelin",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273875838",
+        "OSMURL": "https://www.openstreetmap.org/node/273875838",
+        "Description": "Rakovica este menționată ca sat românesc între Breagovo și Värf, cu 394 locuitori (p. 33).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25266978",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273875838 pentru Kudelin, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.224 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0047",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.4497,
+          44.03541
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0047",
+        "Name": "Mali Jasenovac",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "835996080",
+        "OSMURL": "https://www.openstreetmap.org/node/835996080",
+        "Description": "Mali-Jasenovec este menționat ca sat românesc cu 826 locuitori, aparținând comunei Sipkovo (p. 33).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13922210",
+        "Notes": "Lot OSM 03, sector de frontieră istorică Bulgaria–Serbia. Mapcarta expune OpenStreetMap node 835996080 pentru Mali Jasenovac, place=village. Coordonata OSM este separată de MYMAPS; avertismentul Bulgaria 1907 / azi Serbia rămâne în master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0048",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.54427,
+          43.99417
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0048",
+        "Name": "Perilovets",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273814899",
+        "OSMURL": "https://www.openstreetmap.org/node/273814899",
+        "Description": "Perilovec este menționat ca sat românesc, la 27 km vest de Widdin, cu 478 locuitori, aparținând comunei Sisenci (p. 33).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13802352",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273814899 pentru Perilovets, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.343 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0043",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.56684,
+          44.01675
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0043",
+        "Name": "Rabrovo",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273872902",
+        "OSMURL": "https://www.openstreetmap.org/node/273872902",
+        "Description": "Rabrovo este menționată ca o comună românească, la 25 km vest de Widdin, cu 1.687 locuitori; de ea aparținea cătunul Funden, cu 113 locuitori români (p. 33).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13801408",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273872902 pentru Rabrovo, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.223 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0034",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.6492,
+          44.1221
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0034",
+        "Name": "Rakitnitsa",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273881051",
+        "OSMURL": "https://www.openstreetmap.org/node/273881051",
+        "Description": "Rakitnica este menționată ca o comună mixtă, în apropierea Timokului, la sud de Breagovo, cu 914 români și 201 bulgari (p. 33).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25266980",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273881051 pentru Rakitnica, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.106 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0037",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.0138,
+          44.045
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0037",
+        "Name": "Slanotran",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273875691",
+        "OSMURL": "https://www.openstreetmap.org/node/273875691",
+        "Description": "Slanotäm este menționat ca sat românesc cu 799 locuitori, aparținând comunei Kutovo (p. 33).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25267008",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273875691 pentru Slanotrun, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 1.321 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0038",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.72851,
+          44.07773
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0038",
+        "Name": "Tiyanovtsi",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273873862",
+        "OSMURL": "https://www.openstreetmap.org/node/273873862",
+        "Description": "Tianofci este menționat ca sat românesc cu 381 locuitori, aparținând comunei Gänzovo (p. 33).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13798552",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273873862 pentru Tianovtsi, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.248 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0044",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.43871,
+          44.05241
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0044",
+        "Name": "Veliki Jasenovac",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "1385422903",
+        "OSMURL": "https://www.openstreetmap.org/node/1385422903",
+        "Description": "Golemi-Jasenovec este menționat ca sat românesc cu 1.070 locuitori, aparținând comunei Sipkovo (p. 33).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13914844",
+        "Notes": "Lot OSM 03, sector de frontieră istorică Bulgaria–Serbia. Mapcarta expune OpenStreetMap node 1385422903 pentru Veliki Jasenovac, place=village. Coordonata OSM este separată de MYMAPS; avertismentul Bulgaria 1907 / azi Serbia rămâne în master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0036",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.7382,
+          44.19175
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0036",
+        "Name": "Vrav",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "1363578696",
+        "OSMURL": "https://www.openstreetmap.org/node/1363578696",
+        "Description": "Värf este menționată ca o frumoasă comună românească pe Dunăre, la 20 km nord-vest de Widdin, cu 1.967 locuitori (p. 33).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13797080",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 1363578696 pentru Vrav, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.276 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0052",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.57983,
+          44.08263
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0052",
+        "Name": "Aleksandrovac",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "835996171",
+        "OSMURL": "https://www.openstreetmap.org/node/835996171",
+        "Description": "Zlokukia este menționat ca sat românesc pe Timok, cu 769 locuitori, aparținând comunei Cernomasnica (p. 34).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/N835996171",
+        "Notes": "Lot OSM 03, sector de frontieră istorică Bulgaria–Serbia. Mapcarta expune OpenStreetMap node 835996171 pentru Aleksandrovac, place=village. Coordonata OSM este separată de MYMAPS; avertismentul Bulgaria 1907 / azi Serbia rămâne în master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0064",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.9179,
+          43.8082
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0064",
+        "Name": "Archar",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273873257",
+        "OSMURL": "https://www.openstreetmap.org/node/273873257",
+        "Description": "Orașul Akcar, la 20 km sud de Widdin pe Dunăre, avea 1.937 bulgari, 408 turci, 218 țigani și 59 români (p. 34).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25267018",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273873257 pentru Archar, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.324 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0055",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.27979,
+          43.60514
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0055",
+        "Name": "Dalgodeltsi",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273817625",
+        "OSMURL": "https://www.openstreetmap.org/node/273817625",
+        "Description": "Dälgodealci este menționat de Weigand ca exemplu de localitate din valea Cibărului unde se găsesc mici minorități românești (p. 34).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13809324",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273817625 pentru Dalgodeltsi, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.192 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0062",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.09838,
+          43.71213
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0062",
+        "Name": "Dondukovo",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273881533",
+        "OSMURL": "https://www.openstreetmap.org/node/273881533",
+        "Description": "Weigand notează că în Dondukof, numit și Tatar Mahala, se găseau câțiva români proveniți din Vlaska-Mahala, unde nu mai erau români (p. 34).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13809728",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273881533 pentru Dondukovo, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.245 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0057",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.52573,
+          43.80105
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0057",
+        "Name": "Gorni Tsibar",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273812743",
+        "OSMURL": "https://www.openstreetmap.org/node/273812743",
+        "Description": "Cibär-Palanka, pe Dunăre, avea în cartierul Cibär-Varos 963 români și 99 bulgari (p. 34).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13808072",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273812743 pentru Gorni Tsibar, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.379 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0054",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.23866,
+          43.82017
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0054",
+        "Name": "Lom",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488802",
+        "OSMURL": "https://www.openstreetmap.org/node/273488802",
+        "Description": "Lom Palanka avea, între 10.115 locuitori, numai 95 români; Weigand notează că elementul românesc scăzuse puternic (p. 34).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/13804840",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273488802 pentru Lom, cu place=town; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.261 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0053",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.09178,
+          43.77509
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0053",
+        "Name": "Orsoya",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273880428",
+        "OSMURL": "https://www.openstreetmap.org/node/273880428",
+        "Description": "Ursoia este considerată de Weigand, după nume, o întemeiere românească; românii ar fi fost înlocuiți de tătari, iar aceștia de bulgari, rămânând numai 52 români lângă 569 bulgari, care își pierd limba maternă (p. 34).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13802822",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273880428 pentru Orsoya, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.352 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0051",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.62126,
+          43.98662
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0051",
+        "Name": "Topolovets",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273815715",
+        "OSMURL": "https://www.openstreetmap.org/node/273815715",
+        "Description": "Topolovec este menționat ca sat românesc cu 664 locuitori, aparținând comunei Car-Petrovo (p. 34).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13798452",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273815715 pentru Topolovets, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.065 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0061",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.13393,
+          43.71832
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0061",
+        "Name": "Vasilovtsi",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273818044",
+        "OSMURL": "https://www.openstreetmap.org/node/273818044",
+        "Description": "Vasilofci, comună mixtă pe Lom, în Kreis Lom, număra între 3.431 locuitori numai 104 români (p. 34).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13797724",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273818044 pentru Vasilovtsi, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 0.187 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0056",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.35189,
+          43.63539
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0056",
+        "Name": "Yakimovo",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488953",
+        "OSMURL": "https://www.openstreetmap.org/node/273488953",
+        "Description": "Progorealec este menționat de Weigand ca exemplu de localitate din valea Cibărului unde se găsesc mici minorități românești (p. 34).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/de/13796854",
+        "Notes": "Lot OSM 02, sector Vidin–Lom. Mapcarta expune obiectul OpenStreetMap node 273488953 pentru Yakimovo, cu place=village; coordonatele OSM sunt păstrate separat de MYMAPS. Distanța față de coordonata master: 1.163 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0059",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.4974,
+          43.7748
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0059",
+        "Name": "Zlatiya",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat reper OSM direct",
+        "OSMType": "node",
+        "OSMID": "273879682",
+        "OSMURL": "https://www.openstreetmap.org/node/273879682",
+        "Description": "Kaluger-Mahala este menționat ca sat mixt aparținând de Cibăr, la 7 km sud de Cibăr, cu 883 români și 113 bulgari (p. 34).",
+        "PointType": "reper/container modern OSM",
+        "Source": "https://mapcarta.com/25264130 ; https://www.revistadesociologie.ro/pdf-uri/nr.5-6-2011/06-ETircomnicu.pdf",
+        "Notes": "Kaluger-Mahala este documentată ca parte a actualei Zlatiya. OSM mapează satul modern Zlatija/Zlatiya prin node 273879682 (place=village), nu mahalaua istorică separat. Coordonata OSM este deci reper/container modern, nu punct istoric exact."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0060",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.4974,
+          43.7748
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0060",
+        "Name": "Zlatiya",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat reper OSM direct",
+        "OSMType": "node",
+        "OSMID": "273879682",
+        "OSMURL": "https://www.openstreetmap.org/node/273879682",
+        "Description": "Kule-Mahala este menționat ca sat românesc aparținând de Cibăr, la 5 km sud de Cibăr, cu 920 locuitori (p. 34).",
+        "PointType": "reper/container modern OSM",
+        "Source": "https://mapcarta.com/25264130 ; https://www.revistadesociologie.ro/pdf-uri/nr.5-6-2011/06-ETircomnicu.pdf",
+        "Notes": "Kule-Mahala este documentată ca parte a actualei Zlatiya. OSM mapează satul modern Zlatija/Zlatiya prin node 273879682 (place=village), nu mahalaua istorică separat. Coordonata OSM este deci reper/container modern, nu punct istoric exact."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0050",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.50109,
+          44.03053
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0050",
+        "Name": "Šipikovo",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "835995624",
+        "OSMURL": "https://www.openstreetmap.org/node/835995624",
+        "Description": "Sipkovo este menționată ca o comună românească, la 31 km vest de Widdin, cu 1.105 locuitori (p. 34).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13917448",
+        "Notes": "Lot OSM 03, sector de frontieră istorică Bulgaria–Serbia. Mapcarta expune OpenStreetMap node 835995624 pentru Šipikovo, place=village. Coordonata OSM este separată de MYMAPS; avertismentul Bulgaria 1907 / azi Serbia rămâne în master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0067",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.7488,
+          43.6484
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0067",
+        "Name": "Butan",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273816080",
+        "OSMURL": "https://www.openstreetmap.org/node/273816080",
+        "Description": "Butan este menționată ca o comună mixtă pe Ogost, la 22 km sud-vest de Rahova, cu 1.270 bulgari și 1.000 români (p. 35).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25268764",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273816080, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0068",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.80983,
+          43.69277
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0068",
+        "Name": "Glozhene",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273879981",
+        "OSMURL": "https://www.openstreetmap.org/node/273879981",
+        "Description": "Glözene este menționată ca o comună mixtă pe Ogost, la 15 km sud-est de Rahova, cu 1.717 locuitori, dintre care aproximativ 450 români (p. 35).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/N273879981",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273879981, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0070",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.8223,
+          43.7099
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0070",
+        "Name": "Harlets",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273873101",
+        "OSMURL": "https://www.openstreetmap.org/node/273873101",
+        "Description": "Härlec, la 11 km sud-vest de Rahova, este menționată ca o comună românească cu 1.255 locuitori, dintre care numai 300 știau să citească și să scrie (p. 35).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25268690",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273873101, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0069",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.72933,
+          43.77509
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0069",
+        "Name": "Kozloduy",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488979",
+        "OSMURL": "https://www.openstreetmap.org/node/273488979",
+        "Description": "Kozlodüi este menționată ca o comună mixtă, predominant românească, pe Dunăre, la 20 km est de Rahova, cu 3.930 locuitori, dintre care aproximativ 2.800 români (p. 35).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/13805704",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273488979, place=town. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0071",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.39821,
+          43.64638
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0071",
+        "Name": "Krushovene",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273815941",
+        "OSMURL": "https://www.openstreetmap.org/node/273815941",
+        "Description": "Krusovene este menționată ca o comună mixtă, predominant românească, în valea Iskerului, la 35 km est de Rahova, cu 2.632 locuitori, dintre care aproximativ 1.800 români (p. 35).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13805400",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273815941, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0072",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.0106,
+          43.7086
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0072",
+        "Name": "Leskovets",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273812172",
+        "OSMURL": "https://www.openstreetmap.org/node/273812172",
+        "Description": "Leaskovec este menționat ca sat românesc, la 5 km sud-est de Rahova, cu 612 locuitori, între care și un număr venit mai recent din România (p. 35).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25268846",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273812172, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0075",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.27354,
+          43.6893
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0075",
+        "Name": "Dolni Vadin",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273816449",
+        "OSMURL": "https://www.openstreetmap.org/node/273816449",
+        "Description": "Populația Vadinului era de 2.075 suflete (p. 36).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13809836",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273816449, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0073",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.1369,
+          43.6755
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0073",
+        "Name": "Ostrov",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273815854",
+        "OSMURL": "https://www.openstreetmap.org/node/273815854",
+        "Description": "Ostrof este menționată ca o comună mixtă pe Dunăre, la 18 km est de Rahova, cu 1.952 locuitori, dintre care aproximativ 500 români; românii sunt numiți vechii locuitori, în timp ce bulgarii au venit mai târziu (p. 36).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25268848",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273815854, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0074",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.78371,
+          43.63119
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0074",
+        "Name": "Sofronievo",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273817083",
+        "OSMURL": "https://www.openstreetmap.org/node/273817083",
+        "Description": "Särbenica este menționată ca o comună mixtă în valea Ogostului, la 20 km sud-vest de Rahova, cu 2.200 locuitori, dintre care aproximativ 1.500 români (p. 36).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13799690",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273817083, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0077",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.8028,
+          43.1628
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0077",
+        "Name": "Tsarevets",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273818028",
+        "OSMURL": "https://www.openstreetmap.org/node/273818028",
+        "Description": "Weigand presupune că Vlasko Selo, aflat și mai la sud, în apropiere de Mezdra, a avut cândva locuitori români, dar spune că în acel moment nu se mai găsea nicio urmă (p. 36).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25268830",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273818028, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0076",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.6769,
+          43.2049
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0076",
+        "Name": "Varbeshnitsa",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273872960",
+        "OSMURL": "https://www.openstreetmap.org/node/273872960",
+        "Description": "Varbesnica, la 10 km est de Vratza, avea 987 bulgari și 35 români; Weigand o numește cel mai sudic sat în care trăia populație rurală românească (p. 36).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25268798",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273872960, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0081",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.8358,
+          43.7022
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0081",
+        "Name": "Cherkovitsa",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273814960",
+        "OSMURL": "https://www.openstreetmap.org/node/273814960",
+        "Description": "Cerkovica este menționat ca sat românesc, la 5 km sud-vest de Nikopol, cu 331 locuitori (p. 37).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25266218",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273814960, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0080",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.6127,
+          43.72466
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0080",
+        "Name": "Dabovan",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273877510",
+        "OSMURL": "https://www.openstreetmap.org/node/273877510",
+        "Description": "Cercelan este menționată ca o comună românească pe Dunăre, la 24 km vest de Nikopol, cu 751 locuitori (p. 37).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13809410",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273877510, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0082",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.86998,
+          43.59162
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0082",
+        "Name": "Debovo",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273877369",
+        "OSMURL": "https://www.openstreetmap.org/node/273877369",
+        "Description": "Debovo este menționat ca sat mixt, la 15 km sud de Nikopol pe Osăm, cu 598 români, 452 tătari și 203 bulgari (p. 37).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13810380",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273877369, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0083",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9573,
+          43.6769
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0083",
+        "Name": "Dragash Voyvoda",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273874507",
+        "OSMURL": "https://www.openstreetmap.org/node/273874507",
+        "Description": "Ermenlüi este menționat ca sat românesc, la 7 km sud-est de Nikopol, cu 329 locuitori (p. 37).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25266210",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273874507, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0079",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.91391,
+          43.30881
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0079",
+        "Name": "Gabare",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273878820",
+        "OSMURL": "https://www.openstreetmap.org/node/273878820",
+        "Description": "Gabare, în Kreis Beala Slatina, la 17 km sud de aceasta, în Bezirk Vratza, avea 1.653 bulgari și 60 români (p. 37).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13808826",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273878820, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0087",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.6944,
+          43.64086
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0087",
+        "Name": "Gulyantsi",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488826",
+        "OSMURL": "https://www.openstreetmap.org/node/273488826",
+        "Description": "Gulenci, pe malul stâng al Vidului, la circa 6 km de vărsare, avea 1.094 români, 605 bulgari și 96 turci (p. 37).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/13807642",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273488826, place=town. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0086",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.4502,
+          43.6692
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0086",
+        "Name": "Iskar",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273880584",
+        "OSMURL": "https://www.openstreetmap.org/node/273880584",
+        "Description": "Gigen-Mahala avea 373 bulgari și 452 români (p. 37).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25266124",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273880584, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0088",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.70973,
+          43.57789
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0088",
+        "Name": "Lenkovo",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273874035",
+        "OSMURL": "https://www.openstreetmap.org/node/273874035",
+        "Description": "Kopriva este menționată ca o comună mixtă, împreună cu Kreta, la 20 km sud-vest de Nikopol, cu 1.600 locuitori, dintre care 274 români (p. 37).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13805052",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273874035, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0084",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.73969,
+          43.6304
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0084",
+        "Name": "Milkovitsa",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273877286",
+        "OSMURL": "https://www.openstreetmap.org/node/273877286",
+        "Description": "Gaureni este menționată ca o comună românească pe malul drept al Vidului, la 6 km de vărsare, în Kreis Nikopol, cu 1.946 români (p. 37).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13803838",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273877286, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0090",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.59352,
+          43.54008
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0090",
+        "Name": "Podem",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273876889",
+        "OSMURL": "https://www.openstreetmap.org/node/273876889",
+        "Description": "Märtvica este singurul sat din Kreis Plevna cu populație românească, la 20 km de vărsarea Vidului și la numai 15 km de Plevna; avea 595 bulgari, 406 români și 176 slovaci (p. 37).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13802030",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273876889, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0091",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.7728,
+          43.6876
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0091",
+        "Name": "Somovit",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273874587",
+        "OSMURL": "https://www.openstreetmap.org/node/273874587",
+        "Description": "Somovid, la vărsarea Vidului, la 10 km vest de Nikopol, pe malul Dunării și pe povârnișuri, este descris ca sat aproape în întregime românesc, cu 1.008 locuitori, care, potrivit tradiției, ar fi trecut Dunărea cu 200 de ani înainte (p. 37-38).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13799636",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273874587, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0078",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.8425,
+          43.2906
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0078",
+        "Name": "Varbitsa",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273816788",
+        "OSMURL": "https://www.openstreetmap.org/node/273816788",
+        "Description": "Värbica, în Kreis Beala-Slatina, la 16 km sud-est de aceasta, în Bezirk Vratza, avea 963 bulgari și 75 români (p. 37).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25268762",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273816788, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0089",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.5605,
+          43.7442
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0089",
+        "Name": "Zagrazhden",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273816297",
+        "OSMURL": "https://www.openstreetmap.org/node/273816297",
+        "Description": "Mägura este menționat ca sat românesc pe Dunăre, la 28 km vest de Nikopol, cu 952 locuitori, aparținând comunei Cercelan (p. 37).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25266130",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273816297, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0097",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.16762,
+          44.09725
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0097",
+        "Name": "Aydemir",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273881552",
+        "OSMURL": "https://www.openstreetmap.org/node/273881552",
+        "Description": "Vaidomir, numit și Aidomir, este menționată ca o comună mixtă în apropiere de Silistria, cu 320 case bulgărești și 160 românești; înainte existase o școală românească, iar în biserică se citea atât bulgărește, cât și românește (p. 38).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13812840",
+        "Notes": "Lot OSM 05, Dunărea estică. Obiect OpenStreetMap direct: node 273881552, place=village. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0092",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.75878,
+          43.66458
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0092",
+        "Name": "Dolni Vit",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273817911",
+        "OSMURL": "https://www.openstreetmap.org/node/273817911",
+        "Description": "Šămlíevo, pe Vid, în apropiere de Somovid, este menționat ca sat mixt cu 479 români și 354 bulgari (p. 38).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13809834",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273817911, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0093",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.7091,
+          43.6072
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0093",
+        "Name": "Shiyakovo",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273877616",
+        "OSMURL": "https://www.openstreetmap.org/node/273877616",
+        "Description": "Seikovo, numit și Siiakovo, este menționat ca sat mixt, la 18 km sud-vest de Nikopol, în apropierea Vidului, cu 236 români și 71 bulgari, aparținând comunei Gaureni (p. 38).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25266140",
+        "Notes": "Lot OSM 04, sector Vratsa–Kozloduy–Pleven. Obiect OpenStreetMap direct: node 273877616, place=village. Coordonata OSM rămâne separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0096",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.26,
+          44.1183
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0096",
+        "Name": "Silistra",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "31058188",
+        "OSMURL": "https://www.openstreetmap.org/node/31058188",
+        "Description": "Silistria, în Kreis Silistria, avea aproximativ 13.000 locuitori: circa 5.000 turci, tot atâția bulgari, iar restul români, aproximativ 100 de familii, greci și armeni (p. 38).",
+        "PointType": "localitate moderna OSM; place=city",
+        "Source": "https://mapcarta.com/Silistra",
+        "Notes": "Lot OSM 05, Dunărea estică. Obiect OpenStreetMap direct: node 31058188, place=city. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0094",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.6163,
+          44.046
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0094",
+        "Name": "Tutrakan",
+        "Layer": "Romani / dacoromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "1734063409",
+        "OSMURL": "https://www.openstreetmap.org/node/1734063409",
+        "Description": "După eliberare, elementul bulgar a crescut mult; Weigand estimează aproximativ 5.000 bulgari, 3.000 români și 2.000 turci și țigani (p. 38).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/pt/Tutrakan",
+        "Notes": "Lot OSM 05, Dunărea estică. Obiect OpenStreetMap direct: node 1734063409, place=town. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.12885,
+          43.23732
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0001",
+        "Name": "Berkovitsa",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488808",
+        "OSMURL": "https://www.openstreetmap.org/node/273488808",
+        "Description": "În Berkovica, Weigand a găsit 5 familii aromâne, venite nu de mult timp; a notat și denumiri aromânești ale războiului de țesut, deja amestecate cu bulgară (p. 7). Capitolul 4 repetă existența a 5 familii (p. 51, p. 58).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/13812206",
+        "Notes": "Lot OSM 06, interior vestic — Berkovitsa–Mezdra–Sofia–Kyustendil–Dupnitsa–Samokov. Obiect OpenStreetMap direct: node 273488808, place=town. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.689,
+          42.281
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0003",
+        "Name": "Kyustendil",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "31058178",
+        "OSMURL": "https://www.openstreetmap.org/node/31058178",
+        "Description": "La Küstendil, negustorul aromân Theodor Metta i-a dat lui Weigand informații despre așezările aromâne din împrejurimi (p. 9). În oraș mai păstrau limba maternă 8 familii aromâne (p. 57).",
+        "PointType": "localitate moderna OSM; place=city",
+        "Source": "https://mapcarta.com/Kyustendil",
+        "Notes": "Lot OSM 06, interior vestic — Berkovitsa–Mezdra–Sofia–Kyustendil–Dupnitsa–Samokov. Obiect OpenStreetMap direct: node 31058178, place=city. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.71526,
+          43.14326
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0002",
+        "Name": "Mezdra",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488721",
+        "OSMURL": "https://www.openstreetmap.org/node/273488721",
+        "Description": "La Mezdra, Weigand a stat la hangiul aromân Argbir Dubo din Gopes și notează că încă un aromân ținea han la gară (p. 9). În lista de la p. 58, Mezdra este menționată între locurile cu câte una sau două familii aromâne (p. 58).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/13803946",
+        "Notes": "Lot OSM 06, interior vestic — Berkovitsa–Mezdra–Sofia–Kyustendil–Dupnitsa–Samokov. Obiect OpenStreetMap direct: node 273488721, place=town. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.1144,
+          42.2628
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0004",
+        "Name": "Dupnitsa",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488707",
+        "OSMURL": "https://www.openstreetmap.org/node/273488707",
+        "Description": "La Dupnica, Weigand cunoaște un țelnic aromân din Ravna Buka, care avea casă în oraș (p. 10). Din 50 de familii aromâne din Dupnica, numai 20 mai păstrau limba maternă (p. 57).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/Dupnitsa",
+        "Notes": "Lot OSM 06, interior vestic — Berkovitsa–Mezdra–Sofia–Kyustendil–Dupnitsa–Samokov. Obiect OpenStreetMap direct: node 273488707, place=town. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.5593,
+          42.3378
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0006",
+        "Name": "Samokov",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488819",
+        "OSMURL": "https://www.openstreetmap.org/node/273488819",
+        "Description": "La Samokof, Weigand intră pentru scurt timp la un aromân (p. 15). Din 60 de familii aromâne din Samokof, numai 10 mai păstrau limba maternă (p. 57).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/Samokov",
+        "Notes": "Lot OSM 06, interior vestic — Berkovitsa–Mezdra–Sofia–Kyustendil–Dupnitsa–Samokov. Obiect OpenStreetMap direct: node 273488819, place=town. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.01867,
+          42.21258
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0007",
+        "Name": "Belovo",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488790",
+        "OSMURL": "https://www.openstreetmap.org/node/273488790",
+        "Description": "La Belovo, Weigand a cunoscut o familie aromână din Krusevo, care i-a dat informații despre păstorii valahi pe care dorea să-i viziteze (p. 16).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/13812250",
+        "Notes": "Lot OSM 07, continuarea clusterului aromân/interior. Obiect OpenStreetMap direct: node 273488790, place=town. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.2596,
+          42.73506
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0011",
+        "Name": "Anton",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488725",
+        "OSMURL": "https://www.openstreetmap.org/node/273488725",
+        "Description": "În Pizdita, un aromân din Läzene de lângă Pirdop, care umbla cu stofe, i-a oferit lui Weigand informații importante despre aromânii Bulgariei (p. 19). În capitolul 4, Läzene de lângă Pirdop apare cu 25 de familii care încă păstrau limba maternă (p. 57).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13812998",
+        "Notes": "Lot OSM 07, continuarea clusterului aromân/interior. Obiect OpenStreetMap direct: node 273488725, place=village. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.08763,
+          41.98992
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0009",
+        "Name": "Rakitovo",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "270687419",
+        "OSMURL": "https://www.openstreetmap.org/node/270687419",
+        "Description": "La Rakitova, Weigand menționează un han aromânesc în care a verificat mai multe dialecte (p. 19). În capitolul 4 apar 10 familii aromâne din Zagori la Rakitovo, în Cepino (p. 57).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/13801280",
+        "Notes": "Lot OSM 07, continuarea clusterului aromân/interior. Obiect OpenStreetMap direct: node 270687419, place=town. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.30521,
+          42.03365
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0012",
+        "Name": "Peshtera",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "270706123",
+        "OSMURL": "https://www.openstreetmap.org/node/270706123",
+        "Description": "În Pestera, Weigand a văzut multe femei aromâne, dar ele vorbeau grecește (p. 20). În capitolul 4, Pestera avea circa 100 de familii aromâne, mai ales din Neveska și apoi din Muskopole; numai în aproximativ 20 de familii se mai vorbea aromânește, celelalte se grecizaseră (p. 57).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/13802312",
+        "Notes": "Lot OSM 07, continuarea clusterului aromân/interior. Obiect OpenStreetMap direct: node 270706123, place=town. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0162",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.3217,
+          42.6977
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0162",
+        "Name": "Sofia",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "1700083447",
+        "OSMURL": "https://www.openstreetmap.org/node/1700083447",
+        "Description": "Sofia este indicată drept principal punct de plecare pentru aromânii din Bulgaria; Weigand spune că aromânii din Sofia, mai ales cei din Gopes și apoi din Malovista, sunt foarte numeroși (p. 50). În Sofia ar fi aproximativ 2.000 care încă folosesc aromâna ca limbă de casă; la recensământul din 31 decembrie 1900 numai 739 s-au declarat aromâni, dintre care 161 născuți în Bulgaria (p. 57).",
+        "PointType": "localitate moderna OSM; place=city",
+        "Source": "https://mapcarta.com/Sofia",
+        "Notes": "Lot OSM 06, interior vestic — Berkovitsa–Mezdra–Sofia–Kyustendil–Dupnitsa–Samokov. Obiect OpenStreetMap direct: node 1700083447, place=city. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0175",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.45272,
+          41.92192
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0175",
+        "Name": "Bachevo",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273876992",
+        "OSMURL": "https://www.openstreetmap.org/node/273876992",
+        "Description": "Bacevo, la 6 km nord-est de Razlog, avea 40 de colibe aromâne, pe lângă mai multe colibe bulgărești (p. 54).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13812780",
+        "Notes": "Lot OSM 07, continuarea clusterului aromân/interior. Obiect OpenStreetMap direct: node 273876992, place=village. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0172",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.0906,
+          42.0111
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0172",
+        "Name": "Blagoevgrad",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "31058171",
+        "OSMURL": "https://www.openstreetmap.org/node/31058171",
+        "Description": "Dzumaja, numită și Dzuma bala, avea 50 de familii aromâne, care aveau chiar școală și biserică românească (p. 54).",
+        "PointType": "localitate moderna OSM; place=city",
+        "Source": "https://mapcarta.com/Blagoevgrad",
+        "Notes": "Lot OSM 07, continuarea clusterului aromân/interior. Obiect OpenStreetMap direct: node 31058171, place=city. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0177",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.35964,
+          41.60144
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0177",
+        "Name": "Bozhdovo",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273813699",
+        "OSMURL": "https://www.openstreetmap.org/node/273813699",
+        "Description": "Vlaski Kolibi, numite și Bozdovo, pe muntele Jeltepe, aveau 50 de colibe la 24 km nord de Melnik; aparțineau satului Buzdova, aflat la 7 km nord de Melnik (p. 54).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13811604",
+        "Notes": "Lot OSM 11. Bozhdovo este localitatea modernă asociată lui Bozdovo/Buzdova din sursa istorică. Mapcarta expune direct OpenStreetMap node 273813699, place=village. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0176",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.47667,
+          41.96955
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0176",
+        "Name": "Dobarsko",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273814622",
+        "OSMURL": "https://www.openstreetmap.org/node/273814622",
+        "Description": "Nedobärsko, la 8 km nord de Razlog, avea 10 colibe aromânești, restul fiind bulgăresc (p. 54).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13810026",
+        "Notes": "Lot OSM 07, continuarea clusterului aromân/interior. Obiect OpenStreetMap direct: node 273814622, place=village. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0180",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.64414,
+          41.55263
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0180",
+        "Name": "Popovi Livadi / Papas Chair",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "10961383107",
+        "OSMURL": "https://www.openstreetmap.org/node/10961383107",
+        "Description": "Papas-Cajir, numit pe hartă și Olah-Külbeleri, adică „colibe valahe”, lângă colibe iuruke, era la 7 km sud-vest de Nevrokop și avea 50 de colibe (p. 54).",
+        "PointType": "localitate moderna OSM; place=village; reper istoric Papaz Chair",
+        "Source": "https://mapcarta.com/N10961383107 ; https://mapcarta.com/N274090243 ; https://meteo-ride.com/popovi-livadi-pass-route-198/",
+        "Notes": "Lot OSM 11. Popovi Livadi este obiect OSM direct node 10961383107, place=village, la coordonata master. Reperul istoric Papaz/Papas Chair este confirmat suplimentar de cabana OSM node 274090243 (tourism=alpine_hut; denumire alternativă 'х. Папаз чаир') și de surse care dau Papazchair/Popovi Livadi ca denumiri ale aceleiași zone."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0213",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.8763,
+          42.0074
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0213",
+        "Name": "Asenovgrad",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488997",
+        "OSMURL": "https://www.openstreetmap.org/node/273488997",
+        "Description": "Weigand spune că situația aromânilor din Stanimaka era asemănătoare cu cea din Pestera și Philippopel: nu se bulgarizaseră, ci se grecizaseră (p. 57).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/Asenovgrad",
+        "Notes": "Lot OSM 08, localități moderne clare din grupul aromân rămas. Obiect OpenStreetMap direct: node 273488997, place=town. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0211",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.98531,
+          42.00747
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0211",
+        "Name": "Chepino",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "11591857755",
+        "OSMURL": "https://www.openstreetmap.org/node/11591857755",
+        "Description": "Bania, în Cepino, este menționată cu 10 familii aromâne (p. 57).",
+        "PointType": "cartier modern OSM; fost sat Banya Chepinska",
+        "Source": "https://mapcarta.com/N11591857755 ; https://m.velingrad.bg/wp-content/uploads/2019/02/00_OUP_Velingrad_Zapiska.pdf ; https://www.bdz.bg/bg/a/tesnolineika-istoria",
+        "Notes": "Lot OSM 11. 'Bania, în Cepino' este corelată cu fostul sat Banya Chepinska/Chepino, astăzi cartierul sudic Chepino al Velingradului. OSM expune direct node 11591857755, place=quarter. Sursele administrative/istorice confirmă că fostul sat Banya Chepinska a devenit Chepino și ulterior a fost integrat în Velingrad. Diferența față de master este păstrată pentru QA; coordonata OSM nu este propagată automat în MYMAPS."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0203",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.99644,
+          42.83268
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0203",
+        "Name": "Etropole",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488702",
+        "OSMURL": "https://www.openstreetmap.org/node/273488702",
+        "Description": "Etropole este menționat de Weigand între localitățile despre care se știa că avuseseră odinioară colonii aromâne puternice, venite în timpul lui Ali Pașa, dar care dispăruseră complet până la momentul scrierii (p. 57).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/13808930",
+        "Notes": "Lot OSM 08, localități moderne clare din grupul aromân rămas. Obiect OpenStreetMap direct: node 273488702, place=town. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0205",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.3578,
+          42.6375
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0205",
+        "Name": "Koprivshtitsa",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488962",
+        "OSMURL": "https://www.openstreetmap.org/node/273488962",
+        "Description": "Kopristica este menționat de Weigand între localitățile despre care se știa că avuseseră odinioară colonii aromâne puternice, venite în timpul lui Ali Pașa, dar care dispăruseră complet până la momentul scrierii (p. 57).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/Koprivshtitsa",
+        "Notes": "Lot OSM 08, localități moderne clare din grupul aromân rămas. Obiect OpenStreetMap direct: node 273488962, place=town. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0208",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.44916,
+          42.88738
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0208",
+        "Name": "Kotel",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273489004",
+        "OSMURL": "https://www.openstreetmap.org/node/273489004",
+        "Description": "Kotei este menționat de Weigand între localitățile despre care se știa că avuseseră odinioară colonii aromâne puternice, venite în timpul lui Ali Pașa, dar care dispăruseră complet până la momentul scrierii (p. 57).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/13805824",
+        "Notes": "Lot OSM 08, localități moderne clare din grupul aromân rămas. Obiect OpenStreetMap direct: node 273489004, place=town. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0204",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.1888,
+          42.5043
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0204",
+        "Name": "Panagyurishte",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488711",
+        "OSMURL": "https://www.openstreetmap.org/node/273488711",
+        "Description": "Panagjuriste este menționat de Weigand între localitățile despre care se știa că avuseseră odinioară colonii aromâne puternice, venite în timpul lui Ali Pașa, dar care dispăruseră complet până la momentul scrierii (p. 57).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/13802572",
+        "Notes": "Lot OSM 08, localități moderne clare din grupul aromân rămas. Obiect OpenStreetMap direct: node 273488711, place=town. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0207",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.3318,
+          42.1884
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0207",
+        "Name": "Pazardzhik",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "31058181",
+        "OSMURL": "https://www.openstreetmap.org/node/31058181",
+        "Description": "Tatar-Pazardzik este menționat de Weigand între localitățile despre care se știa că avuseseră odinioară colonii aromâne puternice, venite în timpul lui Ali Pașa, dar care dispăruseră complet până la momentul scrierii (p. 57).",
+        "PointType": "localitate moderna OSM; place=city",
+        "Source": "https://mapcarta.com/Pazardzhik",
+        "Notes": "Lot OSM 08, localități moderne clare din grupul aromân rămas. Obiect OpenStreetMap direct: node 31058181, place=city. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0212",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.7499,
+          42.1419
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0212",
+        "Name": "Plovdiv",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "1698668366",
+        "OSMURL": "https://www.openstreetmap.org/node/1698668366",
+        "Description": "Weigand spune că situația din Philippopel era asemănătoare cu cea din Pestera: aromânii nu se bulgarizaseră, ci se grecizaseră (p. 57).",
+        "PointType": "localitate moderna OSM; place=city",
+        "Source": "https://mapcarta.com/Plovdiv",
+        "Notes": "Lot OSM 08, localități moderne clare din grupul aromân rămas. Obiect OpenStreetMap direct: node 1698668366, place=city. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0209",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.96291,
+          42.54616
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0209",
+        "Name": "Radomir",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488732",
+        "OSMURL": "https://www.openstreetmap.org/node/273488732",
+        "Description": "Radomir este menționat cu 6 familii aromâne care încă își păstrau limba maternă (p. 57).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/13801342",
+        "Notes": "Lot OSM 08, localități moderne clare din grupul aromân rămas. Obiect OpenStreetMap direct: node 273488732, place=town. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0210",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.1324,
+          42.1279
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0210",
+        "Name": "Rila",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488839",
+        "OSMURL": "https://www.openstreetmap.org/node/273488839",
+        "Description": "Rila-Dorf este menționat cu 6 familii aromâne care încă își păstrau limba maternă (p. 57).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/Rila",
+        "Notes": "Lot OSM 08, localități moderne clare din grupul aromân rămas. Obiect OpenStreetMap direct: node 273488839, place=town. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0206",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.2651,
+          42.9178
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0206",
+        "Name": "Teteven",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488741",
+        "OSMURL": "https://www.openstreetmap.org/node/273488741",
+        "Description": "Teteven este menționat de Weigand între localitățile despre care se știa că avuseseră odinioară colonii aromâne puternice, venite în timpul lui Ali Pașa, dar care dispăruseră complet până la momentul scrierii (p. 57).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/13798604",
+        "Notes": "Lot OSM 08, localități moderne clare din grupul aromân rămas. Obiect OpenStreetMap direct: node 273488741, place=town. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0220",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.92762,
+          43.54725
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0220",
+        "Name": "Belotintsi",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273812733",
+        "OSMURL": "https://www.openstreetmap.org/node/273812733",
+        "Description": "În statistica oficială pentru Bezirk Vratza, Belotinci, Kreis Ferdinand, apare cu 19 aromâni între 936 de bulgari (p. 58).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13812258",
+        "Notes": "Lot OSM 09, grupul aromân nordic/nord-vestic. Obiect OpenStreetMap direct: node 273812733, place=village. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0214",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.79295,
+          42.90785
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0214",
+        "Name": "Botevgrad",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488848",
+        "OSMURL": "https://www.openstreetmap.org/node/273488848",
+        "Description": "Orhanje este menționat cu 9 familii aromâne (p. 58).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/13811706",
+        "Notes": "Lot OSM 09, grupul aromân nordic/nord-vestic. Obiect OpenStreetMap direct: node 273488848, place=town. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0218",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.61321,
+          43.41061
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0218",
+        "Name": "Devene",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273873585",
+        "OSMURL": "https://www.openstreetmap.org/node/273873585",
+        "Description": "În statistica oficială pentru Bezirk Vratza, Deavene, Kreis Vratza, apare cu 23 de aromâni între 1.196 de bulgari (p. 58).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13810272",
+        "Notes": "Lot OSM 09, grupul aromân nordic/nord-vestic. Obiect OpenStreetMap direct: node 273873585, place=village. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0216",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.04141,
+          43.28727
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0216",
+        "Name": "Gornik",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273815612",
+        "OSMURL": "https://www.openstreetmap.org/node/273815612",
+        "Description": "În statistica oficială pentru Bezirk Vratza, Gornik, Kreis Beala Slatina, apare cu 27 de aromâni între 843 de bulgari (p. 58).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13808096",
+        "Notes": "Lot OSM 09, grupul aromân nordic/nord-vestic. Obiect OpenStreetMap direct: node 273815612, place=village. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0224",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.16191,
+          43.20643
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0224",
+        "Name": "Lukovit",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488884",
+        "OSMURL": "https://www.openstreetmap.org/node/273488884",
+        "Description": "În Bezirk Plevna, Lukovit apare cu 74 aromâni (p. 58).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/es/13804692",
+        "Notes": "Lot OSM 09, grupul aromân nordic/nord-vestic. Obiect OpenStreetMap direct: node 273488884, place=town. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0219",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.34327,
+          43.51147
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0219",
+        "Name": "Marchevo",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273878723",
+        "OSMURL": "https://www.openstreetmap.org/node/273878723",
+        "Description": "În statistica oficială pentru Bezirk Vratza, Märcevo, Kreis Ferdinand, apare cu 28 de aromâni între 843 de bulgari (p. 58).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13803518",
+        "Notes": "Lot OSM 09, grupul aromân nordic/nord-vestic. Obiect OpenStreetMap direct: node 273878723, place=village. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0221",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.37877,
+          43.45626
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0221",
+        "Name": "Ohrid",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273880626",
+        "OSMURL": "https://www.openstreetmap.org/node/273880626",
+        "Description": "În statistica oficială pentru Bezirk Vratza, Ochrid, Kreis Ferdinand, apare cu 42 de aromâni între 583 de bulgari (p. 58).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13802972",
+        "Notes": "Lot OSM 09, grupul aromân nordic/nord-vestic. Obiect OpenStreetMap direct: node 273880626, place=village. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0222",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.618,
+          43.409
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0222",
+        "Name": "Pleven",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "31058183",
+        "OSMURL": "https://www.openstreetmap.org/node/31058183",
+        "Description": "Plevna este menționată cu 10 familii aromâne; Weigand notează că în statistica oficială apar numai 4 persoane (p. 58).",
+        "PointType": "localitate moderna OSM; place=city",
+        "Source": "https://mapcarta.com/Pleven",
+        "Notes": "Lot OSM 09, grupul aromân nordic/nord-vestic. Obiect OpenStreetMap direct: node 31058183, place=city. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0225",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.1428,
+          43.27169
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0225",
+        "Name": "Ruptsi",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273873805",
+        "OSMURL": "https://www.openstreetmap.org/node/273873805",
+        "Description": "În Bezirk Plevna, Rupci, Kreis Lukovit, apare cu 20 aromâni între 872 bulgari (p. 58).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13800742",
+        "Notes": "Lot OSM 09, grupul aromân nordic/nord-vestic. Obiect OpenStreetMap direct: node 273873805, place=village. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0226",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.27827,
+          43.09671
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0226",
+        "Name": "Toros",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "262416942",
+        "OSMURL": "https://www.openstreetmap.org/node/262416942",
+        "Description": "În Bezirk Plevna, Toros, Kreis Lukovit, apare cu 25 aromâni între 2.000 bulgari (p. 58).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13805086",
+        "Notes": "Lot OSM 09, grupul aromân nordic/nord-vestic. Obiect OpenStreetMap direct: node 262416942, place=village. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0223",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.46148,
+          43.60948
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0223",
+        "Name": "Vardin",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273878764",
+        "OSMURL": "https://www.openstreetmap.org/node/273878764",
+        "Description": "Vardin este menționat în lista locurilor cu câte una sau două familii aromâne (p. 58).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13797788 ; https://actualnosvishtov.com/za-istoriyata-na-selo-vardim/",
+        "Notes": "Lot OSM 09. Vardin din sursa istorică este tratat ca actualul Vardim: sursa locală notează explicit forma Vardin la F. Kanitz. Obiect OSM direct: node 273878764, place=village. Diferența mare față de master este marcată pentru QA."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0217",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.46811,
+          43.3022
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0217",
+        "Name": "Vlasatitsa",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273815324",
+        "OSMURL": "https://www.openstreetmap.org/node/273815324",
+        "Description": "În statistica oficială pentru Bezirk Vratza, Vlasatica, aparținând de Beala-bälgarska, apare cu 26 de aromâni între 311 bulgari (p. 58).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13797306",
+        "Notes": "Lot OSM 09, grupul aromân nordic/nord-vestic. Obiect OpenStreetMap direct: node 273815324, place=village. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0215",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.548,
+          43.2028
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0215",
+        "Name": "Vratsa",
+        "Layer": "Aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "31058197",
+        "OSMURL": "https://www.openstreetmap.org/node/31058197",
+        "Description": "Vratza este menționată cu 4 familii aromâne (p. 58).",
+        "PointType": "localitate moderna OSM; place=city",
+        "Source": "https://mapcarta.com/Vratsa",
+        "Notes": "Lot OSM 09, grupul aromân nordic/nord-vestic. Obiect OpenStreetMap direct: node 31058197, place=city. Coordonata OSM este păstrată separat de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0013",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.52226,
+          43.32232
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0013",
+        "Name": "Lilyache",
+        "Layer": "Mixt romani-aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273812321",
+        "OSMURL": "https://www.openstreetmap.org/node/273812321",
+        "Description": "Weigand noteaza ca in Liliace s-au intalnit colonisti romani veniti din nord si aromani veniti din sud (p. 30). In Kreis Vratza, Liliace, la 15 km nord de Vratza, avea 1.151 bulgari, 159 romani si 13 aromani (p. 36-37). In capitolul 4, statistica oficiala repeta 13 aromani langa 159 romani si 1.151 bulgari (p. 58).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13804928",
+        "Notes": "Lot OSM 10, stratul Mixt români–aromâni. Obiect OpenStreetMap direct: node 273812321, place=village. Coordonata OSM este separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0014",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.67264,
+          43.29791
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0014",
+        "Name": "Mramoren",
+        "Layer": "Mixt romani-aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273874981",
+        "OSMURL": "https://www.openstreetmap.org/node/273874981",
+        "Description": "Weigand noteaza ca in Mramoren s-au intalnit colonisti romani veniti din nord si aromani veniti din sud (p. 30). In Kreis Vratza, Mramoren, la 15 km nord-est de Vratza, avea 707 bulgari, 138 romani si 13 aromani (p. 36). In capitolul 4, statistica oficiala repeta 13 aromani langa 138 romani si 707 bulgari (p. 58).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13803566",
+        "Notes": "Lot OSM 10, stratul Mixt români–aromâni. Obiect OpenStreetMap direct: node 273874981, place=village. Coordonata OSM este separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0063",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.6861,
+          43.6267
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0063",
+        "Name": "Belogradchik",
+        "Layer": "Mixt romani-aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488804",
+        "OSMURL": "https://www.openstreetmap.org/node/273488804",
+        "Description": "Orașul Belogradzik avea, între 2.078 locuitori, 45 români (p. 34). Belogradzik este menționat cu 3 familii aromâne (p. 58).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/Belogradchik",
+        "Notes": "Lot OSM 10, stratul Mixt români–aromâni. Obiect OpenStreetMap direct: node 273488804, place=town. Coordonata OSM este separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0066",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.4228,
+          43.7087
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0066",
+        "Name": "Baykal",
+        "Layer": "Mixt romani-aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273875657",
+        "OSMURL": "https://www.openstreetmap.org/node/273875657",
+        "Description": "Beslii este menționată ca o comună românească, la 40 km de Rahova în aval pe Dunăre, cu 1.100 locuitori; deși satul avea doi învățători, masa populației era analfabetă (p. 35). Besli este menționat în lista locurilor cu câte una sau două familii aromâne (p. 58).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25266142",
+        "Notes": "Lot OSM 10, stratul Mixt români–aromâni. Obiect OpenStreetMap direct: node 273875657, place=village. Coordonata OSM este separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0065",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.95913,
+          43.73463
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0065",
+        "Name": "Oryahovo",
+        "Layer": "Mixt romani-aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273488717",
+        "OSMURL": "https://www.openstreetmap.org/node/273488717",
+        "Description": "Rahova, corect Oreahovo după Weigand, număra între 5.550 locuitori aproximativ 700 români, ceilalți fiind mai ales bulgari veniți după epoca turcească (p. 35). Rahova este menționată cu 12 familii aromâne (p. 58). În notă, Weigand spune că i-au fost enumerate nominal 10 familii aromâne, în timp ce statistica oficială număra numai 14 persoane (p. 58).",
+        "PointType": "localitate moderna OSM; place=town",
+        "Source": "https://mapcarta.com/fr/13802808",
+        "Notes": "Lot OSM 10, stratul Mixt români–aromâni. Obiect OpenStreetMap direct: node 273488717, place=town. Coordonata OSM este separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0085",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.48222,
+          43.69734
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0085",
+        "Name": "Gigen",
+        "Layer": "Mixt romani-aromani",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273874441",
+        "OSMURL": "https://www.openstreetmap.org/node/273874441",
+        "Description": "Gigen este menționată ca o comună mare și frumoasă, mixtă, la 32 km vest de Nikopol și la 7 km de malul Dunării, cu 1.880 bulgari și 715 români, plus turci și țigani (p. 37). Gigen este menționată cu 3 familii aromâne (p. 58).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13808552",
+        "Notes": "Lot OSM 10, stratul Mixt români–aromâni. Obiect OpenStreetMap direct: node 273874441, place=village. Coordonata OSM este separată de coordonata MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0102",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.72802,
+          42.71957
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0102",
+        "Name": "Banishte",
+        "Layer": "Toponime",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273815694",
+        "OSMURL": "https://www.openstreetmap.org/node/273815694",
+        "Description": "Banisor, notat de Weigand după Jirecek, aparținea comunei Kosarevo, Kreis Tarn; Weigand îl explică drept diminutiv românesc de la banie/baie, mină sau baie, și îl plasează exact la vest de Sofia (p. 40-41).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13812632",
+        "Notes": "Lot OSM 12, lot final de toponime. Mapcarta expune și formele istorice Banishor/Banišor, compatibile direct cu Banisor la Weigand. Coordonata OSM rămâne separată de MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0112",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.32981,
+          42.91217
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0112",
+        "Name": "Tseretsel",
+        "Layer": "Toponime",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273880615",
+        "OSMURL": "https://www.openstreetmap.org/node/273880615",
+        "Description": "Cerecel, la nord de Sofia, este explicat de Weigand prin latinescul circellus, prin românescul cercel; ca nume de loc ar însemna probabil o mică suprafață rotunjită sau ar putea porni de la cerc, val ori loc circular (p. 42).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13798158",
+        "Notes": "Lot OSM 12, lot final de toponime. Obiect OSM direct pentru satul Tseretsel/Cerecel; diferența față de master este păstrată explicit. Coordonata OSM rămâne separată de MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0119",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.00427,
+          42.75951
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0119",
+        "Name": "Delyan",
+        "Layer": "Toponime",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273878652",
+        "OSMURL": "https://www.openstreetmap.org/node/273878652",
+        "Description": "Kärnul, lângă Gurguliat, înseamnă „cel cârn”; Weigand spune că rădăcina este slavă, dar formația este românească (p. 43).",
+        "PointType": "localitate moderna OSM; place=village; nume istoric Karnul",
+        "Source": "https://mapcarta.com/13810324",
+        "Notes": "Lot OSM 12, lot final de toponime. Mapcarta/OSM indică explicit vechiul nume Kărnul/Karnul pentru actualul Delyan, confirmând legătura cu Kärnul din Weigand. Coordonata OSM rămâne separată de MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0115",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.9757,
+          42.79134
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0115",
+        "Name": "Gurgulyat",
+        "Layer": "Toponime",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273880756",
+        "OSMURL": "https://www.openstreetmap.org/node/273880756",
+        "Description": "Gurguliat, sat la vest de Sofia, este considerat de Weigand fără îndoială de origine românească; loc gurguliat sau gurguiat înseamnă loc ridicat ori boltit, ceea ce corespunde poziției, iar numele s-a referit întâi la munte și apoi la sat (p. 43).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13807620",
+        "Notes": "Lot OSM 12, lot final de toponime. Obiect OSM direct pentru satul Gurgulyat. Coordonata OSM rămâne separată de MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0128",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.4978,
+          42.5415
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0128",
+        "Name": "Dolni Pasarel",
+        "Layer": "Toponime",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273812079",
+        "OSMURL": "https://www.openstreetmap.org/node/273812079",
+        "Description": "Päsarel, sat mare la sud-est de Sofia, este explicat de Weigand ca diminutiv de la pasere, pasăre, și considerat fără îndoială românesc (p. 44).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25269120",
+        "Notes": "Lot OSM 12, lot final de toponime. Obiect OSM direct pentru Dolni Pasarel, corespondentul localității Päsarel din Weigand. Coordonata OSM rămâne separată de MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0121",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.56706,
+          42.46438
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0121",
+        "Name": "Kretsul/Krecul",
+        "Layer": "Toponime",
+        "OSMStatus": "verificat indirect obiect OSM",
+        "OSMType": "node",
+        "OSMID": "9555084091",
+        "OSMURL": "https://www.openstreetmap.org/node/9555084091",
+        "Description": "Krecul, lângă Gorno Ujno, în zona Küstendil, este explicat de Weigand drept „crețul”, „capul creț”, și considerat sigur românesc (p. 44).",
+        "PointType": "obiect/reper OSM exact",
+        "Source": "https://mapcarta.com/N9555084091",
+        "Notes": "Evidență OSM/Mapcarta existentă din rândul legacy T024. Statut legacy: OSM confirmat exact pentru mahala/toponim. Coordonata OSM este separată de coordonata ramurii MYMAPS."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0124",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.6685,
+          42.83303
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0124",
+        "Name": "Murgash",
+        "Layer": "Toponime",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "274078283",
+        "OSMURL": "https://www.openstreetmap.org/node/274078283",
+        "Description": "Murgas este inițial nume de munte și înseamnă „cel întunecat”; Weigand îl consideră formație românească, menționând atât muntele Murgas la nord-est de Sofia, cât și un sat Murgas la nord-vest de Sofia, la est de Caribrod (p. 44).",
+        "PointType": "toponim montan OSM; natural=peak",
+        "Source": "https://mapcarta.com/13803512",
+        "Notes": "Lot OSM 12, lot final de toponime. Masterul este localizat pe vârful Murgash; OSM are obiect direct natural=peak. Nu se confundă cu satul Murgash din Godech. Coordonata OSM rămâne separată de MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0130",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.79663,
+          43.34738
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0130",
+        "Name": "Pelishat",
+        "Layer": "Toponime",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273873212",
+        "OSMURL": "https://www.openstreetmap.org/node/273873212",
+        "Description": "Pelisat, sat și munte lângă Plevna, este considerat de Weigand probabil introdus în epocă modernă de români bulgarizați (p. 45).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13802378",
+        "Notes": "Lot OSM 12, lot final de toponime. Obiect OSM direct pentru satul Pelishat/Pelisat. Coordonata OSM rămâne separată de MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0131",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.79009,
+          43.06291
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0131",
+        "Name": "Petrlaš",
+        "Layer": "Toponime",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "4461678837",
+        "OSMURL": "https://www.openstreetmap.org/node/4461678837",
+        "Description": "Petärlas, sat lângă Caribrod, conține după Weigand o formație românească de la Peter + -as, cu inserția lui l după r, trăsătură specific românească sau aromână (p. 45).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/13919850",
+        "Notes": "Lot OSM 12, lot final de toponime. Obiect OSM direct pentru Petrlaš, azi în Serbia; păstrează avertismentul istoric/geografic al masterului. Coordonata OSM rămâne separată de MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0146",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.3276,
+          42.18046
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0146",
+        "Name": "Urdini Lakes",
+        "Layer": "Toponime",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "way",
+        "OSMID": "976858244",
+        "OSMURL": "https://www.openstreetmap.org/way/976858244",
+        "Description": "Urdina, un lac de pe Rilodagh, este considerat de Weigand sigur un nume dat în epocă modernă de aromânii de acolo (p. 46).",
+        "PointType": "obiect/reper OSM exact",
+        "Source": "https://www.openstreetmap.org/way/976858244",
+        "Notes": "Evidență OSM/Mapcarta existentă din rândul legacy T050. Statut legacy: obiect OSM exact pentru grupul de lacuri Urdini. Coordonata OSM este separată de coordonata ramurii MYMAPS."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0154",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.7114,
+          42.556
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0154",
+        "Name": "Vakarel",
+        "Layer": "Toponime",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273817088",
+        "OSMURL": "https://www.openstreetmap.org/node/273817088",
+        "Description": "Vakarel, sat la est de Pasarel, este explicat de Weigand ca văcărel, diminutiv de la văcar = păstor de vaci, și este considerat fără îndoială de origine românească (p. 46).",
+        "PointType": "localitate moderna OSM; place=village",
+        "Source": "https://mapcarta.com/25268952",
+        "Notes": "Lot OSM 12, lot final de toponime. Obiect OSM direct pentru satul Vakarel. Coordonata OSM rămâne separată de MYMAPS/master."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0159",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.2127,
+          42.8895
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0159",
+        "Name": "Vlasko Bardo",
+        "Layer": "Toponime",
+        "OSMStatus": "verificat indirect obiect OSM",
+        "OSMType": "node",
+        "OSMID": "1191160110",
+        "OSMURL": "https://www.openstreetmap.org/node/1191160110",
+        "Description": "Vlasko Bärdo, la vest de Cerecel, este menționat ca toponim care amintește de valahi (p. 47).",
+        "PointType": "obiect/reper OSM exact",
+        "Source": "https://mapcarta.com/N1191160110",
+        "Notes": "Evidență OSM/Mapcarta existentă din rândul legacy T061. Statut legacy: OSM confirmat exact pentru deal/varf. Coordonata OSM este separată de coordonata ramurii MYMAPS."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0116",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.28633,
+          43.03543
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0116",
+        "Name": "Yarbata/Jarbata",
+        "Layer": "Localizari cu avertisment",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "273881243",
+        "OSMURL": "https://www.openstreetmap.org/node/273881243",
+        "Description": "Jarbata, sat lângă Teteven, aparținând comunei Turski izvor, poate fi format din românescul iarba plus articolul bulgăresc -ta; Weigand nu poate spune dacă locul este vechi sau o întemeiere nouă dacoromânească și notează că nu aparține zonei Sofiei (p. 43).",
+        "PointType": "reper/container",
+        "Source": "https://mapcarta.com/13811266 ; https://www.openstreetmap.org/node/273881243",
+        "Notes": "Evidență OSM/Mapcarta existentă din rândul legacy T019. Statut legacy: localitate-container OSM, nu punct exact Weigand. Coordonata OSM este separată de coordonata ramurii MYMAPS."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WG_LOC_0170",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.806075,
+          42.249436
+        ]
+      },
+      "properties": {
+        "ID": "WG_LOC_0170",
+        "Name": "Kostenets Banya / Villas Kostenets",
+        "Layer": "Localizari cu avertisment",
+        "OSMStatus": "verificat obiect OSM",
+        "OSMType": "node",
+        "OSMID": "6405413266",
+        "OSMURL": "https://www.openstreetmap.org/node/6405413266",
+        "Description": "Pe muntele de la Kostenec Bania, lângă 50 de colibe grecești, se aflau și 10 colibe aromânești (p. 53).",
+        "PointType": "reper/container",
+        "Source": "https://www.openstreetmap.org/node/6405413266",
+        "Notes": "Evidență OSM/Mapcarta existentă din rândul legacy A039. Statut legacy: reper modern/container; nu exactizeaza colibile. Coordonata OSM este separată de coordonata ramurii MYMAPS."
+      }
+    }
+  ]
+}
