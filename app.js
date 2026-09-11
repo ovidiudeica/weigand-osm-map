@@ -172,7 +172,7 @@ async function start(){
   $('about-open').addEventListener('click',()=>$('about-dialog').showModal());
   $('detail-close').addEventListener('click',()=>{panel.classList.remove('is-open');panel.setAttribute('aria-hidden','true');});
 
-  function showDetail(properties){
+  function showDetail(properties,record=null){
     const name=field(properties,'name')||field(properties,'id')||'Nume nespecificat';
     const category=layerIndex(properties);
     $('detail-title').textContent=name;
@@ -187,6 +187,10 @@ async function start(){
     const modern=field(properties,'ModernIdentification');
     const modernStatus=field(properties,'ModernIDStatus');
     if(modern||modernStatus) body.append(detailCard('Identificare modernă',[modern,modernStatus]));
+    if(record?.collisionSize>1){
+      const others=record.collisionSize-1;
+      body.append(detailCard('Poziție cartografică',[`Poziție OSM partajată cu încă ${others} ${others===1?'entitate canonică':'entități canonice'}.`],'shared-position-note'));
+    }
     const actions=element('div',undefined,'detail-actions');
     const url=osmURL(properties);
     if(url){const link=element('a','Vezi în OpenStreetMap ↗');link.href=url;link.target='_blank';link.rel='noopener noreferrer';actions.append(link);}
@@ -242,13 +246,20 @@ async function start(){
   function highlight(record){document.querySelectorAll('#results button').forEach(button=>button.setAttribute('aria-current',String(button.dataset.record===String(record.index))));}
   function selectRecord(record,move=true){
     if(move){const target=record.displayLayer||record.layer;map.fitBounds(bounds(target),{maxZoom:14,padding:[35,35],animate:false});}
-    highlight(record);showDetail(record.properties);
+    highlight(record);showDetail(record.properties,record);
   }
   function overlapMarker(members){
     const center=bounds(members[0].layer).getCenter(),count=members.length;
-    const icon=L.divIcon({className:'',iconSize:[32,32],iconAnchor:[16,16],html:`<span title="${count} entități la aceeași poziție" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#173d34;color:#fff;border:3px solid #fff;box-shadow:0 2px 9px rgba(0,0,0,.3);font:700 13px/1 system-ui">${count}</span>`});
-    const marker=L.marker(center,{icon,keyboard:true,title:`${count} entități la aceeași poziție`,zIndexOffset:1000});
-    const box=element('div'); box.append(element('h3',`${count} entități la aceeași poziție`),element('p','Selectează fișa pe care vrei să o deschizi.'));
+    const title=`Poziție OSM partajată de ${count} entități canonice`;
+    const icon=L.divIcon({
+      className:'shared-position-icon',
+      iconSize:[30,30],
+      iconAnchor:[15,15],
+      html:`<span class="shared-position-marker" title="${title}" aria-hidden="true"><span class="shared-position-marker__back"></span><span class="shared-position-marker__front"></span></span>`
+    });
+    const marker=L.marker(center,{icon,keyboard:true,title,zIndexOffset:1000});
+    const box=element('div',undefined,'shared-position-popup');
+    box.append(element('h3','Poziție OSM partajată'),element('p',`${count} entități canonice sunt asociate aceleiași poziții. Selectează fișa pe care vrei să o deschizi.`));
     members.forEach(record=>{const b=element('button',`${record.name} · ${field(record.properties,'id')}`);b.type='button';b.addEventListener('click',()=>{map.closePopup();selectRecord(record,false);});box.append(b);});
     marker.bindPopup(box,{maxWidth:360}); return marker;
   }
@@ -258,7 +269,7 @@ async function start(){
     if(!listed.length) $('results').append(element('li',records.length?'Niciun rezultat pentru selecția curentă.':'Nu sunt încărcate date cartografice.'));
     for(const record of listed){
       const li=element('li'),button=element('button'),swatch=element('span','',`swatch layer-${record.category}`),name=element('span',record.name,'result-name');
-      button.type='button';button.dataset.record=record.index;button.append(swatch,document.createTextNode(' '),name,element('small',`${field(record.properties,'id')} · ${LAYERS[record.category].name}${record.collisionSize>1?` · poziție comună ×${record.collisionSize}`:''}`));
+      button.type='button';button.dataset.record=record.index;button.append(swatch,document.createTextNode(' '),name,element('small',`${field(record.properties,'id')} · ${LAYERS[record.category].name}${record.collisionSize>1?' · poziție partajată':''}`));
       button.addEventListener('click',()=>selectRecord(record,true));li.append(button);$('results').append(li);
     }
   }
