@@ -28,15 +28,16 @@
     '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
   })[character]);
 
-  // Public UI keeps the bibliographic citation and printed Weigand pages only.
-  // Raw storage URLs and PDF-page references are suppressed from publication.
-  const publicSourceText = value => String(value ?? '')
-    .replace(/\s*(?:[—–-]\s*)?https?:\/\/\S+/gi, '')
-    .replace(/\s*;\s*PDF\s+p\.\s*[0-9][0-9\s,–—-]*(?=\.)/gi, '')
-    .replace(/\s*;\s*PDF\s+p\.\s*[0-9][0-9\s,–—-]*\.?$/gi, '')
-    .replace(/\s*[—–-]\s*$/g, '')
-    .replace(/\s{2,}/g, ' ')
-    .trim();
+  // Public UI keeps only the bibliographic citation and printed Weigand page.
+  // Storage-location suffixes are publication metadata and are not displayed.
+  const publicSourceText = value => {
+    let text = String(value ?? '').trim();
+    if (/https?:\/\//i.test(text)) {
+      text = text.replace(/\s*(?:[—–-]\s*)?https?:\/\/\S+/gi, '').trim();
+      text = text.replace(/\s*;\s*[^;]+$/g, '').trim();
+    }
+    return text.replace(/\s*[—–-]\s*$/g, '').replace(/\s{2,}/g, ' ').trim();
+  };
 
   const installPublicSourceFilter = () => {
     const currentField = window.field;
@@ -44,7 +45,6 @@
     if (currentField.__weigandPublicSourceFilter) return true;
 
     const wrappedField = function(properties, key) {
-      if (key === 'PDFPages') return '';
       const value = currentField(properties, key);
       return key === 'sources' ? publicSourceText(value) : value;
     };
