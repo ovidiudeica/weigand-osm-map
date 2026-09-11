@@ -50,7 +50,7 @@ function element(tag,text,className){
 const TECH_ROWS = [
   ['WG_LOC / ID','id'],['Strat','layer'],['Nume în Weigand','WeigandName'],['Variante / aliasuri','Aliases'],
   ['Tip obiect','ObjectType'],['Admin./context istoric','HistoricalAdmin'],['Secțiune Weigand','WeigandSection'],
-  ['Pagini Weigand','WeigandPages'],['Pagini PDF','PDFPages'],['Identificare modernă','ModernIdentification'],
+  ['Pagini Weigand','WeigandPages'],['Identificare modernă','ModernIdentification'],
   ['Statut identificare','ModernIDStatus'],['Descriere','description'],['Sursă Weigand','sources'],['Statut semantic','SemanticStatus'],
   ['Paritate semantică','SemanticParity'],['Statut geometrie','GeometryParityStatus'],['Statut OSM','OSMStatus'],
   ['Tip punct','PointType'],['Calitate OSM','OSMQuality'],['OSMType','OSMType'],['OSMID','OSMID'],
@@ -182,7 +182,7 @@ async function start(){
     const description=field(properties,'description');
     if(weigandName||description) body.append(detailCard('În Weigand 1907',[weigandName,description]));
     const source=field(properties,'sources');
-    const pageBits=[field(properties,'WeigandPages')&&`p. ${field(properties,'WeigandPages')}`,field(properties,'PDFPages')&&`PDF p. ${field(properties,'PDFPages')}`].filter(Boolean).join(' · ');
+    const pageBits=field(properties,'WeigandPages')&&`p. ${field(properties,'WeigandPages')}`;
     if(source||pageBits) body.append(detailCard('Citare Weigand 1907',[pageBits,source],'citation'));
     const modern=field(properties,'ModernIdentification');
     const modernStatus=field(properties,'ModernIDStatus');
