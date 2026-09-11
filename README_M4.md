@@ -25,14 +25,14 @@ Corpusul semantic este comun ramurilor MyMaps și OSM/Website. Coordonatele sunt
 
 Câmpurile istorice/semantice sunt identice cu ramura MyMaps:
 `ID`, `Name`, `WeigandName`, `Aliases`, `Layer`, `ObjectType`, `HistoricalAdmin`,
-`WeigandSection`, `ModernIdentification`, `ModernIDStatus`, `WeigandPages`, `PDFPages`,
+`WeigandSection`, `ModernIdentification`, `ModernIDStatus`, `WeigandPages`,
 `Description`, `Source`, `SemanticStatus`, `SemanticParity`, `GeometryParityStatus`.
 
 Câmpurile OSM sunt platform-specific:
 `OSMStatus`, `PointType`, `OSMQuality`, `OSMType`, `OSMID`, `OSMURL`, `OSMSource`,
 `DistanceKM_MyMaps_OSM`, `DistanceQAStatus`, `Notes`.
 
-`Source` citează explicit Weigand 1907 cu paginile tipărite și paginile PDF. `OSMSource`
+`Source` citează explicit Weigand 1907 cu paginile tipărite. `OSMSource`
 este separat și nu este prezentat ca sursă istorică.
 
 ## M5 RC1
