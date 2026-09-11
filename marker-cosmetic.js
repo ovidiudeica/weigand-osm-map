@@ -1,12 +1,11 @@
 'use strict';
 
-// UI-only enhancements for shared OSM positions, modern place labels and source links.
+// UI-only enhancements for shared OSM positions and modern place labels.
 // Datasets and canonical coordinates remain untouched.
 (() => {
   if (!window.L) return;
 
   const LABEL_ZOOM = 9;
-  const PDF_PATH = 'assets/pdf/weigand-1907-rumaenen-und-aromunen-in-bulgarien.pdf';
   const labelsByPosition = new Map();
   const markerOrdinal = new Map();
   const seenColors = new Map();
@@ -29,37 +28,8 @@
     '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
   })[character]);
 
-  const normalizedPdfPageValue = value => String(value ?? '')
-    .replace(/^PDF\s+p\.\s*/i, '')
-    .trim();
-
-  const firstPdfPage = value => {
-    const match = normalizedPdfPageValue(value).match(/\d+/);
-    return match ? Number(match[0]) : null;
-  };
-
-  const pdfPageButton = value => {
-    const labelValue = normalizedPdfPageValue(value);
-    const page = firstPdfPage(labelValue);
-    if (!labelValue || !page) return null;
-    const link = document.createElement('a');
-    link.className = 'pdf-page-button';
-    link.textContent = `PDF p. ${labelValue}`;
-    link.href = `${PDF_PATH}#page=${page}`;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    link.setAttribute('aria-label', `Deschide PDF-ul la pagina ${page} într-o filă nouă`);
-    return link;
-  };
-
-  const pdfPageValueFromText = value => {
-    const match = String(value ?? '').match(/PDF\s+p\.\s*([0-9]+(?:\s*[-–—,]\s*[0-9]+)*)/i);
-    return match ? match[1].trim() : '';
-  };
-
-  // Public UI keeps the bibliographic citation but suppresses raw storage URLs
-  // and removes the PDF page token because that token is reserved for the button.
-  // The underlying canonical datasets remain byte-for-byte unchanged.
+  // Public UI keeps the bibliographic citation and printed Weigand pages only.
+  // Raw storage URLs and PDF-page references are suppressed from publication.
   const publicSourceText = value => String(value ?? '')
     .replace(/\s*(?:[—–-]\s*)?https?:\/\/\S+/gi, '')
     .replace(/\s*;\s*PDF\s+p\.\s*[0-9][0-9\s,–—-]*(?=\.)/gi, '')
@@ -74,6 +44,7 @@
     if (currentField.__weigandPublicSourceFilter) return true;
 
     const wrappedField = function(properties, key) {
+      if (key === 'PDFPages') return '';
       const value = currentField(properties, key);
       return key === 'sources' ? publicSourceText(value) : value;
     };
@@ -89,47 +60,6 @@
       window.clearInterval(sourceFilterTimer);
     }
   }, 0);
-
-  const enhancePdfButtons = () => {
-    document.querySelectorAll('.citation').forEach(card => {
-      const line = card.querySelector('p.value-large');
-      if (!line || line.dataset.pdfButtonApplied === 'true') return;
-      const pageValue = pdfPageValueFromText(line.textContent);
-      if (!pageValue) return;
-      const button = pdfPageButton(pageValue);
-      if (!button) return;
-      line.dataset.pdfButtonApplied = 'true';
-      line.classList.add('pdf-page-line');
-      line.replaceChildren(button);
-    });
-
-    document.querySelectorAll('dt').forEach(dt => {
-      if (dt.textContent.trim() !== 'Pagini PDF') return;
-      const dd = dt.nextElementSibling;
-      if (!dd || dd.tagName !== 'DD' || dd.querySelector('.pdf-page-button')) return;
-      const button = pdfPageButton(dd.textContent);
-      if (!button) return;
-      dd.replaceChildren(button);
-    });
-  };
-
-  let pdfEnhancementScheduled = false;
-  const schedulePdfEnhancement = () => {
-    if (pdfEnhancementScheduled) return;
-    pdfEnhancementScheduled = true;
-    queueMicrotask(() => {
-      pdfEnhancementScheduled = false;
-      enhancePdfButtons();
-    });
-  };
-
-  const pdfObserver = new MutationObserver(schedulePdfEnhancement);
-  pdfObserver.observe(document.documentElement, {childList:true, subtree:true});
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', schedulePdfEnhancement, {once:true});
-  } else {
-    schedulePdfEnhancement();
-  }
 
   const syncMapLabelState = map => {
     const container = map?.getContainer?.();
