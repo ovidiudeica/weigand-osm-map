@@ -3,34 +3,39 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Atlas de cercetare: Gustav Weigand, Rumänen und Aromunen in Bulgarien (1907), varianta OpenStreetMap.">
-  <title>Gustav Weigand · Atlas OSM</title>
+  <meta name="description" content="Atlas de cercetare: Gustav Weigand, Rumänen und Aromunen in Bulgarien (1907), varianta OpenStreetMap, corpus canonic WG_LOC.">
+  <title>Gustav Weigand · Atlas OSM · v0.24 RC1</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="styles.css">
   <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script defer src="transport-shim.js"></script>
   <script defer src="app.js"></script>
 </head>
 <body>
   <header>
-    <div><p class="eyebrow">ATLAS DE CERCETARE / 1907 → OSM</p><h1>Gustav Weigand</h1><p>„Rumänen und Aromunen in Bulgarien” <span>(1907)</span></p></div>
-    <span class="badge">Varianta OpenStreetMap · v0.22</span>
+    <div>
+      <p class="eyebrow">ATLAS DE CERCETARE / WEIGAND 1907 → CORPUS CANONIC → OSM</p>
+      <h1>Gustav Weigand</h1>
+      <p>„Rumänen und Aromunen in Bulgarien” <span>(1907)</span></p>
+    </div>
+    <span class="badge">OpenStreetMap · v0.24 RC1</span>
   </header>
 
-  <p class="method">Ramura OSM este separată de ramura MYMAPS/master. O coordonată OSM nu înlocuiește automat coordonata de cercetare.</p>
+  <p class="method">Sursa istorică este Weigand 1907. Geometria OSM este un strat modern separat și nu înlocuiește coordonatele MyMaps. Cazurile fără geometrie rămân explicit fără coordonate inventate.</p>
 
   <main>
     <aside aria-label="Explorare localități">
       <h2>Explorează atlasul</h2>
-      <p><strong>146 entități de cercetare</strong>: 142 au geometrie OSM/reper, 4 sunt păstrate separat fără geometrie OSM.</p>
+      <p><strong>225 entități canonice WG_LOC</strong>: 163 au geometrie OSM/reper în setul complet; 62 sunt păstrate separat fără geometrie OSM adoptată.</p>
 
-      <label for="search">Localitate / toponim / ID</label>
+      <label for="search">Localitate / toponim / nume Weigand / WG_LOC</label>
       <input id="search" type="search" placeholder="Caută în setul selectat…" autocomplete="off">
 
       <fieldset>
         <legend>Set de date</legend>
         <div class="modes">
-          <label><input type="radio" name="mode" value="full" checked> Complet <strong>142</strong> <span>geometrii · 140 poziții</span></label>
-          <label><input type="radio" name="mode" value="strict"> Strict <strong>136</strong> <span>geometrii · 135 poziții</span></label>
+          <label><input type="radio" name="mode" value="full" checked> Complet <strong>163</strong> <span>geometrii · 161 poziții</span></label>
+          <label><input type="radio" name="mode" value="strict"> Strict <strong>157</strong> <span>geometrii · 156 poziții</span></label>
         </div>
       </fieldset>
 
@@ -45,23 +50,24 @@
 
     <section class="map-panel" aria-label="Harta interactivă">
       <div id="map" aria-label="Hartă OpenStreetMap"></div>
-      <div class="map-caption">BULGARIA ȘI REGIUNILE ÎNVECINATE <span>Vizualizare cartografică</span></div>
+      <div class="map-caption">BULGARIA ȘI REGIUNILE ÎNVECINATE <span>Geometrii OSM / repere validate</span></div>
     </section>
   </main>
 
   <footer>
-    <button id="no-geometry" type="button" data-source="data/weigand-osm-v0.22-no-geometry.csv">4 cazuri fără geometrie OSM</button>
+    <button id="no-geometry" type="button" data-source="gzip">62 entități fără geometrie OSM</button>
     <nav aria-label="Descărcări">
-      <a id="download-full" href="data/weigand-osm-v0.22.geojson" download aria-disabled="true">GeoJSON complet</a>
-      <a id="download-strict" href="data/weigand-osm-v0.22-strict.geojson" download aria-disabled="true">GeoJSON strict</a>
+      <a id="download-full" href="#" aria-disabled="true">GeoJSON complet</a>
+      <a id="download-strict" href="#" aria-disabled="true">GeoJSON strict</a>
+      <a id="download-semantic" href="#">Registru semantic 225</a>
     </nav>
     <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>
   </footer>
 
   <dialog id="missing-dialog" aria-labelledby="dialog-title">
     <form method="dialog"><button class="close" aria-label="Închide dialogul">Închide ×</button></form>
-    <h2 id="dialog-title">Cazuri fără geometrie OSM</h2>
-    <p>4 cazuri confirmate în cercetare, fără obiect OSM distinct. Nu sunt reprezentate prin coordonate OSM inventate.</p>
+    <h2 id="dialog-title">Entități fără geometrie OSM adoptată</h2>
+    <p>Aceste 62 de entități rămân în corpusul canonic și în registrul semantic, fără coordonate OSM inventate.</p>
     <div id="missing-content" role="status"></div>
   </dialog>
 

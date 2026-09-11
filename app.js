@@ -1,19 +1,18 @@
 'use strict';
 
 const LAYERS = [
-  {name: 'Romani / dacoromani', color: '#286eaf', aliases: ['romani', 'dacoromani', 'romani / dacoromani']},
+  {name: 'Romani / dacoromani', color: '#286eaf', aliases: ['romani / dacoromani', 'romani', 'dacoromani']},
   {name: 'Aromani', color: '#a84f83', aliases: ['aromani']},
   {name: 'Mixt romani-aromani', color: '#7965aa', aliases: ['mixt romani-aromani']},
-  {name: 'Toponime', color: '#32785c', aliases: ['toponime']},
-  {name: 'Localizari cu avertisment', color: '#b36b16', aliases: ['localizari cu avertisment']}
+  {name: 'Toponime', color: '#32785c', aliases: ['toponime']}
 ];
 
 const FIELDS = {
-  name: ['name', 'nume', 'Name', 'localitate', 'toponim'],
-  id: ['WG_LOC', 'ID', 'id'],
-  layer: ['strat', 'Strat', 'layer', 'Layer'],
-  description: ['description', 'descriere', 'Description'],
-  sources: ['sources', 'surse', 'Sources', 'source', 'Source'],
+  name: ['Name', 'name', 'nume', 'localitate', 'toponim'],
+  id: ['ID', 'WG_LOC', 'id'],
+  layer: ['Layer', 'layer', 'Strat', 'strat'],
+  description: ['Description', 'description', 'descriere'],
+  sources: ['Source', 'Sources', 'source', 'sources', 'surse'],
   notes: ['Notes', 'notes'],
   osmURL: ['OSMURL']
 };
@@ -26,7 +25,7 @@ const normalize = value => String(value ?? '')
 
 function field(properties, key) {
   for (const alias of FIELDS[key] || [key]) {
-    const value = properties[alias];
+    const value = properties?.[alias];
     if (value !== undefined && value !== null && value !== '') {
       return typeof value === 'object' ? JSON.stringify(value) : String(value);
     }
@@ -35,8 +34,8 @@ function field(properties, key) {
 }
 
 function layerIndex(properties) {
-  const name = normalize(field(properties, 'layer'));
-  return LAYERS.findIndex(layer => layer.aliases.includes(name));
+  const value = normalize(field(properties, 'layer'));
+  return LAYERS.findIndex(layer => layer.aliases.includes(value));
 }
 
 function osmURL(properties) {
@@ -60,23 +59,41 @@ function details(properties) {
   const box = element('div');
   box.append(element('h3', field(properties, 'name') || field(properties, 'id') || 'Nume nespecificat'));
 
-  const list = element('dl');
-  for (const [label, key] of [
+  const rows = [
     ['WG_LOC / ID', 'id'],
     ['Strat', 'layer'],
-    ['OSMStatus', 'OSMStatus'],
-    ['PointType', 'PointType'],
+    ['Nume în Weigand', 'WeigandName'],
+    ['Variante / aliasuri', 'Aliases'],
+    ['Tip obiect', 'ObjectType'],
+    ['Admin./context istoric', 'HistoricalAdmin'],
+    ['Secțiune Weigand', 'WeigandSection'],
+    ['Pagini Weigand', 'WeigandPages'],
+    ['Pagini PDF', 'PDFPages'],
+    ['Identificare modernă', 'ModernIdentification'],
+    ['Statut identificare', 'ModernIDStatus'],
+    ['Descriere', 'description'],
+    ['Sursă Weigand', 'sources'],
+    ['Statut semantic', 'SemanticStatus'],
+    ['Paritate semantică', 'SemanticParity'],
+    ['Statut geometrie', 'GeometryParityStatus'],
+    ['Statut OSM', 'OSMStatus'],
+    ['Tip punct', 'PointType'],
+    ['Calitate OSM', 'OSMQuality'],
     ['OSMType', 'OSMType'],
     ['OSMID', 'OSMID'],
-    ['OSMURL (sursă)', 'osmURL'],
-    ['Descriere', 'description'],
-    ['Surse', 'sources'],
+    ['Sursă verificare OSM', 'OSMSource'],
+    ['Distanță MyMaps–OSM (km)', 'DistanceKM_MyMaps_OSM'],
+    ['QA distanță', 'DistanceQAStatus'],
     ['Note', 'notes']
-  ]) {
-    list.append(element('dt', label), element('dd', field(properties, key) || 'Nespecificat'));
-  }
+  ];
 
+  const list = element('dl');
+  for (const [label, key] of rows) {
+    const value = field(properties, key);
+    if (value) list.append(element('dt', label), element('dd', value));
+  }
   box.append(list);
+
   const url = osmURL(properties);
   if (url) {
     const link = element('a', 'Vezi obiectul OpenStreetMap ↗');
@@ -88,7 +105,7 @@ function details(properties) {
   return box;
 }
 
-function validateGeoJSON(data, expected) {
+function validateGeoJSON(data, expected, expectedPositions) {
   if (!data || data.type !== 'FeatureCollection' || !Array.isArray(data.features)) {
     throw new Error('Este necesar un GeoJSON FeatureCollection.');
   }
@@ -96,42 +113,36 @@ function validateGeoJSON(data, expected) {
     throw new Error(`Setul trebuie să conțină ${expected} geometrii; fișierul conține ${data.features.length}.`);
   }
 
-  const position = p => Array.isArray(p) && p.length >= 2 && p.every(Number.isFinite)
-    && Math.abs(p[0]) <= 180 && Math.abs(p[1]) <= 90;
-  const line = c => Array.isArray(c) && c.length >= 2 && c.every(position);
-  const ring = c => line(c) && c.length >= 4 && JSON.stringify(c[0]) === JSON.stringify(c.at(-1));
-  const polygon = c => Array.isArray(c) && c.length > 0 && c.every(ring);
-
-  function geometry(g) {
-    if (!g) return false;
-    const c = g.coordinates;
-    switch (g.type) {
-      case 'Point': return position(c);
-      case 'MultiPoint': return Array.isArray(c) && c.length > 0 && c.every(position);
-      case 'LineString': return line(c);
-      case 'MultiLineString': return Array.isArray(c) && c.length > 0 && c.every(line);
-      case 'Polygon': return polygon(c);
-      case 'MultiPolygon': return Array.isArray(c) && c.length > 0 && c.every(polygon);
-      case 'GeometryCollection': return Array.isArray(g.geometries) && g.geometries.length > 0 && g.geometries.every(geometry);
-      default: return false;
-    }
-  }
-
+  const ids = new Set();
+  const positions = new Set();
   for (const [i, feature] of data.features.entries()) {
-    if (feature.type !== 'Feature' || !geometry(feature.geometry)) {
-      throw new Error(`Geometrie invalidă la înregistrarea ${i + 1}.`);
+    if (feature?.type !== 'Feature' || feature?.geometry?.type !== 'Point') {
+      throw new Error(`Geometrie neacceptată la înregistrarea ${i + 1}; M3 publică puncte OSM/reper.`);
     }
-    if (!feature.properties || typeof feature.properties !== 'object'
-        || Array.isArray(feature.properties) || layerIndex(feature.properties) < 0) {
-      throw new Error(`Strat necunoscut la înregistrarea ${i + 1}. Verificați adaptorul FIELDS / LAYERS.`);
+    const c = feature.geometry.coordinates;
+    if (!Array.isArray(c) || c.length < 2 || !Number.isFinite(c[0]) || !Number.isFinite(c[1])
+        || Math.abs(c[0]) > 180 || Math.abs(c[1]) > 90) {
+      throw new Error(`Coordonate invalide la înregistrarea ${i + 1}.`);
     }
+    const properties = feature.properties;
+    if (!properties || typeof properties !== 'object' || Array.isArray(properties) || layerIndex(properties) < 0) {
+      throw new Error(`Strat necunoscut la înregistrarea ${i + 1}.`);
+    }
+    const id = field(properties, 'id');
+    if (!/^WG_LOC_\d{4}$/.test(id)) throw new Error(`WG_LOC invalid la înregistrarea ${i + 1}.`);
+    if (ids.has(id)) throw new Error(`WG_LOC duplicat: ${id}.`);
+    ids.add(id);
+    if (field(properties, 'SemanticParity') !== 'PASS') throw new Error(`Paritate semantică nevalidată: ${id}.`);
+    positions.add(`${Number(c[0]).toFixed(7)},${Number(c[1]).toFixed(7)}`);
+  }
+  if (positions.size !== expectedPositions) {
+    throw new Error(`Setul are ${positions.size} poziții distincte; sunt așteptate ${expectedPositions}.`);
   }
   return data;
 }
 
-// RFC 4180-style quoted fields, escaped quotes, CRLF and embedded newlines.
 function parseCSV(text) {
-  text = text.replace(/^\uFEFF/, '');
+  text = String(text).replace(/^\uFEFF/, '');
   const firstLine = text.split(/\r?\n/, 1)[0];
   const delimiter = firstLine.includes(';') && !firstLine.includes(',') ? ';' : ',';
   const rows = [];
@@ -155,26 +166,71 @@ function parseCSV(text) {
       value += c;
     }
   }
-
   if (quoted) throw new Error('CSV cu ghilimele neînchise.');
   row.push(value);
   if (row.some(v => v !== '')) rows.push(row);
 
-  const headers = (rows.shift() || []).map(h => h.trim());
-  if (!headers.length || headers.some(h => !h) || new Set(headers).size !== headers.length) {
+  const headers = (rows.shift() || []).map(v => v.trim());
+  if (!headers.length || headers.some(v => !v) || new Set(headers).size !== headers.length) {
     throw new Error('Antet CSV invalid.');
   }
-
   return rows.map(values => {
     if (values.length !== headers.length) throw new Error('Număr de coloane CSV inconsistent.');
     return Object.fromEntries(headers.map((h, i) => [h, values[i]]));
   });
 }
 
-async function fetchText(url) {
-  const response = await fetch(url, {signal: AbortSignal.timeout(20000)});
-  if (!response.ok) throw new Error(`Eroare HTTP ${response.status}.`);
-  return response.text();
+const DATASETS = {
+  full: {
+    url: 'data/weigand-osm-v0.24.geojson.gz',
+    filename: 'weigand-osm-v0.24.geojson', mime: 'application/geo+json'
+  },
+  strict: {
+    url: 'data/weigand-osm-v0.24-strict.geojson.gz',
+    filename: 'weigand-osm-v0.24-strict.geojson', mime: 'application/geo+json'
+  },
+  noGeometry: {
+    url: 'data/weigand-osm-v0.24-no-geometry.csv.gz',
+    filename: 'weigand-osm-v0.24-no-geometry.csv', mime: 'text/csv;charset=utf-8'
+  },
+  semantic: {
+    url: 'data/weigand-osm-v0.24-semantic-225.csv.gz',
+    filename: 'weigand-osm-v0.24-semantic-225.csv', mime: 'text/csv;charset=utf-8'
+  }
+};
+
+async function fetchDatasetBytes(dataset) {
+  const response = await fetch(dataset.url, {signal: AbortSignal.timeout(20000)});
+  if (!response.ok) throw new Error(`Eroare HTTP ${response.status} pentru ${dataset.url}.`);
+  if (typeof DecompressionStream === 'undefined') {
+    throw new Error('Browserul nu suportă decomprimarea gzip necesară pentru acest Release Candidate.');
+  }
+  const stream = response.body.pipeThrough(new DecompressionStream('gzip'));
+  return new Uint8Array(await new Response(stream).arrayBuffer());
+}
+
+async function fetchDatasetText(dataset) {
+  return new TextDecoder('utf-8').decode(await fetchDatasetBytes(dataset));
+}
+
+async function downloadDataset(anchor, dataset) {
+  const original = anchor.textContent;
+  anchor.textContent = `${original}…`;
+  anchor.setAttribute('aria-disabled', 'true');
+  try {
+    const bytes = await fetchDatasetBytes(dataset);
+    const objectURL = URL.createObjectURL(new Blob([bytes], {type: dataset.mime}));
+    const tmp = document.createElement('a');
+    tmp.href = objectURL;
+    tmp.download = dataset.filename;
+    document.body.append(tmp);
+    tmp.click();
+    tmp.remove();
+    setTimeout(() => URL.revokeObjectURL(objectURL), 30000);
+  } finally {
+    anchor.textContent = original;
+    anchor.setAttribute('aria-disabled', 'false');
+  }
 }
 
 function pointKey(feature, index) {
@@ -198,42 +254,50 @@ async function start() {
   };
 
   const configs = {
-    full: {link: $('download-full'), expected: 142, expectedPositions: 140},
-    strict: {link: $('download-strict'), expected: 136, expectedPositions: 135}
+    full: {link: $('download-full'), dataset: DATASETS.full, expected: 163, expectedPositions: 161},
+    strict: {link: $('download-strict'), dataset: DATASETS.strict, expected: 157, expectedPositions: 156}
   };
-
-  for (const config of Object.values(configs)) {
+  Object.values(configs).forEach(config => {
     config.link.addEventListener('click', event => {
-      if (config.link.getAttribute('aria-disabled') === 'true') event.preventDefault();
+      event.preventDefault();
+      if (config.link.getAttribute('aria-disabled') === 'true') return;
+      downloadDataset(config.link, config.dataset).catch(error => setStatus(`Descărcare: ${error.message}`));
     });
-  }
+  });
 
-  let csvRecords;
+  $('download-semantic').addEventListener('click', event => {
+    event.preventDefault();
+    downloadDataset($('download-semantic'), DATASETS.semantic).catch(error => setStatus(`Descărcare: ${error.message}`));
+  });
+
+  let missingCache;
   $('no-geometry').addEventListener('click', async () => {
     $('missing-dialog').showModal();
     const content = $('missing-content');
     content.textContent = 'Se încarcă…';
-
     try {
-      if (!csvRecords) {
-        const rows = parseCSV(await fetchText($('no-geometry').dataset.source));
-        if (rows.length !== 4) {
-          throw new Error(`Sunt așteptate 4 cazuri; CSV-ul conține ${rows.length}.`);
+      if (!missingCache) {
+        missingCache = parseCSV(await fetchDatasetText(DATASETS.noGeometry));
+        if (missingCache.length !== 62) throw new Error(`Sunt așteptate 62 de cazuri; CSV-ul conține ${missingCache.length}.`);
+        const ids = new Set();
+        for (const row of missingCache) {
+          const id = row.WG_LOC || row.ID;
+          if (!/^WG_LOC_\d{4}$/.test(id || '')) throw new Error(`WG_LOC invalid în registrul fără geometrie: ${id || 'lipsă'}.`);
+          if (ids.has(id)) throw new Error(`WG_LOC duplicat în registrul fără geometrie: ${id}.`);
+          ids.add(id);
+          if (row.SemanticParity !== 'PASS') throw new Error(`Paritate semantică nevalidată pentru ${id}.`);
         }
-        csvRecords = rows;
       }
-
       content.replaceChildren();
-      for (const record of csvRecords) {
+      for (const record of missingCache) {
         const article = element('article', undefined, 'record');
         article.append(details(record));
-
-        const extra = element('dl');
-        for (const [key, value] of Object.entries(record)) {
-          extra.append(element('dt', key), element('dd', value || '—'));
-        }
         const raw = element('details');
-        raw.append(element('summary', 'Toate câmpurile originale'), extra);
+        raw.append(element('summary', 'Toate câmpurile'), (() => {
+          const dl = element('dl');
+          for (const [key, value] of Object.entries(record)) dl.append(element('dt', key), element('dd', value || '—'));
+          return dl;
+        })());
         article.append(raw);
         content.append(article);
       }
@@ -247,39 +311,33 @@ async function start() {
     const label = element('label');
     const input = element('input');
     const swatch = element('span', '', 'swatch');
-
     input.type = 'checkbox';
     input.checked = true;
     swatch.style.backgroundColor = layer.color;
-
     label.append(input, swatch, document.createTextNode(layer.name));
     $('filters').append(label);
-
     input.addEventListener('change', () => {
       input.checked ? selected.add(i) : selected.delete(i);
       render();
     });
   });
 
-  let map, group, records = [], visible = [], sequence = 0, mode = 'full';
-  const cache = {};
-
   if (!window.L) {
     setStatus('Leaflet nu s-a încărcat. Verifică conexiunea la internet și reîncarcă pagina.');
     return;
   }
 
-  map = L.map('map').setView([42.75, 25.2], 7);
+  const map = L.map('map').setView([42.75, 25.2], 7);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
   }).addTo(map);
+  const group = L.featureGroup().addTo(map);
 
-  group = L.featureGroup().addTo(map);
+  let records = [], visible = [], sequence = 0, mode = 'full';
+  const cache = {};
 
-  function bounds(layer) {
-    return layer.getBounds ? layer.getBounds() : L.latLngBounds([layer.getLatLng()]);
-  }
+  const bounds = layer => layer.getBounds ? layer.getBounds() : L.latLngBounds([layer.getLatLng()]);
 
   function highlight(record) {
     document.querySelectorAll('#results button').forEach(button => {
@@ -289,13 +347,10 @@ async function start() {
 
   function overlapPopup(members) {
     const box = element('div');
-    const title = element('h3', `${members.length} înregistrări la aceeași poziție OSM/reper`);
-    const note = element(
-      'p',
-      'Marcatorul compus evită ascunderea entităților suprapuse. Coordonatele de cercetare nu sunt deplasate.'
+    box.append(
+      element('h3', `${members.length} entități la aceeași poziție OSM/reper`),
+      element('p', 'Entitățile rămân distincte în corpus; coordonatele nu sunt deplasate pentru vizualizare.')
     );
-    box.append(title, note);
-
     members.forEach((record, i) => {
       if (i) box.append(document.createElement('hr'));
       box.append(details(record.properties));
@@ -307,100 +362,59 @@ async function start() {
     const center = bounds(members[0].layer).getCenter();
     const count = members.length;
     const icon = L.divIcon({
-      className: '',
-      iconSize: [32, 32],
-      iconAnchor: [16, 16],
-      html: `<span title="${count} înregistrări la aceeași poziție" style="
-        display:flex;align-items:center;justify-content:center;width:32px;height:32px;
-        border-radius:50%;background:#16233a;color:#fff;border:3px solid #fff;
-        box-shadow:0 2px 9px rgba(0,0,0,.35);font:700 13px/1 system-ui,sans-serif;
-      ">${count}</span>`
+      className: '', iconSize: [32, 32], iconAnchor: [16, 16],
+      html: `<span title="${count} entități la aceeași poziție" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#16233a;color:#fff;border:3px solid #fff;box-shadow:0 2px 9px rgba(0,0,0,.35);font:700 13px/1 system-ui,sans-serif">${count}</span>`
     });
-
-    const marker = L.marker(center, {
-      icon,
-      keyboard: true,
-      title: `${count} înregistrări la aceeași poziție`,
-      zIndexOffset: 1000
-    });
-    marker.bindPopup(() => overlapPopup(members), {maxWidth: 430});
+    const marker = L.marker(center, {icon, keyboard: true, title: `${count} entități la aceeași poziție`, zIndexOffset: 1000});
+    marker.bindPopup(() => overlapPopup(members), {maxWidth: 480});
     return marker;
   }
 
   function renderList() {
-    const inView = $('in-view').checked;
     const listed = visible.filter(record => {
       const target = record.displayLayer || record.layer;
-      return !inView || map.getBounds().intersects(bounds(target));
+      return !$('in-view').checked || map.getBounds().intersects(bounds(target));
     });
-
     $('results').replaceChildren();
-    $('count').textContent =
-      `${listed.length} în listă · ${visible.length} rezultate filtrate · ` +
-      `${distinctPositionCount(visible)} poziții cartografice distincte`;
-
-    if (!listed.length) {
-      $('results').append(element(
-        'li',
-        records.length ? 'Niciun rezultat pentru selecția curentă.' : 'Nu sunt încărcate date cartografice.'
-      ));
-    }
+    $('count').textContent = `${listed.length} în listă · ${visible.length} rezultate filtrate · ${distinctPositionCount(visible)} poziții distincte`;
+    if (!listed.length) $('results').append(element('li', records.length ? 'Niciun rezultat pentru selecția curentă.' : 'Nu sunt încărcate date cartografice.'));
 
     for (const record of listed) {
       const li = element('li');
       const button = element('button');
       const swatch = element('span', '', 'swatch');
-
       button.type = 'button';
       button.dataset.record = record.index;
       swatch.style.backgroundColor = LAYERS[record.category].color;
-
-      const collisionNote = record.collisionSize > 1 ? ` · poziție comună ×${record.collisionSize}` : '';
+      const collision = record.collisionSize > 1 ? ` · poziție comună ×${record.collisionSize}` : '';
       button.append(
         swatch,
         document.createTextNode(` ${record.name}`),
-        element(
-          'small',
-          `${field(record.properties, 'id') || 'ID nespecificat'} · ` +
-          `${LAYERS[record.category].name}${collisionNote}`
-        )
+        element('small', `${field(record.properties, 'id')} · ${LAYERS[record.category].name}${collision}`)
       );
-
       button.addEventListener('click', () => {
         const target = record.displayLayer || record.layer;
         map.fitBounds(bounds(target), {maxZoom: 14, padding: [35, 35], animate: false});
-
-        if (target.getLatLng) target.openPopup();
-        else target.openPopup(bounds(target).getCenter());
-
+        if (target.getLatLng) target.openPopup(); else target.openPopup(bounds(target).getCenter());
         highlight(record);
-        if (window.matchMedia('(max-width:760px)').matches) {
-          $('map').scrollIntoView({behavior: 'smooth', block: 'start'});
-        }
+        if (window.matchMedia('(max-width:760px)').matches) $('map').scrollIntoView({behavior: 'smooth', block: 'start'});
       });
-
       li.append(button);
       $('results').append(li);
     }
   }
 
   function render() {
-    if (!map) return;
-
     map.closePopup();
     group.clearLayers();
-
     const query = normalize($('search').value);
     visible = records.filter(record => selected.has(record.category) && record.search.includes(query));
-
     records.forEach(record => { record.displayLayer = null; });
-
     const byPosition = new Map();
     for (const record of visible) {
       if (!byPosition.has(record.positionKey)) byPosition.set(record.positionKey, []);
       byPosition.get(record.positionKey).push(record);
     }
-
     for (const members of byPosition.values()) {
       if (members.length === 1) {
         members[0].displayLayer = members[0].layer;
@@ -411,14 +425,11 @@ async function start() {
         members.forEach(record => { record.displayLayer = marker; });
       }
     }
-
     renderList();
   }
 
   function fit() {
-    if (group.getLayers().length) {
-      map.fitBounds(group.getBounds(), {padding: [30, 30], maxZoom: 13});
-    }
+    if (group.getLayers().length) map.fitBounds(group.getBounds(), {padding: [30, 30], maxZoom: 13});
   }
 
   async function loadMode() {
@@ -426,14 +437,14 @@ async function start() {
     records = [];
     render();
     setStatus('Se verifică setul selectat…');
-
     const current = mode;
     const config = configs[current];
-
     try {
-      const data = cache[current]
-        || validateGeoJSON(JSON.parse(await fetchText(config.link.getAttribute('href'))), config.expected);
-
+      const data = cache[current] || validateGeoJSON(
+        JSON.parse(await fetchDatasetText(config.dataset)),
+        config.expected,
+        config.expectedPositions
+      );
       cache[current] = data;
       config.link.setAttribute('aria-disabled', 'false');
       if (request !== sequence) return;
@@ -442,63 +453,34 @@ async function start() {
         const properties = feature.properties;
         const category = layerIndex(properties);
         const color = LAYERS[category].color;
-        const name = field(properties, 'name') || field(properties, 'id') || 'Nume nespecificat';
-
+        const name = field(properties, 'name') || field(properties, 'id');
         const layer = L.geoJSON(feature, {
           style: {color, weight: 3, fillOpacity: .2},
-          pointToLayer: (_, latlng) => L.circleMarker(latlng, {
-            radius: 7,
-            color: '#fff',
-            weight: 2,
-            fillColor: color,
-            fillOpacity: .9
-          })
+          pointToLayer: (_, latlng) => L.circleMarker(latlng, {radius: 7, color: '#fff', weight: 2, fillColor: color, fillOpacity: .9})
         });
-
         const record = {
-          index,
-          properties,
-          category,
-          name,
-          layer,
+          index, properties, category, name, layer,
           positionKey: pointKey(feature, index),
-          search: normalize(
-            `${name} ${field(properties, 'id')} ${field(properties, 'description')} ` +
-            `${field(properties, 'OSMStatus')} ${field(properties, 'notes')}`
-          )
+          search: normalize([
+            name, field(properties, 'id'), field(properties, 'WeigandName'), field(properties, 'Aliases'),
+            field(properties, 'ModernIdentification'), field(properties, 'description'),
+            field(properties, 'OSMStatus'), field(properties, 'notes')
+          ].join(' '))
         };
-
         layer.bindPopup(() => details(properties));
         layer.on('popupopen', () => highlight(record));
         return record;
       });
 
-      const collisionCounts = new Map();
-      for (const record of records) {
-        collisionCounts.set(record.positionKey, (collisionCounts.get(record.positionKey) || 0) + 1);
-      }
-      records.forEach(record => {
-        record.collisionSize = collisionCounts.get(record.positionKey) || 1;
-      });
-
-      const positions = distinctPositionCount(records);
-      if (positions !== config.expectedPositions) {
-        throw new Error(
-          `Setul are ${positions} poziții distincte; sunt așteptate ${config.expectedPositions}.`
-        );
-      }
+      const counts = new Map();
+      records.forEach(record => counts.set(record.positionKey, (counts.get(record.positionKey) || 0) + 1));
+      records.forEach(record => { record.collisionSize = counts.get(record.positionKey) || 1; });
 
       render();
       fit();
-      setStatus(
-        `${current === 'full' ? 'Complet' : 'Strict'}: ` +
-        `${records.length} geometrii · ${positions} poziții cartografice distincte.`,
-        true
-      );
+      setStatus(`${current === 'full' ? 'Complet' : 'Strict'}: ${records.length} geometrii · ${distinctPositionCount(records)} poziții distincte.`, true);
     } catch (error) {
-      if (request === sequence) {
-        setStatus(`Set ${current === 'full' ? 'complet' : 'strict'}: ${error.message}`);
-      }
+      if (request === sequence) setStatus(`Set ${current === 'full' ? 'complet' : 'strict'}: ${error.message}`);
     }
   }
 
@@ -506,31 +488,22 @@ async function start() {
   $('in-view').addEventListener('change', renderList);
   $('fit').addEventListener('click', fit);
   map.on('moveend', renderList);
-
   document.querySelectorAll('[name=mode]').forEach(input => {
     input.addEventListener('change', () => {
       mode = input.value;
       loadMode();
     });
   });
-
   await loadMode();
 }
 
 if (typeof document !== 'undefined') {
   start().catch(error => {
-    document.getElementById('status').textContent = `Interfața nu a putut porni: ${error.message}`;
+    const status = document.getElementById('status');
+    if (status) status.textContent = `Interfața nu a putut porni: ${error.message}`;
   });
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = {
-    parseCSV,
-    validateGeoJSON,
-    layerIndex,
-    osmURL,
-    normalize,
-    pointKey,
-    distinctPositionCount
-  };
+  module.exports = {DATASETS, fetchDatasetBytes, fetchDatasetText, parseCSV, validateGeoJSON, layerIndex, osmURL, normalize, pointKey, distinctPositionCount};
 }
