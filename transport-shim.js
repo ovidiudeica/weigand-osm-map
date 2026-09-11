@@ -6,10 +6,22 @@
 (() => {
   const nativeFetch = window.fetch.bind(window);
   const encoded = {
-    'data/weigand-osm-v1.0.geojson.gz': ['data/transport/v1-full.b64'],
-    'data/weigand-osm-v1.0-strict.geojson.gz': ['data/transport/v1-strict.b64'],
-    'data/weigand-osm-v1.0-no-geometry.csv.gz': ['data/transport/v1-noGeometry.b64'],
-    'data/weigand-osm-v1.0-semantic-225.csv.gz': ['data/transport/v1-semantic.b64']
+    'data/weigand-osm-v1.0.geojson.gz': [
+      'data/transport/v1-full-01.b64','data/transport/v1-full-02.b64',
+      'data/transport/v1-full-03.b64','data/transport/v1-full-04.b64'
+    ],
+    'data/weigand-osm-v1.0-strict.geojson.gz': [
+      'data/transport/v1-strict-01.b64','data/transport/v1-strict-02.b64',
+      'data/transport/v1-strict-03.b64','data/transport/v1-strict-04.b64'
+    ],
+    'data/weigand-osm-v1.0-no-geometry.csv.gz': [
+      'data/transport/v1-noGeometry-01.b64','data/transport/v1-noGeometry-02.b64'
+    ],
+    'data/weigand-osm-v1.0-semantic-225.csv.gz': [
+      'data/transport/v1-semantic-01.b64','data/transport/v1-semantic-02.b64',
+      'data/transport/v1-semantic-03.b64','data/transport/v1-semantic-04.b64',
+      'data/transport/v1-semantic-05.b64'
+    ]
   };
   const cache = new Map();
 
