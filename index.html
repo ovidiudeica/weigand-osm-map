@@ -32,7 +32,7 @@
         }
         if(!window.L) throw lastError || new Error('Leaflet nu este disponibil.');
         await loadScript('transport-shim.js?v=1.2.2');
-        await loadScript('marker-cosmetic.js?v=1.2.5');
+        await loadScript('marker-cosmetic.js?v=1.2.6');
         await loadScript('app.js?v=1.2.2');
       };
       const start = () => boot().catch(error => {
