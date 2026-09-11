@@ -7,9 +7,12 @@
 
 ## Statut
 
-**QA structural / integritate: PASS — 47/47 controale.**
+**M5 VERIFIED / RELEASE CANDIDATE APPROVED.**
 
-`main` nu este modificat. Nu s-a făcut merge și nu s-a publicat versiunea finală.
+**QA structural / integritate / dataset: PASS.**  
+**Smoke-test vizual și funcțional GitHub Pages: PASS**, confirmat manual la 2026-09-11.
+
+`main` nu este modificat. Nu s-a făcut merge în acest pas.
 
 ## Rezultate OSM
 
@@ -35,8 +38,14 @@ Payload-urile M4 au fost recomprimate deterministic (`gzip`, `mtime=0`) și codi
 
 Fișierele v0.22 au fost eliminate numai din branch-ul RC; ele rămân conservate în `main` și în `archive/v0.22-pre-canonical`.
 
-## Limitare înainte de merge
+## Smoke-test vizual / funcțional
 
-Smoke-testul vizual/manual al GitHub Pages nu a putut fi executat în mediul automatizat deoarece navigarea browserului este blocată administrativ. Prin urmare, RC1 trebuie păstrat ca **Draft PR** până la verificarea manuală a randării, interacțiunilor și tile-urilor Leaflet.
+Testul manual a fost raportat **PASS** pentru versiunea RC1. Au fost confirmate funcționarea interfeței și a hărții în browser, inclusiv încărcarea paginii și utilizarea normală a atlasului.
 
-După PASS vizual: **Ready for review → merge în `main` → release/tag**.
+Gate-ul vizual care bloca merge-ul este închis.
+
+## Concluzie
+
+RC1 este aprobat pentru review final și merge controlat în `main`.
+
+Următorii pași: verificarea ultimului head al PR-ului, confirmarea că `main` este încă la baseline, apoi merge în `main` și release/tag v0.24.
