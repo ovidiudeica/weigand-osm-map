@@ -28,10 +28,12 @@
     '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
   })[character]);
 
-  // Public UI keeps the bibliographic citation but suppresses raw storage URLs.
-  // The underlying canonical datasets remain byte-for-byte unchanged.
+  // Public UI keeps the bibliographic citation and printed Weigand pages only.
+  // Raw storage URLs and PDF-page references are suppressed from publication.
   const publicSourceText = value => String(value ?? '')
     .replace(/\s*(?:[—–-]\s*)?https?:\/\/\S+/gi, '')
+    .replace(/\s*;\s*PDF\s+p\.\s*[0-9][0-9\s,–—-]*(?=\.)/gi, '')
+    .replace(/\s*;\s*PDF\s+p\.\s*[0-9][0-9\s,–—-]*\.?$/gi, '')
     .replace(/\s*[—–-]\s*$/g, '')
     .replace(/\s{2,}/g, ' ')
     .trim();
@@ -42,6 +44,7 @@
     if (currentField.__weigandPublicSourceFilter) return true;
 
     const wrappedField = function(properties, key) {
+      if (key === 'PDFPages') return '';
       const value = currentField(properties, key);
       return key === 'sources' ? publicSourceText(value) : value;
     };
