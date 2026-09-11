@@ -5,6 +5,7 @@
 (() => {
   if (!window.L) return;
 
+  const LABEL_ZOOM = 9;
   const labelsByPosition = new Map();
   const markerOrdinal = new Map();
   const seenColors = new Map();
@@ -26,6 +27,24 @@
   const escapeHTML = value => String(value).replace(/[&<>"']/g, character => ({
     '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
   })[character]);
+
+  const syncMapLabelState = map => {
+    const container = map?.getContainer?.();
+    if (!container) return;
+    const zoom = map.getZoom();
+    container.classList.toggle('osm-labels-visible', zoom >= LABEL_ZOOM);
+    container.dataset.labelZoom = String(zoom);
+  };
+
+  // Capture the atlas map without changing app.js, so label visibility can follow zoom.
+  const originalMap = L.map;
+  L.map = function(...args) {
+    const map = originalMap.apply(this, args);
+    const sync = () => syncMapLabelState(map);
+    map.on('zoomend', sync);
+    map.whenReady(sync);
+    return map;
+  };
 
   const originalFetch = window.fetch.bind(window);
   window.fetch = async (...args) => {
@@ -66,6 +85,7 @@
     const ordinal = markerOrdinal.get(key) || 0;
     markerOrdinal.set(key, ordinal + 1);
     const label = labels[ordinal] || labels[0];
+
     if (label) {
       layer.bindTooltip(label, {
         permanent: true,
@@ -74,6 +94,25 @@
         className: 'osm-place-label',
         opacity: 1,
         interactive: false
+      });
+
+      const forceLabel = () => {
+        const tooltip = layer.getTooltip?.();
+        if (!tooltip?.isOpen?.()) layer.openTooltip();
+        tooltip?.getElement?.()?.classList.add('osm-label-force');
+      };
+      const releaseLabel = () => {
+        layer.getTooltip?.()?.getElement?.()?.classList.remove('osm-label-force');
+      };
+
+      layer.on('mouseover', forceLabel);
+      layer.on('mouseout', releaseLabel);
+      layer.on('add', () => {
+        const element = layer.getElement?.();
+        if (!element || element.dataset.osmLabelFocusBound === 'true') return;
+        element.dataset.osmLabelFocusBound = 'true';
+        element.addEventListener('focus', forceLabel);
+        element.addEventListener('blur', releaseLabel);
       });
     }
     return layer;
