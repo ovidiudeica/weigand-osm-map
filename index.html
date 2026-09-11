@@ -7,7 +7,7 @@
   <title>Gustav Weigand · Atlas digital OSM · v1.2</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" onerror="this.onerror=null;this.href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'">
   <link rel="stylesheet" href="styles.css?v=1.2.2">
-  <link rel="stylesheet" href="marker-cosmetic.css?v=1.2.4">
+  <link rel="stylesheet" href="marker-cosmetic.css?v=1.2.5">
   <style>.detail-card p{overflow-wrap:anywhere}</style>
   <script>
     (() => {
@@ -32,7 +32,7 @@
         }
         if(!window.L) throw lastError || new Error('Leaflet nu este disponibil.');
         await loadScript('transport-shim.js?v=1.2.2');
-        await loadScript('marker-cosmetic.js?v=1.2.4');
+        await loadScript('marker-cosmetic.js?v=1.2.5');
         await loadScript('app.js?v=1.2.2');
       };
       const start = () => boot().catch(error => {
