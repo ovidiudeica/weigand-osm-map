@@ -42,6 +42,6 @@ OpenStreetMap și sursele moderne sunt folosite pentru identificare/geometrie mo
 
 ## Release Candidate
 
-RC1 este construit pe ramura `release/v0.24-rc1`. Baseline-ul pre-canonic v0.22 este păstrat în ramura `archive/v0.22-pre-canonical`. `main` rămâne nemodificat până la validarea finală a RC-ului.
+RC1 este construit pe ramura `release/v0.24-rc1`. Baseline-ul pre-canonic v0.22 este păstrat în ramura `archive/v0.22-pre-canonical`. `main` rămâne nemodificat până la merge-ul controlat al Release Candidate-ului.
 
-QA structural și de integritate: **PASS**. Un smoke-test vizual/manual GitHub Pages rămâne obligatoriu înainte de merge, deoarece mediul automatizat nu permite navigarea browserului către pagina publică.
+QA structural și de integritate: **PASS**. Smoke-testul vizual și funcțional GitHub Pages a fost confirmat manual **PASS** la 2026-09-11. M5 are statut **VERIFIED / RELEASE CANDIDATE APPROVED** și este pregătit pentru review final și merge controlat în `main`.
