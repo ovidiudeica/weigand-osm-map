@@ -1,47 +1,33 @@
 # Gustav Weigand — Rumänen und Aromunen in Bulgarien — Atlas OSM
 
-**Release Candidate:** v0.24 RC1  
+**Ediție publicată:** v1.0  
 **Corpus canonic:** 225 entități `WG_LOC`  
 **Sursa istorică de adevăr:** Gustav Weigand, *Rumänen und Aromunen in Bulgarien* (1907).
 
-Acest repository publică ramura **OpenStreetMap / Website** a proiectului. Corpusul semantic este comun cu ramura Google My Maps; coordonatele sunt însă specifice platformei și sunt păstrate separat.
+Acest repository publică ramura **OpenStreetMap / Website** a proiectului. Corpusul semantic este comun cu ramura Google My Maps; coordonatele rămân specifice platformei și nu sunt propagate între MyMaps și OSM.
 
-## Date publicate în RC1
+## Date v1.0
 
 - corpus canonic activ: **225 WG_LOC**;
-- set OSM complet: **163 geometrii / 161 poziții distincte**;
-- set OSM strict: **157 geometrii / 156 poziții distincte**;
+- MyMaps final: **188 geometrii / 187 poziții**, 37 fără geometrie;
+- OSM complet: **163 geometrii / 161 poziții distincte**;
+- OSM strict: **157 geometrii / 156 poziții distincte**;
 - fără geometrie OSM adoptată: **62 entități**;
-- setul strict exclude exact cele 6 cazuri cu statut `OSM_PROVISIONAL_REPER`;
-- toate entitățile publicate păstrează numele Weigand, paginile tipărite, paginile PDF, descrierea/sinteza, identificarea modernă și statutul de verificare.
+- setul strict exclude exact cele 6 cazuri frozen cu reper OSM provizoriu;
+- descrierile și citările provin din M6; cele două ramuri au trecut M7 structural parity și M8 QA academic/paritate.
 
-Pozițiile comune sunt deliberate și nu sunt deduplicate: în setul complet există două perechi de entități care împart o poziție OSM/reper; în setul strict rămâne o singură pereche comună.
+## QA
 
-## Fișiere
+Milestone 8: **52/52 controale PASS**, **225/225 WG_LOC entity-level PASS**, 0 probleme blocante. Câmpurile semantice comune MyMaps–OSM sunt identice 3.825/3.825. Geometriile sunt neschimbate față de freeze-ul M3.
 
-```text
-index.html
-app.js
-styles.css
-.nojekyll
-transport-shim.js
-README_M4.md
-M5_RELEASE_QA.md
-M5_MANIFEST.csv
-data/transport/
-  fragmente Base64 pentru full / strict / semantic / no-geometry
-```
+## Runtime v1.0
 
-În RC1, payload-urile M4 sunt păstrate în repository ca fluxuri gzip deterministe codificate Base64. `transport-shim.js` concatenează fragmentele și reconstruiește fără pierderi exact fluxurile gzip validate în M5; `app.js` le decomprimă în browser, iar descărcările livrează fișierele originale `.geojson` / `.csv`. `M5_MANIFEST.csv` conține hash-urile SHA-256 ale payload-urilor canonice și ale fluxurilor gzip deterministe.
+`transport-shim.js` reconstruiește din Base64 exact cele patru fluxuri gzip deterministe verificate în M8. `app.js` le decomprimă în browser și oferă descărcările GeoJSON/CSV v1.0.
 
 ## Regula de sursă
 
-**WEIGAND 1907 → CORPUS CANONIC WG_LOC → PUBLICARE OSM**
+**WEIGAND 1907 → CORPUS CANONIC WG_LOC → PUBLICARE v1.0**
 
 OpenStreetMap și sursele moderne sunt folosite pentru identificare/geometrie modernă, nu pentru a rescrie informația istorică din Weigand.
 
-## Release Candidate
-
-RC1 este construit pe ramura `release/v0.24-rc1`. Baseline-ul pre-canonic v0.22 este păstrat în ramura `archive/v0.22-pre-canonical`. `main` rămâne nemodificat până la merge-ul controlat al Release Candidate-ului.
-
-QA structural și de integritate: **PASS**. Smoke-testul vizual și funcțional GitHub Pages a fost confirmat manual **PASS** la 2026-09-11. M5 are statut **VERIFIED / RELEASE CANDIDATE APPROVED** și este pregătit pentru review final și merge controlat în `main`.
+Tag-ul GitHub nu este o cerință a proiectului; versiunea v1.0 este identificată prin pachetul M9, manifest, QA și starea publicată în `main`/GitHub Pages.

@@ -182,20 +182,20 @@ function parseCSV(text) {
 
 const DATASETS = {
   full: {
-    url: 'data/weigand-osm-v0.24.geojson.gz',
-    filename: 'weigand-osm-v0.24.geojson', mime: 'application/geo+json'
+    url: 'data/weigand-osm-v1.0.geojson.gz',
+    filename: 'weigand-osm-v1.0.geojson', mime: 'application/geo+json'
   },
   strict: {
-    url: 'data/weigand-osm-v0.24-strict.geojson.gz',
-    filename: 'weigand-osm-v0.24-strict.geojson', mime: 'application/geo+json'
+    url: 'data/weigand-osm-v1.0-strict.geojson.gz',
+    filename: 'weigand-osm-v1.0-strict.geojson', mime: 'application/geo+json'
   },
   noGeometry: {
-    url: 'data/weigand-osm-v0.24-no-geometry.csv.gz',
-    filename: 'weigand-osm-v0.24-no-geometry.csv', mime: 'text/csv;charset=utf-8'
+    url: 'data/weigand-osm-v1.0-no-geometry.csv.gz',
+    filename: 'weigand-osm-v1.0-no-geometry.csv', mime: 'text/csv;charset=utf-8'
   },
   semantic: {
-    url: 'data/weigand-osm-v0.24-semantic-225.csv.gz',
-    filename: 'weigand-osm-v0.24-semantic-225.csv', mime: 'text/csv;charset=utf-8'
+    url: 'data/weigand-osm-v1.0-semantic-225.csv.gz',
+    filename: 'weigand-osm-v1.0-semantic-225.csv', mime: 'text/csv;charset=utf-8'
   }
 };
 
@@ -203,7 +203,7 @@ async function fetchDatasetBytes(dataset) {
   const response = await fetch(dataset.url, {signal: AbortSignal.timeout(20000)});
   if (!response.ok) throw new Error(`Eroare HTTP ${response.status} pentru ${dataset.url}.`);
   if (typeof DecompressionStream === 'undefined') {
-    throw new Error('Browserul nu suportă decomprimarea gzip necesară pentru acest Release Candidate.');
+    throw new Error('Browserul nu suportă decomprimarea gzip necesară pentru ediția v1.0.');
   }
   const stream = response.body.pipeThrough(new DecompressionStream('gzip'));
   return new Uint8Array(await new Response(stream).arrayBuffer());
