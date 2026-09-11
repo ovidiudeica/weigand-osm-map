@@ -28,6 +28,36 @@
     '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
   })[character]);
 
+  // Public UI keeps the bibliographic citation but suppresses raw storage URLs.
+  // The underlying canonical datasets remain byte-for-byte unchanged.
+  const publicSourceText = value => String(value ?? '')
+    .replace(/\s*(?:[—–-]\s*)?https?:\/\/\S+/gi, '')
+    .replace(/\s*[—–-]\s*$/g, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+
+  const installPublicSourceFilter = () => {
+    const currentField = window.field;
+    if (typeof currentField !== 'function') return false;
+    if (currentField.__weigandPublicSourceFilter) return true;
+
+    const wrappedField = function(properties, key) {
+      const value = currentField(properties, key);
+      return key === 'sources' ? publicSourceText(value) : value;
+    };
+    wrappedField.__weigandPublicSourceFilter = true;
+    window.field = wrappedField;
+    return true;
+  };
+
+  let sourceFilterAttempts = 0;
+  const sourceFilterTimer = window.setInterval(() => {
+    sourceFilterAttempts += 1;
+    if (installPublicSourceFilter() || sourceFilterAttempts >= 100) {
+      window.clearInterval(sourceFilterTimer);
+    }
+  }, 0);
+
   const syncMapLabelState = map => {
     const container = map?.getContainer?.();
     if (!container) return;
