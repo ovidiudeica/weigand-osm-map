@@ -18,6 +18,22 @@ const LAYERS = [
 const norm=v=>String(v??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 const publicLayer=old=>norm(old)==='toponime'?'Toponime':'Comunitati / Localitati';
 const layerIndex=p=>publicLayer(p.Layer)==='Toponime'?1:0;
+const ORDER=window.WG_RC_ORDER||{};
+const ORDER_RANK={};
+for(const [layer,ids] of Object.entries(ORDER)){
+  ORDER_RANK[layer]=new Map(ids.map((id,i)=>[id,i+1]));
+}
+function applyOrder(p){
+  const rank=ORDER_RANK[p.Layer]?.get(p.WG_LOC);
+  if(!rank) throw new Error(`Lipsește ordinea Weigand pentru ${p.WG_LOC} în ${p.Layer}.`);
+  p.DisplayOrder=rank;
+  return p;
+}
+function compareByBook(a,b){
+  const la=a.properties.Layer==='Comunitati / Localitati'?0:1;
+  const lb=b.properties.Layer==='Comunitati / Localitati'?0:1;
+  return la-lb || Number(a.properties.DisplayOrder)-Number(b.properties.DisplayOrder);
+}
 async function gunzipText(url){
   const r=await fetch(url,{cache:'no-store'});
   if(!r.ok) throw new Error(`HTTP ${r.status}: ${url}`);
@@ -63,7 +79,7 @@ function applySemantic(p, semMap){
   p.Layer=publicLayer(p.Layer);
   p.SemanticStatus='V0.6_VERIFIED_FROZEN';
   p.SemanticParity='PASS';
-  return p;
+  return applyOrder(p);
 }
 async function build(){
   const [full0,strict0,sem0]=await Promise.all([
@@ -85,6 +101,7 @@ async function build(){
     const n=newest[id], p={...n.properties,SemanticStatus:'V0.6_VERIFIED_FROZEN',SemanticParity:'PASS'};
     p.Group=p.Group||p.Layer||'';
     p.Layer=publicLayer(p.Layer);
+    applyOrder(p);
     return {type:'Feature',geometry:{type:'Point',coordinates:[n.lon,n.lat]},properties:p};
   };
   const full=full0.features.map(f=>({type:'Feature',geometry:f.geometry,properties:applySemantic({...f.properties},semMap)}));
@@ -104,6 +121,12 @@ async function build(){
   const lc=full.reduce((a,f)=>(a[f.properties.Layer]=(a[f.properties.Layer]||0)+1,a),{});
   if(lc['Comunitati / Localitati']!==164||lc.Toponime!==72) throw new Error(`Număr straturi invalid: ${JSON.stringify(lc)}`);
   if(strict.length!==RC.strict.expected||posCount(strict)!==RC.strict.positions) throw new Error(`STRICT invalid: ${strict.length}/${posCount(strict)}`);
+  full.sort(compareByBook);
+  strict.sort(compareByBook);
+  for(const [layer,ids] of Object.entries(ORDER)){
+    const got=full.filter(f=>f.properties.Layer===layer).map(f=>f.properties.WG_LOC);
+    if(got.length!==ids.length||got.some((id,i)=>id!==ids[i])) throw new Error(`Ordine Weigand invalidă în stratul ${layer}.`);
+  }
   const semanticIDs=new Set([...semMap.keys(),...Object.keys(newest)]);
   if(semanticIDs.size!==RC.semantic.expected) throw new Error(`Semantic invalid: ${semanticIDs.size}`);
   return {full,strict};
@@ -120,7 +143,7 @@ function show(features){
     const [lon,lat]=f.geometry.coordinates, li=layerIndex(p);
     const marker=L.circleMarker([lat,lon],{radius:6,color:'#fff',weight:1.5,fillColor:LAYERS[li].color,fillOpacity:.92});
     const osm=(p.OSMType&&p.OSMID)?`<br><a target="_blank" rel="noopener" href="https://www.openstreetmap.org/${p.OSMType}/${p.OSMID}">OSM ↗</a>`:'';
-    marker.bindPopup(`<strong>${p.Name||p.WG_LOC}</strong><br>${p.WG_LOC}<br>${p.WeigandName||''}<br><small>${p.ModernIdentification||''}</small>${osm}`);
+    marker.bindPopup(`<strong>${p.Name||p.WG_LOC}</strong><br>${p.WG_LOC}<br>${p.WeigandName||''}<br><small>Ordine în strat: ${p.DisplayOrder}</small><br><small>${p.ModernIdentification||''}</small>${osm}`);
     marker.addTo(group); visible++;
   }
   document.getElementById('visible').textContent=String(visible);
@@ -137,7 +160,7 @@ async function start(){
     document.getElementById('search').addEventListener('input',render);
     document.querySelectorAll('[name=mode]').forEach(x=>x.addEventListener('change',()=>{mode=x.value;render();}));
     render(); map.fitBounds(group.getBounds(),{padding:[20,20]});
-    status.textContent=`QA PASS · 2 straturi: Comunitati/Localitati 164 + Toponime 72 · semantic 236/236 · full 236/219 poziții · strict 188/175 · referințe editoriale non-native ${RC.nonNative}`;
+    status.textContent=`QA PASS · ordine Weigand aplicată · 2 straturi: Comunitati/Localitati 164 + Toponime 72 · semantic 236/236 · full 236/219 poziții · strict 188/175 · referințe editoriale non-native ${RC.nonNative}`;
     status.dataset.state='ready';
   }catch(e){status.textContent=`QA FAIL: ${e.message}`;status.dataset.state='error';throw e;}
 }
