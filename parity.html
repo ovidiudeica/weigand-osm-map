@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Weigand — 192-marker parity QA</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <style>
+    :root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#173d34;background:#f7f4ea}
+    *{box-sizing:border-box}
+    body{margin:0;background:#f7f4ea}
+    header{padding:18px 22px;background:#173d34;color:#fff;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    h1{font-size:20px;margin:0}
+    header p{margin:4px 0 0;color:#dce7e2}
+    .qa{display:flex;gap:10px;flex-wrap:wrap;padding:14px 18px;background:#fff;border-bottom:1px solid #d9ddd7}
+    .card{min-width:130px;padding:10px 12px;border:1px solid #d9ddd7;border-radius:8px;background:#fafaf7}
+    .card strong{display:block;font-size:20px}
+    #status{flex:1;min-width:300px;padding:12px 14px;border-radius:8px;background:#f7e8c7;color:#5a4722}
+    #status[data-state="ok"]{background:#e1efe3;color:#173d34}
+    #map{height:calc(100vh - 168px);min-height:520px}
+    .popup h3{margin:0 0 8px;font-size:18px}
+    .popup dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 9px;margin:0 0 10px}
+    .popup dt{font-weight:700;color:#31584e}
+    .popup dd{margin:0}
+    .popup p{line-height:1.4}
+    .warning{padding:8px 9px;border-left:4px solid #b68424;background:#fff5da}
+    details{margin-top:8px}
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Gustav Weigand — 192-marker parity QA</h1>
+      <p>Staging validation of the unified My Maps ↔ OSM/Website identity register.</p>
+    </div>
+  </header>
+  <section class="qa" aria-label="Parity QA">
+    <div class="card">Public markers<strong id="features">—</strong></div>
+    <div class="card">Website positions<strong id="positions">—</strong></div>
+    <div class="card">Historical WG_LOC<strong id="historical">—</strong></div>
+    <div id="status" role="status">Preparing parity QA…</div>
+  </section>
+  <main id="map" aria-label="Parity map"></main>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="parity-app.js"></script>
+</body>
+</html>
