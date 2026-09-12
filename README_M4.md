@@ -1,5 +1,7 @@
 # Gustav Weigand — atlas OpenStreetMap — M4 candidate v0.24
 
+> **Notă de stare:** acest document descrie milestone-ul istoric M4/M5. Referințele la transport din secțiunea M5 RC1 descriu starea acelui milestone, nu fișierele publice curente din `main`. Pentru integritatea publicației curente se folosește `PUBLICATION_MANIFEST.csv`.
+
 Pachet de publicare candidat generat din `Weigand_Gustav_MASTER_v0.24_M3_COORDINATE_FROZEN_CANDIDATE_2026-09-10.xlsx`.
 
 ## Regulă metodologică
@@ -37,4 +39,4 @@ este separat și nu este prezentat ca sursă istorică.
 
 ## M5 RC1
 
-Milestone 5 publică acest candidat numai pe ramura `release/v0.24-rc1`; `main` rămâne baseline până la validarea finală. Din cauza limitării conectorului controlat GitHub la fișiere text, fluxurile gzip M4 sunt stocate lossless în `data/transport/` ca Base64 și reconstruite de `transport-shim.js`. QA M5 verifică hash-urile datelor rezultate după reconstrucție și decomprimare.
+La milestone-ul M5, candidatul a fost publicat pe ramura `release/v0.24-rc1`, iar fluxurile gzip M4 au fost stocate lossless ca Base64 pentru transport. `M5_MANIFEST.csv` păstrează hash-urile istorice ale acelui candidat. Fragmentele M4 neutilizate de runtime-ul v1.0 au fost ulterior eliminate din starea curentă a `main`; manifestul M5 rămâne numai evidență de audit a milestone-ului.
