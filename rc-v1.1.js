@@ -12,19 +12,12 @@ const BASE = {
   semantic:'data/weigand-osm-v1.0-semantic-225.csv.gz'
 };
 const LAYERS = [
-  {name:'Romani / dacoromani',color:'#286eaf'},
-  {name:'Aromani',color:'#cf4d9b'},
-  {name:'Mixt romani-aromani',color:'#7b4aad'},
+  {name:'Comunitati / Localitati',color:'#286eaf'},
   {name:'Toponime',color:'#2f8a4a'}
 ];
 const norm=v=>String(v??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
-const layerIndex=p=>{
-  const s=norm(p.Layer);
-  if(s.includes('mixt')) return 2;
-  if(s.includes('aromani')&&!s.includes('romani /')) return 1;
-  if(s.includes('romani')) return 0;
-  return 3;
-};
+const publicLayer=old=>norm(old)==='toponime'?'Toponime':'Comunitati / Localitati';
+const layerIndex=p=>publicLayer(p.Layer)==='Toponime'?1:0;
 async function gunzipText(url){
   const r=await fetch(url,{cache:'no-store'});
   if(!r.ok) throw new Error(`HTTP ${r.status}: ${url}`);
@@ -65,6 +58,9 @@ function applySemantic(p, semMap){
   if(base) Object.assign(p,base);
   const over=window.WG_RC_SEMANTIC_OVERRIDES[id];
   if(over) Object.assign(p,over);
+  const legacyGroup=p.Group||p.Layer||'';
+  p.Group=legacyGroup;
+  p.Layer=publicLayer(p.Layer);
   p.SemanticStatus='V0.6_VERIFIED_FROZEN';
   p.SemanticParity='PASS';
   return p;
@@ -87,6 +83,8 @@ async function build(){
   };
   const makeNew=id=>{
     const n=newest[id], p={...n.properties,SemanticStatus:'V0.6_VERIFIED_FROZEN',SemanticParity:'PASS'};
+    p.Group=p.Group||p.Layer||'';
+    p.Layer=publicLayer(p.Layer);
     return {type:'Feature',geometry:{type:'Point',coordinates:[n.lon,n.lat]},properties:p};
   };
   const full=full0.features.map(f=>({type:'Feature',geometry:f.geometry,properties:applySemantic({...f.properties},semMap)}));
@@ -101,6 +99,10 @@ async function build(){
     strict.push(newest[id]?makeNew(id):makeOld(id));
   }
   if(full.length!==RC.full.expected||posCount(full)!==RC.full.positions) throw new Error(`FULL invalid: ${full.length}/${posCount(full)}`);
+  const layerSet=new Set(full.map(f=>f.properties.Layer));
+  if(layerSet.size!==2||!layerSet.has('Comunitati / Localitati')||!layerSet.has('Toponime')) throw new Error(`Arhitectură straturi invalidă: ${[...layerSet].join(', ')}`);
+  const lc=full.reduce((a,f)=>(a[f.properties.Layer]=(a[f.properties.Layer]||0)+1,a),{});
+  if(lc['Comunitati / Localitati']!==164||lc.Toponime!==72) throw new Error(`Număr straturi invalid: ${JSON.stringify(lc)}`);
   if(strict.length!==RC.strict.expected||posCount(strict)!==RC.strict.positions) throw new Error(`STRICT invalid: ${strict.length}/${posCount(strict)}`);
   const semanticIDs=new Set([...semMap.keys(),...Object.keys(newest)]);
   if(semanticIDs.size!==RC.semantic.expected) throw new Error(`Semantic invalid: ${semanticIDs.size}`);
@@ -135,7 +137,7 @@ async function start(){
     document.getElementById('search').addEventListener('input',render);
     document.querySelectorAll('[name=mode]').forEach(x=>x.addEventListener('change',()=>{mode=x.value;render();}));
     render(); map.fitBounds(group.getBounds(),{padding:[20,20]});
-    status.textContent=`QA PASS · semantic 236/236 · full 236/219 poziții · strict 188/175 · referințe editoriale non-native ${RC.nonNative}`;
+    status.textContent=`QA PASS · 2 straturi: Comunitati/Localitati 164 + Toponime 72 · semantic 236/236 · full 236/219 poziții · strict 188/175 · referințe editoriale non-native ${RC.nonNative}`;
     status.dataset.state='ready';
   }catch(e){status.textContent=`QA FAIL: ${e.message}`;status.dataset.state='error';throw e;}
 }
