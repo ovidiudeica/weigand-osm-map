@@ -59,15 +59,30 @@ The RC4 build produced from the same v0.7 state passed:
 - spreadsheet formula scan: **0 errors**;
 - GeoJSON/CSV structural validation: **PASS**.
 
+## Final visual QA — PASS
+
+A final geometry-focused visual review was performed from the exact RC4 Website GeoJSON, the RC4 My Maps CSV, and the historical p.139 scan.
+
+Results:
+
+- all **10 p.139-corrected points** were overlaid back on the historical map and match the intended local source context;
+- none of the 10 corrected points has an accidental exact-coordinate collision with another WG_LOC;
+- no latitude/longitude reversal, null/default point, or new gross outlier was found;
+- the extreme western point `WG_LOC_0236` (Kostei / Kostela candidate) is intentional and documented, not a coordinate error;
+- all ten corrected records coincide between My Maps and Website by design as `COMMON_HISTORICAL_MAP_RESEARCH_GEOMETRY`;
+- only **8 pre-existing branch differences >= 1 km** remain. The largest is `WG_LOC_0109` Bukor (~16.9 km), already explicitly classified `MYMAPS_VERIFIED_OSM_PROVISIONAL`; `WG_LOC_0138` Rogulyat/Rugulet (~1.84 km) is likewise `OSM_PROVISIONAL_REPER`; the remaining >=1 km cases are documented independent dual geometries and were not introduced by RC4;
+- the Sofia/p.139 regional zoom shows Cincofci, Corul, Pasunci, Puliofci, Purcenica, Svinove, Cercelat, Kornica, Almas and Vlahinia in distinct, source-consistent positions.
+
+**Visual geometry gate: PASS.** No additional coordinate correction is required before My Maps import.
+
 ## Pull-request scope QA
 
 PR #16 changes only staging/QA files (`rc-v1.1-*` and this QA document). It does **not** modify `index.html`, `app.js`, the existing v1.0 payload files, or `main`.
 
 ## Remaining promotion gate
 
-Do **not** merge to `main` yet. Two external/manual checks remain:
+Do **not** merge to `main` yet. One external/manual check remains:
 
-1. visually inspect the standalone `rc-v1.1.html` map, especially representative exact-modern, editorial-reference, shared-position and p.139-derived records;
-2. import the two RC4 My Maps CSV layers into a greenfield My Maps map and confirm **164 + 72 = 236** rows in preserved Weigand order.
+1. import the two RC4 My Maps CSV layers into a greenfield My Maps map and confirm **164 + 72 = 236** rows in preserved Weigand order.
 
-Only after those two checks should the public runtime assets be promoted in a separate controlled commit/PR.
+After that import check passes, the public runtime assets can be promoted in a separate controlled commit/PR.
