@@ -21,7 +21,8 @@ async function build(){
  const g=geom(),n=newest(),pids=new Set(Object.keys(window.WG_RC_P139||{}));
  const old=id=>{const x=g[id],p=sem({...m.get(id)},m);Object.assign(p,x);delete p.lat;delete p.lon;return{type:'Feature',geometry:{type:'Point',coordinates:[x.lon,x.lat]},properties:p};};
  const neu=id=>{const x=n[id],p=sem({...x.properties},m);return{type:'Feature',geometry:{type:'Point',coordinates:[x.lon,x.lat]},properties:p};};
- const full=f0.features.map(f=>({type:'Feature',geometry:f.geometry,properties:sem({...f.properties},m)})),seen=new Set(full.map(f=>f.properties.WG_LOC));
+ const existing=f=>{const id=f.properties.WG_LOC;if(!pids.has(id))return{type:'Feature',geometry:f.geometry,properties:sem({...f.properties},m)};const x=g[id],p=sem({...f.properties},m);Object.assign(p,x);delete p.lat;delete p.lon;return{type:'Feature',geometry:{type:'Point',coordinates:[x.lon,x.lat]},properties:p};};
+ const full=f0.features.map(existing),seen=new Set(full.map(f=>f.properties.WG_LOC));
  for(const id of Object.keys(g))if(!seen.has(id))full.push(old(id));for(const id of Object.keys(n))full.push(neu(id));
  const strict=s0.features.filter(f=>!pids.has(f.properties.WG_LOC)).map(f=>({type:'Feature',geometry:f.geometry,properties:sem({...f.properties},m)})),ss=new Set(strict.map(f=>f.properties.WG_LOC));
  for(const id of window.WG_RC_STRICT_ADD_IDS)if(!ss.has(id)&&!pids.has(id))strict.push(n[id]?neu(id):old(id));
