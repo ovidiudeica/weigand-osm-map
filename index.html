@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Atlas digital de cercetare: Gustav Weigand, Rumänen und Aromunen in Bulgarien (1907), corpus canonic WG_LOC și localizare OpenStreetMap.">
-  <title>Gustav Weigand · Atlas digital OSM · v1.2</title>
+  <meta name="description" content="Atlas digital de cercetare: Gustav Weigand, Rumänen und Aromunen in Bulgarien (1907), corpus canonic WG_LOC v0.13 și localizare OpenStreetMap RC8.">
+  <title>Gustav Weigand · Atlas digital OSM · v1.4</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" onerror="this.onerror=null;this.href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'">
-  <link rel="stylesheet" href="styles.css?v=1.2.2">
-  <link rel="stylesheet" href="marker-cosmetic.css?v=1.2.5">
+  <link rel="stylesheet" href="styles.css?v=1.4.0">
+  <link rel="stylesheet" href="marker-cosmetic.css?v=1.4.0">
   <style>.detail-card p{overflow-wrap:anywhere}</style>
   <script>
     (() => {
@@ -25,15 +25,11 @@
       const boot = async () => {
         let lastError;
         for(const src of leafletSources){
-          try{
-            await loadScript(src);
-            if(window.L) break;
-          }catch(error){lastError=error;}
+          try{await loadScript(src);if(window.L)break;}catch(error){lastError=error;}
         }
         if(!window.L) throw lastError || new Error('Leaflet nu este disponibil.');
-        await loadScript('transport-shim.js?v=1.2.2');
-        await loadScript('marker-cosmetic.js?v=1.2.8');
-        await loadScript('app.js?v=1.2.2');
+        await loadScript('transport-shim-v14.js?v=1.4.0');
+        await loadScript('app-v14.js?v=1.4.0');
       };
       const start = () => boot().catch(error => {
         const status=document.getElementById('status');
@@ -47,17 +43,14 @@
   <header class="site-header">
     <div class="brand">
       <div class="brand-mark" aria-hidden="true">GW</div>
-      <div>
-        <h1>Gustav Weigand</h1>
-        <p><cite>Rumänen und Aromunen in Bulgarien</cite> · 1907</p>
-      </div>
+      <div><h1>Gustav Weigand</h1><p><cite>Rumänen und Aromunen in Bulgarien</cite> · 1907</p></div>
     </div>
     <nav class="top-nav" aria-label="Navigare principală">
       <a href="#atlas" class="active">Atlas</a>
       <button type="button" class="nav-button" id="about-open">Despre</button>
       <a href="#downloads">Date și download</a>
     </nav>
-    <div class="header-meta"><span class="edition">v1.2</span><span class="osm-badge">OSM</span></div>
+    <div class="header-meta"><span class="edition">v1.4</span><span class="osm-badge">OSM</span></div>
   </header>
 
   <main id="atlas" class="atlas-shell">
@@ -65,7 +58,7 @@
       <div class="explorer-head">
         <p class="kicker">ATLAS DIGITAL · WEIGAND 1907</p>
         <h2>Explorează atlasul</h2>
-        <p>Caută, filtrează și descoperă localitățile din corpusul canonic pe harta interactivă.</p>
+        <p>Caută, filtrează și descoperă localitățile și toponimele din corpusul canonic pe harta interactivă.</p>
       </div>
 
       <div class="search-wrap">
@@ -76,8 +69,8 @@
 
       <fieldset class="mode-fieldset"><legend class="sr-only">Set de date</legend>
         <div class="segmented">
-          <label><input type="radio" name="mode" value="full" checked><span>Complet <strong>163</strong></span></label>
-          <label><input type="radio" name="mode" value="strict"><span>Strict <strong>157</strong></span></label>
+          <label><input type="radio" name="mode" value="full" checked><span>Complet <strong>235</strong></span></label>
+          <label><input type="radio" name="mode" value="strict"><span>Strict <strong>183</strong></span></label>
         </div>
       </fieldset>
 
@@ -88,9 +81,9 @@
       </section>
 
       <section class="corpus-stats" aria-label="Statistici corpus">
-        <div><span>Corpus total</span><strong>225</strong></div>
-        <div><span>Pe hartă OSM</span><strong id="map-total">163</strong></div>
-        <button id="no-geometry" type="button" data-source="gzip"><span>Fără geometrie</span><strong>62</strong></button>
+        <div><span>Corpus total</span><strong>236</strong></div>
+        <div><span>Pe hartă</span><strong id="map-total">235</strong></div>
+        <button id="no-geometry" type="button"><span>Nemarcabil prin evidență</span><strong>1</strong></button>
       </section>
 
       <div class="results-head"><h3>Listă rezultate</h3><p id="count" aria-live="polite"></p></div>
@@ -100,7 +93,7 @@
 
     <section class="map-stage" aria-label="Harta interactivă">
       <div id="map" aria-label="Hartă OpenStreetMap"></div>
-      <div class="map-title"><strong>Bulgaria și regiunile învecinate</strong><span>Geometrii OSM / repere validate</span></div>
+      <div class="map-title"><strong>Bulgaria și regiunile învecinate</strong><span>Geometrii OSM / repere validate · RC8</span></div>
       <div class="map-legend" aria-label="Legendă">
         <div><span class="legend-dot layer-0"></span>Români / Dacoromâni</div>
         <div><span class="legend-dot layer-1"></span>Aromâni</div>
@@ -117,15 +110,19 @@
   </main>
 
   <footer id="downloads">
-    <div>Gustav Weigand · Atlas digital al localităților · 225 entități canonice</div>
-    <nav aria-label="Descărcări"><a id="download-full" href="#" aria-disabled="true">GeoJSON complet</a><a id="download-strict" href="#" aria-disabled="true">GeoJSON strict</a><a id="download-semantic" href="#">Registru semantic 225</a></nav>
+    <div>Gustav Weigand · Atlas digital · 236 entități canonice · 235 marcate</div>
+    <nav aria-label="Descărcări">
+      <a id="download-full" href="#" aria-disabled="true">GeoJSON complet 235</a>
+      <a id="download-strict" href="#" aria-disabled="true">GeoJSON strict 183</a>
+      <a id="download-semantic" href="#">Registru semantic 236</a>
+    </nav>
     <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>
   </footer>
 
   <dialog id="missing-dialog" aria-labelledby="dialog-title">
     <form method="dialog"><button class="close" aria-label="Închide dialogul">Închide ×</button></form>
-    <p class="kicker">CORPUS CANONIC</p><h2 id="dialog-title">62 de entități fără geometrie OSM adoptată</h2>
-    <p>Aceste entități rămân în corpusul canonic și în registrul semantic. Nu li se atribuie coordonate OSM inventate.</p>
+    <p class="kicker">CORPUS CANONIC</p><h2 id="dialog-title">1 entitate explicit nemarcabilă prin evidența disponibilă</h2>
+    <p>WG_LOC_0236 Kostei rămâne în corpusul canonic, dar fără marker: sursele disponibile nu justifică un punct geografic. Absența geometriei este intenționată și documentată, nu un deficit ascuns.</p>
     <div id="missing-content" role="status"></div>
   </dialog>
 
@@ -133,8 +130,8 @@
     <form method="dialog"><button class="close" aria-label="Închide dialogul">Închide ×</button></form>
     <p class="kicker">DESPRE ATLAS</p><h2 id="about-title">Sursa istorică și localizarea modernă</h2>
     <p>Atlasul pornește de la Gustav Weigand, <cite>Rumänen und Aromunen in Bulgarien</cite> (1907). Identitățile istorice, descrierile și citările sunt păstrate separat de geometria modernă.</p>
-    <p>Geometria OpenStreetMap este un strat editorial modern de localizare. Ea nu înlocuiește sursa istorică și nu este folosită pentru a inventa poziții acolo unde identificarea nu este suficient de sigură.</p>
-    <p><strong>Complet</strong> include toate geometriile OSM/reper adoptate. <strong>Strict</strong> exclude cazurile provizorii.</p>
+    <p>Geometria OpenStreetMap este un strat editorial modern de localizare. Ea nu înlocuiește sursa istorică și nu dovedește automat poziția istorică exactă.</p>
+    <p><strong>Complet</strong> include toate cele 235 de geometrii publicabile. <strong>Strict</strong> include cele 183 de geometrii cu obiect OSM nativ/validat. Un caz, Kostei, este păstrat semantic dar nu este marcat, pentru a evita precizia falsă.</p>
   </dialog>
 
   <noscript>Activează JavaScript pentru harta interactivă.</noscript>
