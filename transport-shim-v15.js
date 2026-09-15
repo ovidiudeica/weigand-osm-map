@@ -38,11 +38,14 @@
     const value = typeof input === 'string' ? input : input?.url || '';
     try {
       const u = new URL(value, window.location.href);
-      const marker = '/weigand-osm-map/';
-      const i = u.pathname.indexOf(marker);
-      return (i >= 0 ? u.pathname.slice(i + marker.length) : u.pathname.replace(/^\//, '')).split(/[?#]/,1)[0];
+      const path = u.pathname;
+      const dataIndex = path.lastIndexOf('/data/');
+      if (dataIndex >= 0) return path.slice(dataIndex + 1);
+      return path.replace(/^\/+/, '').split(/[?#]/,1)[0];
     } catch (_) {
-      return value.replace(/^\.\//, '').split(/[?#]/,1)[0];
+      const cleaned = value.replace(/^\.\//, '').split(/[?#]/,1)[0];
+      const dataIndex = cleaned.lastIndexOf('data/');
+      return dataIndex >= 0 ? cleaned.slice(dataIndex) : cleaned;
     }
   };
 
