@@ -57,7 +57,7 @@ Rezultate:
 - toate geometriile full/strict sunt `Point`; `SemanticParity=PASS` peste tot;
 - `index.html` expune 236 corpus / 235 complet / 183 strict / 1 nemarcabil și încarcă `transport-shim-v14.js` + `app-v14.js`;
 - patch-ul v1.4 pentru runtime păstrează validarea 235/225 și 183/176, registrul semantic 236, excepția no-geometry=1 și clasificarea tematică `Group`→`Layer`;
-- release branch este **3 commits ahead / 0 behind** `main`; `main` nu a fost modificat.
+- release branch rămâne descendent direct din `main` fără divergență în urmă la momentul controlului; `main` nu a fost modificat.
 
 Mediul de execuție folosit pentru QA blochează navigarea Chromium către preview-uri externe. Din acest motiv, controlul pre-PR este unul determinist de payload/runtime/static wiring, nu un GitHub Pages production smoke. Acest lucru nu afectează verificarea hash-urilor, a conținutului sau a logicii de validare a datelor.
 
