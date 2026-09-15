@@ -11,9 +11,12 @@
       "data/transport-v14/v14-full-04.b64"
     ],
     "data/weigand-osm-v1.4-strict.geojson.gz": [
-      "data/transport-v14/v14-strict-01.b64",
-      "data/transport-v14/v14-strict-02.b64",
-      "data/transport-v14/v14-strict-03.b64"
+      "data/transport-v14/v14-strict-s01.b64",
+      "data/transport-v14/v14-strict-s02.b64",
+      "data/transport-v14/v14-strict-s03.b64",
+      "data/transport-v14/v14-strict-s04.b64",
+      "data/transport-v14/v14-strict-s05.b64",
+      "data/transport-v14/v14-strict-s06.b64"
     ],
     "data/weigand-osm-v1.4-no-geometry.csv.gz": [
       "data/transport-v14/v14-noGeometry-01.b64"
