@@ -7,7 +7,12 @@
     "data/weigand-osm-v1.5.geojson.gz": [
       "data/transport-v15/v15-full-01.b64",
       "data/transport-v15/v15-full-02.b64",
-      "data/transport-v15/v15-full-03.b64",
+      "data/transport-v15/v15-full-03a.b64",
+      "data/transport-v15/v15-full-03b.b64",
+      "data/transport-v15/v15-full-03c.b64",
+      "data/transport-v15/v15-full-03d.b64",
+      "data/transport-v15/v15-full-03e.b64",
+      "data/transport-v15/v15-full-03f.b64",
       "data/transport-v15/v15-full-04.b64"
     ],
     "data/weigand-osm-v1.5-strict.geojson.gz": [
