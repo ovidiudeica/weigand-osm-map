@@ -42,6 +42,27 @@ Controlul de integritate al stării finale de pe branch-ul RC8:
 
 **Verdict transport strict-183: PASS.**
 
+## Smoke-test branch RC8 — Milestone 37
+
+Starea `release/v1.4-rc8` a fost verificată înainte de PR prin reconstrucție deterministă a celor patru payload-uri virtuale și prin controlul wiring-ului interfeței.
+
+Rezultate:
+
+- `full`: **235 features / 225 poziții distincte / 235 WG_LOC unice**;
+- `strict`: **183 features / 176 poziții distincte / 183 WG_LOC unice**;
+- `noGeometry`: **1 rând — WG_LOC_0236 Kostei**;
+- `semantic`: **236 rânduri / 236 WG_LOC unice**, inclusiv Kostei;
+- fiecare payload reconstruiește exact dimensiunea și SHA-256 din `PUBLICATION_MANIFEST.csv`;
+- subsetul strict este feature-identic cu cele 183 de rânduri `StrictNative=YES` din setul complet;
+- toate geometriile full/strict sunt `Point`; `SemanticParity=PASS` peste tot;
+- `index.html` expune 236 corpus / 235 complet / 183 strict / 1 nemarcabil și încarcă `transport-shim-v14.js` + `app-v14.js`;
+- patch-ul v1.4 pentru runtime păstrează validarea 235/225 și 183/176, registrul semantic 236, excepția no-geometry=1 și clasificarea tematică `Group`→`Layer`;
+- release branch este **3 commits ahead / 0 behind** `main`; `main` nu a fost modificat.
+
+Mediul de execuție folosit pentru QA blochează navigarea Chromium către preview-uri externe. Din acest motiv, controlul pre-PR este unul determinist de payload/runtime/static wiring, nu un GitHub Pages production smoke. Acest lucru nu afectează verificarea hash-urilor, a conținutului sau a logicii de validare a datelor.
+
+**Verdict Milestone 37: `PASS_BRANCH_SMOKE__READY_FOR_PR`.**
+
 ## Limită de interpretare
 
 Publicarea confirmă starea de release/proveniență. Nu reprezintă o afirmație că toate cele 236 de localizări istorice au fost determinate cu exactitate absolută.
