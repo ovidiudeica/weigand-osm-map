@@ -83,7 +83,7 @@
   window.fetch = async (...args) => {
     const response = await originalFetch(...args);
     const url = String(args[0]?.url || args[0] || '');
-    if (/weigand-osm-v1\.(?:0|4)(?:-strict)?\.geojson\.gz(?:[?#].*)?$/.test(url)) {
+    if (/weigand-osm-v1\.(?:0|4|5)(?:-strict)?\.geojson\.gz(?:[?#].*)?$/.test(url)) {
       try {
         const clone = response.clone();
         const stream = clone.body.pipeThrough(new DecompressionStream('gzip'));
