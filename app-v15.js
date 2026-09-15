@@ -4,7 +4,7 @@
 // explicit, fail-fast substitutions for the v1.5 datasets/counts and the
 // canonical Group-based thematic classification.
 (async () => {
-  const response = await fetch('app.js?v=legacy-runtime');
+  const response = await fetch('app.js?v=1.5.0');
   if (!response.ok) throw new Error(`Nu s-a putut încărca runtime-ul atlasului: HTTP ${response.status}.`);
   let source = await response.text();
 
