@@ -1,6 +1,6 @@
 'use strict';
 
-// v1.5 CC-0002 candidate bootstrap. Reuses the validated legacy atlas runtime but applies
+// v1.5 release bootstrap. Reuses the validated legacy atlas runtime but applies
 // explicit, fail-fast substitutions for the v1.5 datasets/counts and the
 // canonical Group-based thematic classification.
 (async () => {
@@ -54,6 +54,6 @@
   (0, eval)(source + '\n//# sourceURL=app-v15-runtime.js');
 })().catch(error => {
   const status=document.getElementById('status');
-  if(status){status.textContent=`Interfața v1.5 candidat nu a putut porni: ${error.message}`;status.dataset.state='error';}
+  if(status){status.textContent=`Interfața v1.5 nu a putut porni: ${error.message}`;status.dataset.state='error';}
   else console.error(error);
 });
