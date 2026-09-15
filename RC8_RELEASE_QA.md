@@ -63,6 +63,20 @@ Mediul de execuție folosit pentru QA blochează navigarea Chromium către previ
 
 **Verdict Milestone 37: `PASS_BRANCH_SMOKE__READY_FOR_PR`.**
 
+## Audit PR #17 — remediere cosmetică pre-merge
+
+Auditul complet al diff-ului PR #17 a identificat o regresie de interfață: `index.html` păstra `marker-cosmetic.css`, dar nu mai încărca `marker-cosmetic.js`. În plus, scriptul cosmetic existent recunoștea numai payload-urile GeoJSON v1.0, astfel încât etichetele moderne și comportamentul markerilor partajați nu puteau fi alimentate corect de fluxurile v1.4.
+
+Remedierea aplicată exclusiv pe `release/v1.4-rc8`:
+
+- `index.html` încarcă acum, în ordine: `transport-shim-v14.js` → `marker-cosmetic.js` → `app-v14.js`;
+- `marker-cosmetic.js` acceptă atât URL-urile GeoJSON v1.0, cât și v1.4 prin expresia `v1.(0|4)`;
+- scriptul cosmetic rămâne UI-only și nu modifică payload-urile, coordonatele sau corpusul;
+- hash-urile payload-urilor din `PUBLICATION_MANIFEST.csv` rămân neschimbate;
+- stylesheet-ul `marker-cosmetic.css` și runtime-ul cosmetic sunt din nou pereche funcțională pentru RC8.
+
+**Verdict remediere PR UI: PASS.**
+
 ## Limită de interpretare
 
 Publicarea confirmă starea de release/proveniență. Nu reprezintă o afirmație că toate cele 236 de localizări istorice au fost determinate cu exactitate absolută.
