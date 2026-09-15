@@ -1,37 +1,58 @@
 # Gustav Weigand — Rumänen und Aromunen in Bulgarien — Atlas OSM
 
-**Ediție publicată:** v1.0  
-**Corpus canonic:** 225 entități `WG_LOC`  
+**Ediție publicată:** v1.4 / RC8  
+**Corpus canonic:** 236 entități `WG_LOC`  
+**Corpus canonic de release:** WG_LOC v0.13 VERIFIED/CANDIDATE  
 **Sursa istorică de adevăr:** Gustav Weigand, *Rumänen und Aromunen in Bulgarien* (1907).
 
-Acest repository publică ramura **OpenStreetMap / Website** a proiectului. Corpusul semantic este comun cu ramura Google My Maps; coordonatele rămân specifice platformei și nu sunt propagate între MyMaps și OSM.
+Acest repository publică ramura **OpenStreetMap / Website** a proiectului. Corpusul semantic este comun cu ramura Google My Maps; coordonatele/geometriile rămân specifice platformei și proveniența lor este explicită.
 
-## Date v1.0
+## Date v1.4 / RC8
 
-- corpus canonic activ: **225 WG_LOC**;
-- MyMaps final: **188 geometrii / 187 poziții**, 37 fără geometrie;
-- OSM complet: **163 geometrii / 161 poziții distincte**;
-- OSM strict: **157 geometrii / 156 poziții distincte**;
-- fără geometrie OSM adoptată: **62 entități**;
-- setul strict exclude exact cele 6 cazuri frozen cu reper OSM provizoriu;
-- descrierile și citările provin din M6; cele două ramuri au trecut M7 structural parity și M8 QA academic/paritate.
+- corpus canonic activ: **236 WG_LOC**;
+- geometrii publicate în setul complet: **235**, în **225 poziții distincte**;
+- set strict OSM: **183 geometrii**, în **176 poziții distincte**;
+- entități explicit nemarcabile prin evidență: **1** — `WG_LOC_0236` Kostei;
+- model de release: **236 corpus / 235 mapped / 1 explicit unmarked**;
+- audit regulă coordonate: **236 PASS / 0 WARN / 0 FAIL**;
+- Google My Maps greenfield round-trip: **235/235 coordonate păstrate exact**;
+- verificarea nativă OSM a detectat problemele RC7, iar toate cazurile care au rămas în setul strict RC8 au fost remediate și re-gate-uite.
 
-## QA
+## Ce înseamnă „strict” și „complet”
 
-Milestone 8: **52/52 controale PASS**, **225/225 WG_LOC entity-level PASS**, 0 probleme blocante. Câmpurile semantice comune MyMaps–OSM sunt identice 3.825/3.825. Geometriile sunt neschimbate față de freeze-ul M3.
+**Complet** include toate geometriile publicabile: obiecte OSM native, referințe/fallback-uri explicite și geometrii editoriale/de cercetare etichetate ca atare.
 
-După M9, stratul de publicare a fost regenerat pentru a elimina metadatele specifice digitizării externe și legăturile de stocare din fișierele publice. Această operație nu modifică `WG_LOC`, `WeigandPages`, identificările moderne, geometriile OSM sau coordonatele. Din acest motiv, hash-urile payload-urilor publice curente diferă de baseline-ul M9.
+**Strict** include numai rândurile finale cu `StrictNative=YES`.
 
-**Sursa de adevăr pentru hash-urile fișierelor publice curente este `PUBLICATION_MANIFEST.csv`.** `M5_MANIFEST.csv` și `M9_MANIFEST.csv` sunt păstrate ca evidențe istorice ale milestone-urilor respective și nu trebuie folosite pentru verificarea payload-urilor curente.
+Kostei nu primește marker doar pentru a forța totalul la 236. Milestone 32 a stabilit că sursele disponibile nu justifică o localizare publică; el rămâne în registrul semantic și în fișierul `no-geometry`.
 
-## Runtime v1.0
+## QA și promovare
 
-`transport-shim.js` reconstruiește din Base64 cele patru fluxuri publice curente. `app.js` le decomprimă în browser și oferă descărcările GeoJSON/CSV v1.0. În `data/transport/` sunt păstrate numai fragmentele utilizate de runtime-ul public curent; fragmentele istorice neutilizate au fost eliminate din starea curentă a publicației.
+Milestone 36: **PASS_PROMOTION_READY__DEPLOYMENT_NOT_EXECUTED** înaintea acestei publicări. Criteriile de promovare includ:
+
+- regresie canonică v0.13: PASS;
+- rebuild sincronizat RC8: PASS;
+- set final strict-native OSM: 183/183 acoperit de lanțul live + remedieri documentate;
+- My Maps round-trip RC8: 235/235 exact;
+- manifestul pachetului RC8: 20/20 SHA-256 corecte;
+- 0 blocking release holds.
+
+Această publicare nu afirmă că toate cele 236 de localizări istorice sunt exact cunoscute. Geometriile native, referințele, punctele de cercetare și excepția nemarcabilă rămân diferențiate.
+
+## Runtime v1.4
+
+Runtime-ul public păstrează transportul compatibil cu limitările de fișiere text ale conectorului GitHub:
+
+- `transport-shim-v14.js` reconstruiește deterministic cele patru fluxuri gzip v1.4 din fragmente Base64 aflate în `data/transport-v14/`;
+- `app-v14.js` pornește runtime-ul atlasului verificat anterior și aplică fail-fast numai substituțiile necesare pentru căile/count-urile v1.4, clasificarea tematică pe `Group` și filtrarea publică a URL-urilor de stocare;
+- payload-urile virtuale sunt `data/weigand-osm-v1.4.geojson.gz`, `data/weigand-osm-v1.4-strict.geojson.gz`, `data/weigand-osm-v1.4-no-geometry.csv.gz` și `data/weigand-osm-v1.4-semantic-236.csv.gz`.
+
+`transport-shim.js` și `data/transport/` rămân în repository numai ca istoric al publicației v1.0 și nu sunt folosite de pagina v1.4.
 
 ## Regula de sursă
 
-**WEIGAND 1907 → CORPUS CANONIC WG_LOC → PUBLICARE v1.0**
+**WEIGAND 1907 → CORPUS CANONIC WG_LOC → RAMURI SINCRONIZATE MY MAPS / OSM-WEBSITE**
 
-În publicația publică, citarea Weigand folosește numai pagina tipărită (`WeigandPages`, de exemplu `p. 57`) și referința bibliografică normală. OpenStreetMap și sursele moderne sunt folosite pentru identificare/geometrie modernă, nu pentru a rescrie informația istorică din Weigand.
+Weigand 1907 rămâne autoritatea istorică și semantică. OpenStreetMap și alte surse moderne sunt folosite pentru identificare și geometrie modernă, fără a rescrie afirmația istorică și fără a transforma automat un obiect modern într-o dovadă a localizării istorice exacte.
 
-Tag-ul GitHub nu este o cerință a proiectului; versiunea v1.0 este identificată prin pachetul M9, QA, starea publicată în `main`/GitHub Pages și manifestul publicației curente.
+Hash-urile payload-urilor publice curente sunt în `PUBLICATION_MANIFEST.csv`. Fișierele M5/M9 sunt păstrate ca evidențe istorice și nu reprezintă starea curentă.
