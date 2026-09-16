@@ -1,6 +1,6 @@
 'use strict';
 
-// v1.5 release bootstrap. Reuses the validated legacy atlas runtime but applies
+// v1.5 draft/versioned bootstrap. Reuses the validated legacy atlas runtime but applies
 // explicit, fail-fast substitutions for the v1.5 datasets/counts and the
 // canonical Group-based thematic classification.
 (async () => {
