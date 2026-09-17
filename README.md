@@ -12,11 +12,11 @@ Repository-ul găzduiește ramura **OpenStreetMap / Website** a proiectului. Cor
 ## Starea tehnică v1.5
 
 - corpus canonic activ: **236 WG_LOC**;
-- geometrii în setul complet: **235**, în **225 poziții distincte**;
-- set strict OSM: **183 geometrii**, în **176 poziții distincte**;
-- entități explicit nemarcabile prin evidență: **1** — `WG_LOC_0236` Kostei;
-- model tehnic: **236 corpus / 235 mapped / 1 explicit unmarked**;
-- Google My Maps greenfield round-trip: **235/235 coordonate păstrate exact**;
+- geometrii în setul complet: **236**, în **226 poziții distincte**;
+- set strict OSM: **184 geometrii**, în **177 poziții distincte**;
+- entități explicit nemarcabile prin evidență: **0**;
+- model tehnic: **236 corpus / 236 mapped / 0 explicit unmarked**;
+- `WG_LOC_0236` **Kostel** este mapat prin obiectul OSM nativ verificat, cu proveniența modernă păstrată separat de afirmația istorică;
 - `WG_LOC_0139` este identificat modern ca **Stargel, Gorna Malina, Sofia, Bulgaria**, fără schimbare de coordonate sau geometrie.
 
 ## Ce înseamnă „strict” și „complet”
@@ -25,7 +25,7 @@ Repository-ul găzduiește ramura **OpenStreetMap / Website** a proiectului. Cor
 
 **Strict** include numai rândurile finale cu `StrictNative=YES`.
 
-Kostei nu primește marker doar pentru a forța totalul la 236. Sursele disponibile nu justifică o localizare publică suficient de precisă; cazul rămâne în registrul semantic și în fișierul `no-geometry`.
+`WG_LOC_0236` Kostel este inclus în setul complet și în setul strict pe baza obiectului OSM nativ verificat. Această localizare modernă rămâne distinctă de afirmația istorică din Weigand 1907 și nu este prezentată ca dovadă automată a poziției istorice exacte.
 
 ## Statut editorial și QA
 
