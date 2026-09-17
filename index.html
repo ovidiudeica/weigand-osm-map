@@ -28,7 +28,7 @@
           try{await loadScript(src);if(window.L)break;}catch(error){lastError=error;}
         }
         if(!window.L) throw lastError || new Error('Leaflet nu este disponibil.');
-        await loadScript('transport-shim-v15.js?v=1.5.0');
+        await loadScript('transport-shim-v15.js?v=1.5.1');
         await loadScript('marker-cosmetic.js?v=1.5.0');
         await loadScript('app-v15.js?v=1.5.0');
       };
