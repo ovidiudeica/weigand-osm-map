@@ -39,10 +39,10 @@
   replaceExact("weigand-osm-v1.0-semantic-225.csv", "weigand-osm-v1.5-semantic-236.csv", 'filename semantic');
 
   replaceExact("Browserul nu suportă decomprimarea gzip necesară pentru ediția v1.0.", "Browserul nu suportă decomprimarea gzip necesară pentru ediția v1.5.", 'mesaj ediție');
-  replaceExact("expected:163,expectedPositions:161", "expected:235,expectedPositions:225", 'număr full');
-  replaceExact("expected:157,expectedPositions:156", "expected:183,expectedPositions:176", 'număr strict');
-  replaceExact("missingCache.length!==62", "missingCache.length!==1", 'număr noGeometry');
-  replaceExact("Sunt așteptate 62 de cazuri; CSV-ul conține ${missingCache.length}.", "Este așteptată 1 excepție nemarcabilă; CSV-ul conține ${missingCache.length}.", 'mesaj noGeometry');
+  replaceExact("expected:163,expectedPositions:161", "expected:236,expectedPositions:226", 'număr full');
+  replaceExact("expected:157,expectedPositions:156", "expected:184,expectedPositions:177", 'număr strict');
+  replaceExact("missingCache.length!==62", "missingCache.length!==0", 'număr noGeometry');
+  replaceExact("Sunt așteptate 62 de cazuri; CSV-ul conține ${missingCache.length}.", "Sunt așteptate 0 excepții nemarcabile; CSV-ul conține ${missingCache.length}.", 'mesaj noGeometry');
 
   replaceExact(
     "const source=field(properties,'sources');",
