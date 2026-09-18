@@ -34,6 +34,13 @@
     source = source.replace(needle, replacement);
   };
 
+  const replaceBetween = (startNeedle, endNeedle, replacement, label) => {
+    const start = source.indexOf(startNeedle);
+    const end = source.indexOf(endNeedle, start >= 0 ? start : 0);
+    if (start < 0 || end < 0 || end <= start) throw new Error(`Patch v1.6 incompatibil: ${label}.`);
+    source = source.slice(0, start) + replacement + source.slice(end);
+  };
+
   // v1.5 dataset/count and Group-first semantic classification invariants.
   replaceExact(
 `function layerIndex(properties){
@@ -70,6 +77,147 @@
     "const source=field(properties,'sources');",
     "const source=field(properties,'sources').replace(/\\s*(?:[—–-]\\s*)?https?:\\/\\/\\S+/gi,'').replace(/\\s*[—–-]\\s*$/g,'').trim();",
     'filtru sursă publică'
+  );
+
+  // CC-0007 chapter/sublist presentation tree. Canonical records remain unique;
+  // the list is a source-order projection over those records.
+  replaceExact(
+    "function highlight(record){document.querySelectorAll('#results button').forEach(button=>button.setAttribute('aria-current',String(button.dataset.record===String(record.index))));}",
+    "function highlight(record,appearanceId=''){const id=field(record.properties,'id');document.querySelectorAll('#results button[data-wg-loc]').forEach(button=>{const active=appearanceId?button.dataset.appearanceId===appearanceId:button.dataset.wgLoc===id;button.setAttribute('aria-current',String(active));});}",
+    'highlight apariție/WG_LOC'
+  );
+
+  replaceExact(
+`  function selectRecord(record,move=true){
+    if(move){const target=record.displayLayer||record.layer;map.fitBounds(bounds(target),{maxZoom:14,padding:[35,35],animate:false});}
+    highlight(record);showDetail(record.properties,record);
+  }`,
+`  function selectRecord(record,move=true,appearance=null){
+    if(move){const target=record.displayLayer||record.layer;map.fitBounds(bounds(target),{maxZoom:14,padding:[35,35],animate:false});}
+    highlight(record,appearance?.id||'');showDetail(record.properties,record);
+  }`,
+    'selectare apariție editorială'
+  );
+
+  replaceBetween(
+    "  function renderList(){",
+    "\n  function render(){",
+`  function renderList(){
+    const order=window.__WEIGAND_PUBLIC_ORDER__;
+    if(!order||!Array.isArray(order.groups)||!Array.isArray(order.appearances)) throw new Error('Proiecția editorială nu este disponibilă.');
+
+    const listedRecords=visible.filter(record=>!$('in-view').checked||map.getBounds().intersects(bounds(record.displayLayer||record.layer)));
+    const recordById=new Map(listedRecords.map(record=>[field(record.properties,'id'),record]));
+    const query=normalize($('search').value);
+    const unfiltered=!query&&selected.size===LAYERS.length&&!$('in-view').checked;
+
+    const groupById=new Map(order.groups.map(group=>[group.id,group]));
+    const topGroups=order.groups.filter(group=>!group.parentId).slice().sort((a,b)=>a.sourceOrder-b.sourceOrder);
+    const childGroups=order.groups.filter(group=>group.parentId).slice().sort((a,b)=>a.sourceOrder-b.sourceOrder);
+    const appearancesByGroup=new Map();
+
+    for(const appearance of order.appearances){
+      if(!appearancesByGroup.has(appearance.groupId)) appearancesByGroup.set(appearance.groupId,[]);
+      appearancesByGroup.get(appearance.groupId).push(appearance);
+    }
+    for(const list of appearancesByGroup.values()) list.sort((a,b)=>a.appearanceOrder-b.appearanceOrder);
+
+    const isContextVisible=appearance=>{
+      if(!appearance.contextual) return false;
+      const candidates=Array.isArray(appearance.candidateWGLOC)?appearance.candidateWGLOC:[];
+      return candidates.some(id=>recordById.has(id));
+    };
+
+    const visibleAppearances=appearance=>{
+      if(appearance.wgLoc) return recordById.has(appearance.wgLoc);
+      return isContextVisible(appearance);
+    };
+
+    const linkedVisible=order.appearances.filter(a=>a.wgLoc&&recordById.has(a.wgLoc));
+    const contextualVisible=order.appearances.filter(a=>!a.wgLoc&&isContextVisible(a));
+    $('results').replaceChildren();
+    $('count').textContent=`${linkedVisible.length} apariții · ${listedRecords.length} entități${contextualVisible.length?' · +1 context':''}`;
+
+    let renderedAny=false;
+    for(const chapter of topGroups){
+      const children=childGroups.filter(group=>group.parentId===chapter.id);
+      const childModels=[];
+      for(const child of children){
+        const all=(appearancesByGroup.get(child.id)||[]);
+        const shown=all.filter(visibleAppearances);
+        const keepEmpty=unfiltered&&Number(child.expectedLinkedAppearanceCount||0)===0;
+        if(shown.length||keepEmpty) childModels.push({group:child,shown,keepEmpty});
+      }
+      if(!childModels.length) continue;
+
+      renderedAny=true;
+      const chapterLi=element('li',undefined,'chapter-group');
+      const chapterDetails=element('details',undefined,'chapter-details');
+      chapterDetails.open=Boolean(query)||chapter.sourceOrder===1;
+      const chapterSummary=element('summary');
+      const chapterCount=childModels.reduce((sum,item)=>sum+item.shown.filter(a=>a.wgLoc).length,0);
+      chapterSummary.append(element('span',chapter.publicTitle,'chapter-title'),element('span',String(chapterCount),'chapter-count'));
+      chapterDetails.append(chapterSummary);
+
+      for(const model of childModels){
+        const section=element('details',undefined,'sublist-details');
+        section.open=Boolean(query)||chapter.sourceOrder===1;
+        const summary=element('summary');
+        const linkedCount=model.shown.filter(a=>a.wgLoc).length;
+        const contextCount=model.shown.filter(a=>!a.wgLoc).length;
+        summary.append(
+          element('span',model.group.publicTitle,'sublist-title'),
+          element('span',`${linkedCount}${contextCount?'+1c':''}`,'sublist-count')
+        );
+        section.append(summary);
+        const list=element('ul',undefined,'appearance-list');
+
+        if(model.keepEmpty&&!model.shown.length){
+          const empty=element('li','Nicio entitate WG_LOC relevantă în corpusul actual.','source-empty');
+          list.append(empty);
+        }
+
+        for(const appearance of model.shown){
+          const li=element('li',undefined,appearance.contextual?'contextual-appearance':'appearance-item');
+          if(appearance.contextual){
+            const label=element('div',appearance.publicLabel||appearance.sourceName||'Mențiune contextuală','contextual-label');
+            const page=(appearance.sourcePrintedPages||[]).length?`p. ${appearance.sourcePrintedPages.join(', ')}`:`PDF p. ${(appearance.sourcePDFPages||[]).join(', ')}`;
+            label.append(element('small',`${page} · mențiune colectivă de sursă, neatribuită unui WG_LOC`));
+            li.append(label);
+          }else{
+            const record=recordById.get(appearance.wgLoc);
+            if(!record) continue;
+            const button=element('button');
+            button.type='button';
+            button.dataset.record=record.index;
+            button.dataset.wgLoc=appearance.wgLoc;
+            button.dataset.appearanceId=appearance.id;
+            const swatch=element('span','',`swatch layer-${record.category}`);
+            const name=element('span',record.name,'result-name');
+            const printed=(appearance.sourcePrintedPages||[]).length?`p. ${appearance.sourcePrintedPages.join(', ')}`:`PDF p. ${(appearance.sourcePDFPages||[]).join(', ')}`;
+            const sourceName=appearance.sourceName&&normalize(appearance.sourceName)!==normalize(record.name)?` · Weigand: ${appearance.sourceName}`:'';
+            button.append(
+              swatch,
+              document.createTextNode(' '),
+              name,
+              element('small',`${appearance.wgLoc} · ${printed}${sourceName}${record.collisionSize>1?' · poziție partajată':''}`)
+            );
+            button.addEventListener('click',()=>selectRecord(record,true,appearance));
+            li.append(button);
+          }
+          list.append(li);
+        }
+        section.append(list);
+        chapterDetails.append(section);
+      }
+      chapterLi.append(chapterDetails);
+      $('results').append(chapterLi);
+    }
+
+    if(!renderedAny) $('results').append(element('li',records.length?'Niciun rezultat pentru selecția curentă.':'Nu sunt încărcate date cartografice.','source-empty'));
+  }
+`,
+    'arbore Capitol/Sublistă'
   );
 
   // CC-0007 canonical marker palette calibrated for OSM Standard.
