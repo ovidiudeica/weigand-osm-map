@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="DRAFT / work in progress — atlas digital de cercetare: Gustav Weigand, Rumänen und Aromunen in Bulgarien (1907), corpus canonic WG_LOC și localizare OpenStreetMap · versiunea tehnică v1.5.">
-  <title>Gustav Weigand · Atlas digital OSM · DRAFT v1.5</title>
+  <meta name="description" content="DRAFT / work in progress — atlas digital de cercetare: Gustav Weigand, Rumänen und Aromunen in Bulgarien (1907), corpus canonic WG_LOC și localizare OpenStreetMap · versiunea tehnică v1.6 (CC-0007).">
+  <title>Gustav Weigand · Atlas digital OSM · DRAFT v1.6</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" onerror="this.onerror=null;this.href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'">
-  <link rel="stylesheet" href="styles.css?v=1.5.0">
+  <link rel="stylesheet" href="styles.css?v=1.6.0">
   <link rel="stylesheet" href="marker-cosmetic.css?v=1.5.0">
   <style>.detail-card p{overflow-wrap:anywhere}</style>
   <script>
@@ -30,7 +30,7 @@
         if(!window.L) throw lastError || new Error('Leaflet nu este disponibil.');
         await loadScript('transport-shim-v15.js?v=1.5.1');
         await loadScript('marker-cosmetic.js?v=1.5.0');
-        await loadScript('app-v15.js?v=1.5.0');
+        await loadScript('app-v16.js?v=1.6.0');
       };
       const start = () => boot().catch(error => {
         const status=document.getElementById('status');
@@ -51,7 +51,7 @@
       <button type="button" class="nav-button" id="about-open">Despre</button>
       <a href="#downloads">Date și download</a>
     </nav>
-    <div class="header-meta"><span class="edition">DRAFT · v1.5</span><span class="osm-badge">OSM</span></div>
+    <div class="header-meta"><span class="edition">DRAFT · v1.6</span><span class="osm-badge">OSM</span></div>
   </header>
 
   <main id="atlas" class="atlas-shell">
@@ -94,7 +94,7 @@
 
     <section class="map-stage" aria-label="Harta interactivă">
       <div id="map" aria-label="Hartă OpenStreetMap"></div>
-      <div class="map-title"><strong>Bulgaria și regiunile învecinate</strong><span>DRAFT de cercetare · Geometrii OSM / repere validate · v1.5</span></div>
+      <div class="map-title"><strong>Bulgaria și regiunile învecinate</strong><span>DRAFT de cercetare · Geometrii OSM / repere validate · v1.6</span></div>
       <div class="map-legend" aria-label="Legendă">
         <div><span class="legend-dot layer-0"></span>Români / Dacoromâni</div>
         <div><span class="legend-dot layer-1"></span>Aromâni</div>
