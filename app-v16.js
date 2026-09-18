@@ -120,12 +120,6 @@
     'card apariții editoriale'
   );
 
-  replaceExact(
-    "    highlight(record,appearance?.id||'');showDetail(record.properties,record);",
-    "    highlight(record,appearance?.id||'');showDetail(record.properties,record,appearance);",
-    'propagare context apariție'
-  );
-
   // CC-0007 chapter/sublist presentation tree. Canonical records remain unique;
   // the list is a source-order projection over those records.
   replaceExact(
@@ -141,7 +135,7 @@
   }`,
 `  function selectRecord(record,move=true,appearance=null){
     if(move){const target=record.displayLayer||record.layer;map.fitBounds(bounds(target),{maxZoom:14,padding:[35,35],animate:false});}
-    highlight(record,appearance?.id||'');showDetail(record.properties,record);
+    highlight(record,appearance?.id||'');showDetail(record.properties,record,appearance);
   }`,
     'selectare apariție editorială'
   );
