@@ -79,6 +79,53 @@
     'filtru sursă publică'
   );
 
+  // CC-0007 detail-context projection: one canonical entity may have several
+  // verified editorial appearances without becoming several canonical records.
+  replaceExact(
+    "function showDetail(properties,record=null){",
+    "function showDetail(properties,record=null,appearance=null){",
+    'semnătură detail cu apariție'
+  );
+
+  replaceExact(
+    "    const modern=field(properties,'ModernIdentification');",
+`    const editorial=(window.__WEIGAND_PUBLIC_ORDER__?.appearances||[]).filter(item=>item.wgLoc===field(properties,'id'));
+    if(editorial.length){
+      const order=window.__WEIGAND_PUBLIC_ORDER__;
+      const groups=new Map((order.groups||[]).map(group=>[group.id,group]));
+      const card=element('section',undefined,'detail-card editorial-context');
+      card.append(element('h3','Apare la Weigand în:'));
+      const list=element('ol',undefined,'editorial-appearances');
+      editorial
+        .slice()
+        .sort((a,b)=>a.chapterOrder-b.chapterOrder||a.sectionOrder-b.sectionOrder||a.appearanceOrder-b.appearanceOrder)
+        .forEach(item=>{
+          const group=groups.get(item.groupId);
+          const parent=group?.parentId?groups.get(group.parentId):null;
+          const page=(item.sourcePrintedPages||[]).length?`p. ${item.sourcePrintedPages.join(', ')}`:`PDF p. ${(item.sourcePDFPages||[]).join(', ')}`;
+          const text=[parent?.publicTitle,group?.publicTitle,page].filter(Boolean).join(' → ');
+          const li=element('li',text);
+          if(appearance?.id===item.id) li.classList.add('is-current-appearance');
+          li.dataset.appearanceId=item.id;
+          list.append(li);
+        });
+      card.append(list);
+      if(appearance){
+        const selected=element('p',`Context selectat: ${appearance.sourceName||field(properties,'name')} · ${(appearance.sourcePrintedPages||[]).length?'p. '+appearance.sourcePrintedPages.join(', '):'PDF p. '+(appearance.sourcePDFPages||[]).join(', ')}`,'selected-appearance-note');
+        card.append(selected);
+      }
+      body.append(card);
+    }
+    const modern=field(properties,'ModernIdentification');`,
+    'card apariții editoriale'
+  );
+
+  replaceExact(
+    "    highlight(record,appearance?.id||'');showDetail(record.properties,record);",
+    "    highlight(record,appearance?.id||'');showDetail(record.properties,record,appearance);",
+    'propagare context apariție'
+  );
+
   // CC-0007 chapter/sublist presentation tree. Canonical records remain unique;
   // the list is a source-order projection over those records.
   replaceExact(
