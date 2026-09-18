@@ -66,7 +66,7 @@
   replaceExact("color:'#2f8a4a'","color:'#8C5A08'",'paletă Toponime');
   replaceExact("color:'#fff',weight:2,fillColor:color","color:'#FFF8E7',weight:2,fillColor:color",'casing marker ivory');
 
-  (0, eval)(source + '\\n//# sourceURL=app-v16-runtime.js');
+  (0, eval)(source + '\n//# sourceURL=app-v16-runtime.js');
 })().catch(error => {
   const status=typeof document!=='undefined'?document.getElementById('status'):null;
   if(status){status.textContent='Interfața v1.6 nu a putut porni: '+error.message;status.dataset.state='error';}
