@@ -19,3 +19,11 @@
 .contextual-label small{display:block;margin-top:4px;color:#766958;font:500 10px/1.35 Inter,ui-sans-serif,system-ui,sans-serif}
 .source-empty{padding:8px 10px;color:#7a817d;font-size:11px;font-style:italic}
 @media(max-width:760px){.sublist-details{margin-left:7px}.chapter-details>summary{font-size:13px}.sublist-details>summary{font-size:11px}}
+
+
+/* CC-0007 — editorial appearance context in canonical detail */
+.editorial-context{border-left:3px solid #8f8574}
+.editorial-appearances{margin:0;padding-left:20px;color:#4f5a55;font-size:11px}
+.editorial-appearances li{margin:5px 0;padding:3px 5px;border-radius:4px}
+.editorial-appearances li.is-current-appearance{background:#e6ece7;color:var(--ink);font-weight:750}
+.selected-appearance-note{margin-top:9px!important;padding-top:8px;border-top:1px solid #ded7cb;color:#53625b;font-size:10px!important}
