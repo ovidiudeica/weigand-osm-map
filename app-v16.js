@@ -22,7 +22,7 @@
   if (publicOrder.linkedAppearanceCount !== 266 || linked.length !== 266) throw new Error('Public-order: număr de apariții legate invalid.');
   if (publicOrder.contextualSlotCount !== 1 || contextual.length !== 1) throw new Error('Public-order: număr de sloturi contextuale invalid.');
   if (appearanceIds.size !== (publicOrder.appearances || []).length) throw new Error('Public-order: ID de apariție duplicat.');
-  if (linked.some(item => !/^WG_LOC_\\d{4}$/.test(item.wgLoc))) throw new Error('Public-order: WG_LOC invalid.');
+  if (linked.some(item => !/^WG_LOC_\d{4}$/.test(item.wgLoc))) throw new Error('Public-order: WG_LOC invalid.');
   if (contextual[0]?.sourceName !== 'Vadin' || contextual[0]?.selectable !== false) throw new Error('Public-order: slotul contextual Vadin este invalid.');
 
   window.__WEIGAND_PUBLIC_ORDER__ = publicOrder;
