@@ -1,7 +1,8 @@
 # Gustav Weigand — Rumänen und Aromunen in Bulgarien — Atlas OSM — DRAFT
 
 **Statut editorial:** **DRAFT / work in progress**  
-**Versiune tehnică curentă:** v1.5  
+**Versiune tehnică curentă a interfeței:** **DRAFT v1.6**  
+**Versiune a datelor geografice publice:** **v1.5 (păstrate neschimbate)**  
 **Corpus canonic:** 236 entități `WG_LOC`  
 **Sursa istorică de adevăr:** Gustav Weigand, *Rumänen und Aromunen in Bulgarien* (1907).
 
@@ -9,7 +10,7 @@
 
 Repository-ul găzduiește ramura **OpenStreetMap / Website** a proiectului. Corpusul semantic este comun cu ramura Google My Maps; coordonatele și geometriile rămân specifice platformei, iar proveniența lor este documentată separat. Numerele de versiune, tagurile și eventualele GitHub Releases trebuie interpretate ca **snapshot-uri de cercetare**, nu ca declarații de finalitate editorială.
 
-## Starea tehnică v1.5
+## Starea tehnică a Website-ului DRAFT v1.6 și a datelor v1.5
 
 - corpus canonic activ: **236 WG_LOC**;
 - geometrii în setul complet: **236**, în **226 poziții distincte**;
@@ -29,17 +30,26 @@ Repository-ul găzduiește ramura **OpenStreetMap / Website** a proiectului. Cor
 
 ## Statut editorial și QA
 
-v1.5 este o **versiune tehnică verificată într-un proiect aflat încă în DRAFT**. Verificările tehnice includ sincronizarea corpusului, round-trip Google My Maps, reconstrucția payload-urilor, regresia numărătorilor și smoke-test-ul public GitHub Pages.
+Website-ul v1.6 este o **interfață tehnică verificată într-un proiect aflat încă în DRAFT**, folosind payload-urile geografice v1.5 protejate. Verificările tehnice includ sincronizarea corpusului, round-trip Google My Maps, reconstrucția payload-urilor, regresia numărătorilor și smoke-test-ul public GitHub Pages.
 
 Aceste verificări nu transformă proiectul într-o ediție finală și nu afirmă că toate cele 236 de localizări istorice sunt cunoscute cu precizie exactă. Identitatea istorică, identificarea modernă, geometriile native, reperele de referință, punctele de cercetare și excepțiile nemarcabile rămân diferențiate.
 
-## Runtime v1.5
+## Runtime DRAFT v1.6; transport și date geografice v1.5
 
-Runtime-ul curent folosește transportul versionat v1.5:
+Interfața activă este `index.html` → `app-v16.js` → `app.js` (runtime legacy protejat). `app-v16.js` validează proiecția editorială `data/weigand-public-order-v1.0.json` înainte de încărcarea atlasului. Ierarhia Explorer urmează **Capitol → Sublistă → apariție în ordinea Weigand**, cu **266 apariții documentate** pentru **236 entități canonice WG_LOC** și **un slot contextual Vadin (Cap. 4, p. 50), ne-selectabil și fără WG_LOC propriu**. Aparițiile multiple selectează întotdeauna aceeași entitate canonică. Căutarea, filtrarea și restrângerea la viewport nu reordonează aparițiile rămase.
 
-- `transport-shim-v15.js` reconstruiește deterministic fluxurile gzip v1.5 din fragmentele Base64 din `data/transport-v15/`;
-- `app-v15.js` pornește runtime-ul atlasului și aplică substituțiile validate pentru căile/count-urile v1.5 și clasificarea tematică pe `Group`;
-- payload-urile virtuale sunt `data/weigand-osm-v1.5.geojson.gz`, `data/weigand-osm-v1.5-strict.geojson.gz`, `data/weigand-osm-v1.5-no-geometry.csv.gz` și `data/weigand-osm-v1.5-semantic-236.csv.gz`.
+Paleta markerelor OSM Standard este: **Români/Dacoromâni — albastru `#1F5A8A`; Aromâni — roșu `#A63D32`; Români + Aromâni — violet `#6C4A8B`; Toponime — ocru `#8C5A08`**; contur ivory `#FFF8E7`. Harta publică utilizează numai basemap-ul OpenStreetMap Standard / OSM Carto, cu atribuire vizibilă.
+
+Datele descărcabile **nu au fost reconstruite pentru v1.6**:
+- `transport-shim-v15.js` reconstruiește determinist fluxurile gzip v1.5 din fragmentele Base64 din `data/transport-v15/`;
+- setul **Complet v1.5**: 236 geometrii / 226 poziții distincte;
+- setul **Strict v1.5**: 184 geometrii / 177 poziții distincte;
+- registrul **noGeometry v1.5**: 0; registrul **semantic v1.5**: 236;
+- payload-urile virtuale protejate sunt `data/weigand-osm-v1.5.geojson.gz`, `data/weigand-osm-v1.5-strict.geojson.gz`, `data/weigand-osm-v1.5-no-geometry.csv.gz` și `data/weigand-osm-v1.5-semantic-236.csv.gz`.
+
+**Limită editorială explicită:** corpusul canonic v0.17 a reconciliat metadate de secțiune și pagini pentru 15 WG_LOC, dar aceste corecții **nu au fost republicate** în descărcările Full/Strict/Semantic v1.5. Proiecția de ordine derivată v1.0 și interfața v1.6 nu echivalează cu un export nou al corpusului. O republicare a acelor metadate necesită controlul separat `DATA_PAYLOAD`.
+
+`PUBLICATION_MANIFEST.csv` rămâne manifestul autoritativ al payload-urilor geografice v1.5. `V16_RELEASE_MANIFEST.csv` înregistrează resursele UI v1.6 măsurate public și face trimitere explicită la fluxurile geografice v1.5. `V16_RELEASE_QA.md` păstrează dovezile și limitele gate-ului documentar. În interfața existentă, textul din dialogul „Despre atlas” care menționează v1.5 descrie payload-ul geografic moștenit; modificarea HTML-ului nu intră în CC-0008. Nu există încă autorizare de tag sau GitHub Release v1.6.
 
 Fișierele și runtime-urile versiunilor anterioare sunt păstrate în repository pentru trasabilitate și audit și nu reprezintă starea tehnică curentă a paginii.
 
