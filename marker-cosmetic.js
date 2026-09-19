@@ -83,13 +83,14 @@
   window.fetch = async (...args) => {
     const response = await originalFetch(...args);
     const url = String(args[0]?.url || args[0] || '');
-    if (/weigand-osm-v1\.(?:0|4|5)(?:-strict)?\.geojson\.gz(?:[?#].*)?$/.test(url)) {
+    if (/weigand-osm-v1\.(?:0|4|5|7)(?:-strict)?\.geojson\.gz(?:[?#].*)?$/.test(url)) {
       try {
         const clone = response.clone();
         const stream = clone.body.pipeThrough(new DecompressionStream('gzip'));
         const data = JSON.parse(await new Response(stream).text());
         labelsByPosition.clear();
         markerOrdinal.clear();
+        seenColors.clear();
         for (const feature of data.features || []) {
           if (feature?.geometry?.type !== 'Point') continue;
           const [lon, lat] = feature.geometry.coordinates || [];
@@ -110,7 +111,7 @@
     const key = positionKey(latlng);
 
     const colors = seenColors.get(key) || [];
-    colors.push(options.fillColor || options.color || '#286eaf');
+    colors.push(options.fillColor || options.color || '#1683FF');
     seenColors.set(key, colors);
 
     const layer = originalCircleMarker.call(this, latlng, options);
@@ -161,7 +162,7 @@
         const count = Math.max(2, Number(countMatch?.[1] || 2));
         const colors = (seenColors.get(key) || []).slice(-count);
         const labels = (labelsByPosition.get(key) || []).slice(0, count);
-        const back = colors[0] || '#286eaf';
+        const back = colors[0] || '#1683FF';
         const front = colors[1] || back;
 
         let html = iconOptions.html.replace(
