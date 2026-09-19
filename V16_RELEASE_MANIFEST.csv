@@ -1,0 +1,9 @@
+category,path,version,bytes,sha256,source_or_verification,notes
+ui_asset,index.html,v1.6,8552,e326560d7ce9e58e14b8d2b7db4289d2e3db813c2c86c34767dd1d3149e5e0ef,PUBLIC_HTTP_SHA256_2026-09-19,DRAFT v1.6 page; CC-0007 verified
+ui_asset,app-v16.js,v1.6,17035,9c8f9e1b11e0d36182cadcc535751f22a31934b71c07703bf3af7ee86183f024,PUBLIC_HTTP_SHA256_2026-09-19,v1.6 guarded runtime bootstrap
+ui_asset,styles.css,v1.6,14070,2bc9fd2cbfe8286e6a748c925ee8addedbc65b1d51e0b1de18d66844556fa8b9,PUBLIC_HTTP_SHA256_2026-09-19,Canonical palette and chapter styling
+editorial_order,data/weigand-public-order-v1.0.json,v1.0-for-v1.6,238463,c1527f0189a5da82d25248f3e01cc6911b22e494e95c148b627a6adf15b14cb9,PUBLIC_HTTP_SHA256_2026-09-19,Derived 236 entities; 266 linked appearances; 1 contextual Vadin
+inherited_v15_virtual_payload,data/weigand-osm-v1.5.geojson.gz,v1.5,33275,ff78e8c5c1bcb40bee6c09f8da36131588dc54b12d9c97af11a7c59fa00c9e55,PUBLICATION_MANIFEST.csv:gzip_sha256,Full 236 geometries 226 positions; virtual gzip via transport-v15; NOT rebuilt from canonical v0.17
+inherited_v15_virtual_payload,data/weigand-osm-v1.5-strict.geojson.gz,v1.5,26041,74cbb3e0f8fbff51772ae50e78af2009cf8adce81e72b88e4417f287626375b0,PUBLICATION_MANIFEST.csv:gzip_sha256,Strict 184 geometries 177 positions; virtual gzip via transport-v15; NOT rebuilt from canonical v0.17
+inherited_v15_virtual_payload,data/weigand-osm-v1.5-no-geometry.csv.gz,v1.5,173,87b00c688f6b8aab5563f311da7233be38054b1440b0436e636e2011214b43bf,PUBLICATION_MANIFEST.csv:gzip_sha256,noGeometry 0; virtual gzip via transport-v15; NOT rebuilt from canonical v0.17
+inherited_v15_virtual_payload,data/weigand-osm-v1.5-semantic-236.csv.gz,v1.5,23008,9cf3c635568e00f014fd863f0ec30000006b72d4b949e35405d4f2d25b3cff9c,PUBLICATION_MANIFEST.csv:gzip_sha256,Semantic 236 entries; virtual gzip via transport-v15; NOT rebuilt from canonical v0.17
