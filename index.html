@@ -30,7 +30,7 @@
         if(!window.L) throw lastError || new Error('Leaflet nu este disponibil.');
         await loadScript('transport-shim-v17.js?v=1.7.0');
         await loadScript('marker-cosmetic.js?v=1.5.0');
-        await loadScript('app-v16.js?v=1.6.0');
+        await loadScript('app-v16.js?v=1.7.0');
       };
       const start = () => boot().catch(error => {
         const status=document.getElementById('status');
