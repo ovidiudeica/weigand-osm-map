@@ -68,11 +68,11 @@
   replaceExact("  function selectRecord(record,move=true,appearance=null){\n    if(move)","  function selectRecord(record,move=true,appearance=null){\n    window.__WEIGAND_SELECTED_CONTEXT__={wgLoc:field(record.properties,'id'),appearanceId:appearance?.id||''};\n    if(move)","selecție persistentă");
   replaceExact("    if(!renderedAny) $('results').append(element('li',records.length?'Niciun rezultat pentru selecția curentă.':'Nu sunt încărcate date cartografice.','source-empty'));","    if(!renderedAny) $('results').append(element('li',records.length?'Niciun rezultat pentru selecția curentă.':'Nu sunt încărcate date cartografice.','source-empty'));\n    const active=window.__WEIGAND_SELECTED_CONTEXT__;\n    if(active) document.querySelectorAll('#results button[data-wg-loc]').forEach(button=>button.setAttribute('aria-current',String(button.dataset.wgLoc===active.wgLoc&&(!active.appearanceId||button.dataset.appearanceId===active.appearanceId))));","rehighlight după re-render");
 
-  replaceExact("color:'#286eaf'","color:'#1F5A8A'",'paletă Români / Dacoromâni');
-  replaceExact("color:'#cf4d9b'","color:'#A63D32'",'paletă Aromâni');
-  replaceExact("color:'#7b4aad'","color:'#6C4A8B'",'paletă mixt');
-  replaceExact("color:'#2f8a4a'","color:'#8C5A08'",'paletă Toponime');
-  replaceExact("color:'#fff',weight:2,fillColor:color","color:'#FFF8E7',weight:2,fillColor:color",'casing marker ivory');
+  replaceExact("color:'#286eaf'","color:'#1683FF'",'paletă Români / Dacoromâni');
+  replaceExact("color:'#cf4d9b'","color:'#FF3347'",'paletă Aromâni');
+  replaceExact("color:'#7b4aad'","color:'#944DFF'",'paletă mixt');
+  replaceExact("color:'#2f8a4a'","color:'#00C853'",'paletă Toponime');
+  replaceExact("color:'#fff',weight:2,fillColor:color","color:'#FFF8E7',weight:2,className:'wg-thematic-marker',fillColor:color",'casing marker ivory');
 
   (0, eval)(source + '\n//# sourceURL=app-v16-runtime.js');
 })().catch(error => {
