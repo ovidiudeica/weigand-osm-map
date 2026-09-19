@@ -1,0 +1,101 @@
+{
+  "verdict": "PASS_LOCAL_BUILD_AND_TRANSPORT_ROUNDTRIP__HOLD_GITHUB_INTEGRATION",
+  "canonical": "v0.18 SHA256 9a81f0c13c248405658ef420ce49b8cd3958f13fe5186e1e67f9981d6d806c12",
+  "source_payload": "frozen v1.5 GitHub tag v1.6, reconstructed from verified Drive raw backup",
+  "counts": {
+    "semantic": 236,
+    "full": 236,
+    "strict": 184,
+    "fullDistinctPositions": 226,
+    "strictDistinctPositions": 177,
+    "fullLayers": {
+      "Comunitati / Localitati": 164,
+      "Toponime": 72
+    },
+    "strictLayers": {
+      "Comunitati / Localitati": 135,
+      "Toponime": 49
+    }
+  },
+  "diffs": {
+    "semantic": 39,
+    "full": 31,
+    "strict": 31
+  },
+  "identities": {
+    "semantic": 236,
+    "full": 236,
+    "strict": 184
+  },
+  "strictIdenticalToFull": true,
+  "musat": [
+    24.0000772,
+    43.1241831
+  ],
+  "petrus": [
+    23.2305031,
+    42.4790338
+  ],
+  "new_manifest": [
+    {
+      "payload": "full",
+      "virtual_file": "data/weigand-osm-v1.7.geojson.gz",
+      "raw_bytes": 295154,
+      "raw_sha256": "1b567bc91d13737b0292227d43c4d1cfcca7c67fb4d1d02fe0b4539483ddeedd",
+      "gzip_bytes": 33348,
+      "gzip_sha256": "ef8330c56c75a72f148998eba90693e530749230c77630b52951590293fc7760",
+      "records": 236,
+      "distinct_positions": 226,
+      "base64_chunks": 4,
+      "status": "CANDIDATE_NOT_PUBLISHED",
+      "canonical_source": "v0.18"
+    },
+    {
+      "payload": "strict",
+      "virtual_file": "data/weigand-osm-v1.7-strict.geojson.gz",
+      "raw_bytes": 230949,
+      "raw_sha256": "aff99966ac168723a3862bf1c36f02085f7b5094491c2e1c5c5c1cf0b861329f",
+      "gzip_bytes": 26044,
+      "gzip_sha256": "7060cc321d3ed68240f49fd19cdc61f208bf36ba705e10fe81b5abfefb26140f",
+      "records": 184,
+      "distinct_positions": 177,
+      "base64_chunks": 3,
+      "status": "CANDIDATE_NOT_PUBLISHED",
+      "canonical_source": "v0.18"
+    },
+    {
+      "payload": "semantic",
+      "virtual_file": "data/weigand-osm-v1.7-semantic-236.csv.gz",
+      "raw_bytes": 144896,
+      "raw_sha256": "97196583b2118f2bf18ff8146997b3c86b84d0dcd3a14279e93fa0ebfcb41932",
+      "gzip_bytes": 23096,
+      "gzip_sha256": "bef977894d94a2c0504dc9bd3aad1d69a0e8a8ff81f05956881832ce855f781e",
+      "records": 236,
+      "distinct_positions": "",
+      "base64_chunks": 3,
+      "status": "CANDIDATE_NOT_PUBLISHED",
+      "canonical_source": "v0.18"
+    },
+    {
+      "payload": "noGeometry",
+      "virtual_file": "data/weigand-osm-v1.5-no-geometry.csv.gz",
+      "raw_bytes": 235,
+      "raw_sha256": "1593d0709936393867e87ef2daa2bafb8f809471ae748be8cda9bb3f47a7c212",
+      "gzip_bytes": 173,
+      "gzip_sha256": "87b00c688f6b8aab5563f311da7233be38054b1440b0436e636e2011214b43bf",
+      "records": 0,
+      "distinct_positions": "",
+      "base64_chunks": 1,
+      "status": "LEGACY_V15_UNCHANGED",
+      "canonical_source": "v1.5"
+    }
+  ],
+  "notes": [
+    "new version only; no GitHub commit/PR/merge/release",
+    "baseline root name labels are inherited unchanged and may be stale; editing is out-of-scope",
+    "legacy noGeometry unchanged, not included as new gzip",
+    "UI/browser smoke not performed; separate GitHub integration QA required",
+    "My Maps live was not modified",
+    "original public order v1.6 266 linked appearances + one contextual remains unchanged"
+  ]
+}

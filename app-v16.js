@@ -39,14 +39,14 @@
   };
 
   replaceExact("function layerIndex(properties){\n  const value = normalize(field(properties,'layer'));\n  return LAYERS.findIndex(layer => layer.aliases.includes(value));\n}","function layerIndex(properties){\n  const values=[field(properties,'Group'),field(properties,'layer')].map(normalize).filter(Boolean);\n  for(const value of values){\n    const i=LAYERS.findIndex(layer=>layer.aliases.includes(value));\n    if(i>=0) return i;\n  }\n  return -1;\n}",'clasificare tematică Group/Layer');
-  replaceExact('data/weigand-osm-v1.0.geojson.gz','data/weigand-osm-v1.5.geojson.gz','URL full');
-  replaceExact('weigand-osm-v1.0.geojson','weigand-osm-v1.5.geojson','filename full');
-  replaceExact('data/weigand-osm-v1.0-strict.geojson.gz','data/weigand-osm-v1.5-strict.geojson.gz','URL strict');
-  replaceExact('weigand-osm-v1.0-strict.geojson','weigand-osm-v1.5-strict.geojson','filename strict');
+  replaceExact('data/weigand-osm-v1.0.geojson.gz','data/weigand-osm-v1.7.geojson.gz','URL full');
+  replaceExact('weigand-osm-v1.0.geojson','weigand-osm-v1.7.geojson','filename full');
+  replaceExact('data/weigand-osm-v1.0-strict.geojson.gz','data/weigand-osm-v1.7-strict.geojson.gz','URL strict');
+  replaceExact('weigand-osm-v1.0-strict.geojson','weigand-osm-v1.7-strict.geojson','filename strict');
   replaceExact('data/weigand-osm-v1.0-no-geometry.csv.gz','data/weigand-osm-v1.5-no-geometry.csv.gz','URL noGeometry');
   replaceExact('weigand-osm-v1.0-no-geometry.csv','weigand-osm-v1.5-no-geometry.csv','filename noGeometry');
-  replaceExact('data/weigand-osm-v1.0-semantic-225.csv.gz','data/weigand-osm-v1.5-semantic-236.csv.gz','URL semantic');
-  replaceExact('weigand-osm-v1.0-semantic-225.csv','weigand-osm-v1.5-semantic-236.csv','filename semantic');
+  replaceExact('data/weigand-osm-v1.0-semantic-225.csv.gz','data/weigand-osm-v1.7-semantic-236.csv.gz','URL semantic');
+  replaceExact('weigand-osm-v1.0-semantic-225.csv','weigand-osm-v1.7-semantic-236.csv','filename semantic');
   replaceExact('Browserul nu suportă decomprimarea gzip necesară pentru ediția v1.0.','Browserul nu suportă decomprimarea gzip necesară pentru ediția v1.6.','mesaj ediție');
   replaceExact('expected:163,expectedPositions:161','expected:236,expectedPositions:226','număr full');
   replaceExact('expected:157,expectedPositions:156','expected:184,expectedPositions:177','număr strict');

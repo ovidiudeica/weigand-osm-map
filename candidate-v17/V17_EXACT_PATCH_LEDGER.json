@@ -1,0 +1,614 @@
+{
+  "semantic": [
+    {
+      "id": "WG_LOC_0003",
+      "field": "WeigandPages",
+      "before": "9, 57",
+      "after": "9, 51, 57"
+    },
+    {
+      "id": "WG_LOC_0003",
+      "field": "PDFPages",
+      "before": "31, 85",
+      "after": "31, 79, 85"
+    },
+    {
+      "id": "WG_LOC_0004",
+      "field": "WeigandPages",
+      "before": "10, 57",
+      "after": "10, 51, 57"
+    },
+    {
+      "id": "WG_LOC_0004",
+      "field": "PDFPages",
+      "before": "32, 85",
+      "after": "32, 79, 85"
+    },
+    {
+      "id": "WG_LOC_0006",
+      "field": "WeigandPages",
+      "before": "15, 57",
+      "after": "15, 51, 57"
+    },
+    {
+      "id": "WG_LOC_0006",
+      "field": "PDFPages",
+      "before": "37, 85",
+      "after": "37, 79, 85"
+    },
+    {
+      "id": "WG_LOC_0020",
+      "field": "WeigandSection",
+      "before": "Bezirk Widdin",
+      "after": "Bezirk Widdin | Liste der untersuchten Gemeinden"
+    },
+    {
+      "id": "WG_LOC_0020",
+      "field": "WeigandPages",
+      "before": "3, 32",
+      "after": "3, 32, 101"
+    },
+    {
+      "id": "WG_LOC_0020",
+      "field": "PDFPages",
+      "before": "25, 56",
+      "after": "25, 56, 135"
+    },
+    {
+      "id": "WG_LOC_0030",
+      "field": "WeigandSection",
+      "before": "Bezirk Widdin",
+      "after": "Bezirk Widdin | Liste der untersuchten Gemeinden"
+    },
+    {
+      "id": "WG_LOC_0030",
+      "field": "WeigandPages",
+      "before": "3, 32",
+      "after": "3, 32, 51, 101"
+    },
+    {
+      "id": "WG_LOC_0030",
+      "field": "PDFPages",
+      "before": "25, 56",
+      "after": "25, 56, 79, 135"
+    },
+    {
+      "id": "WG_LOC_0065",
+      "field": "WeigandPages",
+      "before": "26, 35, 58",
+      "after": "26, 35, 51, 58"
+    },
+    {
+      "id": "WG_LOC_0065",
+      "field": "PDFPages",
+      "before": "50, 61, 86",
+      "after": "50, 61, 79, 86"
+    },
+    {
+      "id": "WG_LOC_0066",
+      "field": "WeigandPages",
+      "before": "25, 35, 58",
+      "after": "25, 35, 50, 58"
+    },
+    {
+      "id": "WG_LOC_0066",
+      "field": "PDFPages",
+      "before": "49, 61, 86",
+      "after": "49, 61, 78, 86"
+    },
+    {
+      "id": "WG_LOC_0070",
+      "field": "WeigandSection",
+      "before": "Bezirk Vratza",
+      "after": "Bezirk Vratza | Liste der untersuchten Gemeinden"
+    },
+    {
+      "id": "WG_LOC_0070",
+      "field": "WeigandPages",
+      "before": "35",
+      "after": "35, 101"
+    },
+    {
+      "id": "WG_LOC_0070",
+      "field": "PDFPages",
+      "before": "61",
+      "after": "61, 135"
+    },
+    {
+      "id": "WG_LOC_0227",
+      "field": "WeigandSection",
+      "before": "Bezirk Vratza",
+      "after": "Bezirk Vratza | Liste der untersuchten Gemeinden"
+    },
+    {
+      "id": "WG_LOC_0227",
+      "field": "WeigandPages",
+      "before": "36",
+      "after": "36, 101"
+    },
+    {
+      "id": "WG_LOC_0227",
+      "field": "PDFPages",
+      "before": "62",
+      "after": "62, 135"
+    },
+    {
+      "id": "WG_LOC_0085",
+      "field": "WeigandSection",
+      "before": "Bezirk Plevna – Kreis Nikopol | Verbreitung und Statistik der Aromunen",
+      "after": "Bezirk Plevna – Kreis Nikopol | Verbreitung und Statistik der Aromunen | Liste der untersuchten Gemeinden"
+    },
+    {
+      "id": "WG_LOC_0085",
+      "field": "WeigandPages",
+      "before": "25, 37, 58",
+      "after": "25, 37, 50, 58, 101"
+    },
+    {
+      "id": "WG_LOC_0085",
+      "field": "PDFPages",
+      "before": "49, 63, 86",
+      "after": "49, 63, 78, 86, 135"
+    },
+    {
+      "id": "WG_LOC_0091",
+      "field": "WeigandSection",
+      "before": "Bezirk Plevna – Kreis Nikopol | Bezirk Rustschuk",
+      "after": "Bezirk Plevna – Kreis Nikopol | Bezirk Rustschuk | Liste der untersuchten Gemeinden"
+    },
+    {
+      "id": "WG_LOC_0091",
+      "field": "WeigandPages",
+      "before": "25, 37, 38",
+      "after": "25, 37, 38, 101"
+    },
+    {
+      "id": "WG_LOC_0091",
+      "field": "PDFPages",
+      "before": "49, 63, 64",
+      "after": "49, 63, 64, 135"
+    },
+    {
+      "id": "WG_LOC_0094",
+      "field": "WeigandSection",
+      "before": "Bezirk Rustschuk",
+      "after": "Bezirk Rustschuk | Liste der untersuchten Gemeinden"
+    },
+    {
+      "id": "WG_LOC_0094",
+      "field": "WeigandPages",
+      "before": "28, 38",
+      "after": "28, 38, 101"
+    },
+    {
+      "id": "WG_LOC_0094",
+      "field": "PDFPages",
+      "before": "52, 64",
+      "after": "52, 64, 135"
+    },
+    {
+      "id": "WG_LOC_0097",
+      "field": "WeigandSection",
+      "before": "Bezirk Rustschuk",
+      "after": "Bezirk Rustschuk | Liste der untersuchten Gemeinden"
+    },
+    {
+      "id": "WG_LOC_0097",
+      "field": "WeigandPages",
+      "before": "28, 38",
+      "after": "28, 38, 101"
+    },
+    {
+      "id": "WG_LOC_0097",
+      "field": "PDFPages",
+      "before": "52, 64",
+      "after": "52, 64, 135"
+    },
+    {
+      "id": "WG_LOC_0215",
+      "field": "WeigandPages",
+      "before": "8, 29, 31, 36, 58",
+      "after": "8, 29, 31, 36, 51, 58"
+    },
+    {
+      "id": "WG_LOC_0215",
+      "field": "PDFPages",
+      "before": "30, 53, 55, 62, 86",
+      "after": "30, 53, 55, 62, 79, 86"
+    },
+    {
+      "id": "WG_LOC_0222",
+      "field": "WeigandPages",
+      "before": "31, 57, 58",
+      "after": "31, 51, 57, 58"
+    },
+    {
+      "id": "WG_LOC_0222",
+      "field": "PDFPages",
+      "before": "55, 85, 86",
+      "after": "55, 79, 85, 86"
+    },
+    {
+      "id": "WG_LOC_0125",
+      "field": "Aliases",
+      "before": "Musat; Mushat; Мушат; Kirilovo/Кирилово (to 1947); Stoyanovo/Стояново (to 1966); Stoianovtsi/Стояновци",
+      "after": "Musat; Mushat; Мушат; Kirilovo/Кирилово; Stoyanovo/Стояново; Stoianovtsi/Стояновци"
+    }
+  ],
+  "full": [
+    {
+      "id": "WG_LOC_0003",
+      "field": "WeigandPages",
+      "before": "9, 57",
+      "after": "9, 51, 57"
+    },
+    {
+      "id": "WG_LOC_0003",
+      "field": "PDFPages",
+      "before": "31, 85",
+      "after": "31, 79, 85"
+    },
+    {
+      "id": "WG_LOC_0004",
+      "field": "WeigandPages",
+      "before": "10, 57",
+      "after": "10, 51, 57"
+    },
+    {
+      "id": "WG_LOC_0004",
+      "field": "PDFPages",
+      "before": "32, 85",
+      "after": "32, 79, 85"
+    },
+    {
+      "id": "WG_LOC_0006",
+      "field": "WeigandPages",
+      "before": "15, 57",
+      "after": "15, 51, 57"
+    },
+    {
+      "id": "WG_LOC_0006",
+      "field": "PDFPages",
+      "before": "37, 85",
+      "after": "37, 79, 85"
+    },
+    {
+      "id": "WG_LOC_0020",
+      "field": "WeigandPages",
+      "before": "3, 32",
+      "after": "3, 32, 101"
+    },
+    {
+      "id": "WG_LOC_0020",
+      "field": "PDFPages",
+      "before": "25, 56",
+      "after": "25, 56, 135"
+    },
+    {
+      "id": "WG_LOC_0030",
+      "field": "WeigandPages",
+      "before": "3, 32",
+      "after": "3, 32, 51, 101"
+    },
+    {
+      "id": "WG_LOC_0030",
+      "field": "PDFPages",
+      "before": "25, 56",
+      "after": "25, 56, 79, 135"
+    },
+    {
+      "id": "WG_LOC_0065",
+      "field": "WeigandPages",
+      "before": "26, 35, 58",
+      "after": "26, 35, 51, 58"
+    },
+    {
+      "id": "WG_LOC_0065",
+      "field": "PDFPages",
+      "before": "50, 61, 86",
+      "after": "50, 61, 79, 86"
+    },
+    {
+      "id": "WG_LOC_0066",
+      "field": "WeigandPages",
+      "before": "25, 35, 58",
+      "after": "25, 35, 50, 58"
+    },
+    {
+      "id": "WG_LOC_0066",
+      "field": "PDFPages",
+      "before": "49, 61, 86",
+      "after": "49, 61, 78, 86"
+    },
+    {
+      "id": "WG_LOC_0070",
+      "field": "WeigandPages",
+      "before": "35",
+      "after": "35, 101"
+    },
+    {
+      "id": "WG_LOC_0070",
+      "field": "PDFPages",
+      "before": "61",
+      "after": "61, 135"
+    },
+    {
+      "id": "WG_LOC_0085",
+      "field": "WeigandPages",
+      "before": "25, 37, 58",
+      "after": "25, 37, 50, 58, 101"
+    },
+    {
+      "id": "WG_LOC_0085",
+      "field": "PDFPages",
+      "before": "49, 63, 86",
+      "after": "49, 63, 78, 86, 135"
+    },
+    {
+      "id": "WG_LOC_0091",
+      "field": "WeigandPages",
+      "before": "25, 37, 38",
+      "after": "25, 37, 38, 101"
+    },
+    {
+      "id": "WG_LOC_0091",
+      "field": "PDFPages",
+      "before": "49, 63, 64",
+      "after": "49, 63, 64, 135"
+    },
+    {
+      "id": "WG_LOC_0094",
+      "field": "WeigandPages",
+      "before": "28, 38",
+      "after": "28, 38, 101"
+    },
+    {
+      "id": "WG_LOC_0094",
+      "field": "PDFPages",
+      "before": "52, 64",
+      "after": "52, 64, 135"
+    },
+    {
+      "id": "WG_LOC_0097",
+      "field": "WeigandPages",
+      "before": "28, 38",
+      "after": "28, 38, 101"
+    },
+    {
+      "id": "WG_LOC_0097",
+      "field": "PDFPages",
+      "before": "52, 64",
+      "after": "52, 64, 135"
+    },
+    {
+      "id": "WG_LOC_0125",
+      "field": "Aliases",
+      "before": "Musat; Mushat; Мушат; Kirilovo/Кирилово (to 1947); Stoyanovo/Стояново (to 1966); Stoianovtsi/Стояновци",
+      "after": "Musat; Mushat; Мушат; Kirilovo/Кирилово; Stoyanovo/Стояново; Stoianovtsi/Стояновци"
+    },
+    {
+      "id": "WG_LOC_0215",
+      "field": "WeigandPages",
+      "before": "8, 29, 31, 36, 58",
+      "after": "8, 29, 31, 36, 51, 58"
+    },
+    {
+      "id": "WG_LOC_0215",
+      "field": "PDFPages",
+      "before": "30, 53, 55, 62, 86",
+      "after": "30, 53, 55, 62, 79, 86"
+    },
+    {
+      "id": "WG_LOC_0222",
+      "field": "WeigandPages",
+      "before": "31, 57, 58",
+      "after": "31, 51, 57, 58"
+    },
+    {
+      "id": "WG_LOC_0222",
+      "field": "PDFPages",
+      "before": "55, 85, 86",
+      "after": "55, 79, 85, 86"
+    },
+    {
+      "id": "WG_LOC_0227",
+      "field": "WeigandPages",
+      "before": "36",
+      "after": "36, 101"
+    },
+    {
+      "id": "WG_LOC_0227",
+      "field": "PDFPages",
+      "before": "62",
+      "after": "62, 135"
+    }
+  ],
+  "strict": [
+    {
+      "id": "WG_LOC_0003",
+      "field": "WeigandPages",
+      "before": "9, 57",
+      "after": "9, 51, 57"
+    },
+    {
+      "id": "WG_LOC_0003",
+      "field": "PDFPages",
+      "before": "31, 85",
+      "after": "31, 79, 85"
+    },
+    {
+      "id": "WG_LOC_0004",
+      "field": "WeigandPages",
+      "before": "10, 57",
+      "after": "10, 51, 57"
+    },
+    {
+      "id": "WG_LOC_0004",
+      "field": "PDFPages",
+      "before": "32, 85",
+      "after": "32, 79, 85"
+    },
+    {
+      "id": "WG_LOC_0006",
+      "field": "WeigandPages",
+      "before": "15, 57",
+      "after": "15, 51, 57"
+    },
+    {
+      "id": "WG_LOC_0006",
+      "field": "PDFPages",
+      "before": "37, 85",
+      "after": "37, 79, 85"
+    },
+    {
+      "id": "WG_LOC_0020",
+      "field": "WeigandPages",
+      "before": "3, 32",
+      "after": "3, 32, 101"
+    },
+    {
+      "id": "WG_LOC_0020",
+      "field": "PDFPages",
+      "before": "25, 56",
+      "after": "25, 56, 135"
+    },
+    {
+      "id": "WG_LOC_0030",
+      "field": "WeigandPages",
+      "before": "3, 32",
+      "after": "3, 32, 51, 101"
+    },
+    {
+      "id": "WG_LOC_0030",
+      "field": "PDFPages",
+      "before": "25, 56",
+      "after": "25, 56, 79, 135"
+    },
+    {
+      "id": "WG_LOC_0065",
+      "field": "WeigandPages",
+      "before": "26, 35, 58",
+      "after": "26, 35, 51, 58"
+    },
+    {
+      "id": "WG_LOC_0065",
+      "field": "PDFPages",
+      "before": "50, 61, 86",
+      "after": "50, 61, 79, 86"
+    },
+    {
+      "id": "WG_LOC_0066",
+      "field": "WeigandPages",
+      "before": "25, 35, 58",
+      "after": "25, 35, 50, 58"
+    },
+    {
+      "id": "WG_LOC_0066",
+      "field": "PDFPages",
+      "before": "49, 61, 86",
+      "after": "49, 61, 78, 86"
+    },
+    {
+      "id": "WG_LOC_0070",
+      "field": "WeigandPages",
+      "before": "35",
+      "after": "35, 101"
+    },
+    {
+      "id": "WG_LOC_0070",
+      "field": "PDFPages",
+      "before": "61",
+      "after": "61, 135"
+    },
+    {
+      "id": "WG_LOC_0085",
+      "field": "WeigandPages",
+      "before": "25, 37, 58",
+      "after": "25, 37, 50, 58, 101"
+    },
+    {
+      "id": "WG_LOC_0085",
+      "field": "PDFPages",
+      "before": "49, 63, 86",
+      "after": "49, 63, 78, 86, 135"
+    },
+    {
+      "id": "WG_LOC_0091",
+      "field": "WeigandPages",
+      "before": "25, 37, 38",
+      "after": "25, 37, 38, 101"
+    },
+    {
+      "id": "WG_LOC_0091",
+      "field": "PDFPages",
+      "before": "49, 63, 64",
+      "after": "49, 63, 64, 135"
+    },
+    {
+      "id": "WG_LOC_0094",
+      "field": "WeigandPages",
+      "before": "28, 38",
+      "after": "28, 38, 101"
+    },
+    {
+      "id": "WG_LOC_0094",
+      "field": "PDFPages",
+      "before": "52, 64",
+      "after": "52, 64, 135"
+    },
+    {
+      "id": "WG_LOC_0097",
+      "field": "WeigandPages",
+      "before": "28, 38",
+      "after": "28, 38, 101"
+    },
+    {
+      "id": "WG_LOC_0097",
+      "field": "PDFPages",
+      "before": "52, 64",
+      "after": "52, 64, 135"
+    },
+    {
+      "id": "WG_LOC_0125",
+      "field": "Aliases",
+      "before": "Musat; Mushat; Мушат; Kirilovo/Кирилово (to 1947); Stoyanovo/Стояново (to 1966); Stoianovtsi/Стояновци",
+      "after": "Musat; Mushat; Мушат; Kirilovo/Кирилово; Stoyanovo/Стояново; Stoianovtsi/Стояновци"
+    },
+    {
+      "id": "WG_LOC_0215",
+      "field": "WeigandPages",
+      "before": "8, 29, 31, 36, 58",
+      "after": "8, 29, 31, 36, 51, 58"
+    },
+    {
+      "id": "WG_LOC_0215",
+      "field": "PDFPages",
+      "before": "30, 53, 55, 62, 86",
+      "after": "30, 53, 55, 62, 79, 86"
+    },
+    {
+      "id": "WG_LOC_0222",
+      "field": "WeigandPages",
+      "before": "31, 57, 58",
+      "after": "31, 51, 57, 58"
+    },
+    {
+      "id": "WG_LOC_0222",
+      "field": "PDFPages",
+      "before": "55, 85, 86",
+      "after": "55, 79, 85, 86"
+    },
+    {
+      "id": "WG_LOC_0227",
+      "field": "WeigandPages",
+      "before": "36",
+      "after": "36, 101"
+    },
+    {
+      "id": "WG_LOC_0227",
+      "field": "PDFPages",
+      "before": "62",
+      "after": "62, 135"
+    }
+  ]
+}

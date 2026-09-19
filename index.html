@@ -28,7 +28,7 @@
           try{await loadScript(src);if(window.L)break;}catch(error){lastError=error;}
         }
         if(!window.L) throw lastError || new Error('Leaflet nu este disponibil.');
-        await loadScript('transport-shim-v15.js?v=1.5.1');
+        await loadScript('transport-shim-v17.js?v=1.7.0');
         await loadScript('marker-cosmetic.js?v=1.5.0');
         await loadScript('app-v16.js?v=1.6.0');
       };
@@ -122,15 +122,15 @@
 
   <dialog id="missing-dialog" aria-labelledby="dialog-title">
     <form method="dialog"><button class="close" aria-label="Închide dialogul">Închide ×</button></form>
-    <p class="kicker">CORPUS CANONIC</p><h2 id="dialog-title">0 entități fără geometrie în starea tehnică v1.5</h2>
-    <p>Toate cele 236 de entități canonice au geometrie publicabilă în starea tehnică verificată v1.5. WG_LOC_0236 Kostel este localizat prin obiectul OSM nativ verificat; proveniența și limitele interpretative rămân documentate separat.</p>
+    <p class="kicker">CORPUS CANONIC</p><h2 id="dialog-title">0 entități fără geometrie în datele candidate v1.7</h2>
+    <p>Toate cele 236 de entități canonice au geometrie în datele candidate v1.7 (CC-0012, nepublicate). WG_LOC_0236 Kostel este localizat prin obiectul OSM nativ verificat; proveniența și limitele interpretative rămân documentate separat.</p>
     <div id="missing-content" role="status"></div>
   </dialog>
 
   <dialog id="about-dialog" aria-labelledby="about-title">
     <form method="dialog"><button class="close" aria-label="Închide dialogul">Închide ×</button></form>
     <p class="kicker">DESPRE ATLAS</p><h2 id="about-title">Sursa istorică și localizarea modernă</h2>
-    <p><strong>Statut editorial: DRAFT / work in progress.</strong> Acest atlas este un instrument public de cercetare aflat în lucru, supus revizuirii; versiunea tehnică v1.5 nu reprezintă o ediție digitală finală.</p>
+    <p><strong>Statut editorial: DRAFT / work in progress.</strong> Acest atlas este un instrument public de cercetare aflat în lucru, supus revizuirii; datele geografice candidate v1.7 nu reprezintă o ediție digitală finală sau un release publicat.</p>
     <p>Atlasul pornește de la Gustav Weigand, <cite>Rumänen und Aromunen in Bulgarien</cite> (1907). Identitățile istorice, descrierile și citările sunt păstrate separat de geometria modernă.</p>
     <p>Geometria OpenStreetMap este un strat editorial modern de localizare. Ea nu înlocuiește sursa istorică și nu dovedește automat poziția istorică exactă.</p>
     <p><strong>Complet</strong> include toate cele 236 de geometrii publicabile în starea curentă a cercetării. <strong>Strict</strong> include cele 184 de geometrii cu obiect OSM nativ/validat. WG_LOC_0236 Kostel este inclus pe baza obiectului OSM nativ verificat, cu proveniența modernă păstrată separat de afirmația istorică.</p>
