@@ -1,0 +1,30 @@
+/* CC-0032: progressive editorial controls. Existing cartography/palette unchanged. */
+.book-navigation{
+  border:1px solid #dbe0d5;border-radius:9px;background:#f4f7f0;
+  padding:10px 9px;margin:9px 0 10px;display:grid;gap:8px;
+}
+.book-navigation strong{color:#24493b;font:700 13px Georgia,serif}
+.book-navigation>div{display:flex;align-items:center;gap:6px;min-width:0;flex-wrap:wrap}
+.book-navigation button,.detail-share,.atlas-link-notice button{
+  border:1px solid #cbd8ca;color:#24493b;background:#fffdf8;
+  border-radius:7px;padding:7px 9px;cursor:pointer;font:600 11px/1.2 system-ui,sans-serif;
+  min-height:34px;
+}
+.book-navigation button:disabled,.detail-share:disabled{opacity:.43;cursor:default}
+#book-position{font-size:11px;color:#426050;flex:1;min-width:90px;text-align:center}
+.atlas-link-notice{border:1px solid #e5d59e;background:#fff7e5;color:#563f1f;padding:9px;border-radius:7px;margin-bottom:9px;font-size:12px;overflow-wrap:anywhere}
+.atlas-link-notice[hidden]{display:none}
+.atlas-link-notice p{margin:0 0 6px}
+.detail-share{width:100%;margin-top:9px;padding:10px}
+.book-navigation button:focus-visible,.detail-share:focus-visible,.atlas-link-notice button:focus-visible{
+  outline:3px solid #b98439;outline-offset:2px;
+}
+.technical .research-qa-label{font:700 12px Georgia,serif;color:#3b5145;margin:7px 0}
+@media(max-width:760px){
+  .book-navigation{padding:8px;margin:7px 0}
+  .book-navigation>div{gap:4px}
+  .book-navigation button{padding:6px;font-size:10px}
+  #book-position{flex-basis:110px}
+  .detail-share{margin-bottom:15px}
+}
+@media(prefers-reduced-motion:reduce){.book-navigation *{scroll-behavior:auto}}
