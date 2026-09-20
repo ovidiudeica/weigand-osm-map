@@ -15,3 +15,6 @@
 .leaflet-container:not(.osm-labels-visible) .shared-position-icon:hover .shared-position-marker__label,
 .leaflet-container:not(.osm-labels-visible) .shared-position-icon:focus .shared-position-marker__label,
 .leaflet-container:not(.osm-labels-visible) .shared-position-icon:focus-visible .shared-position-marker__label{opacity:1;visibility:visible}
+
+/* Shared OSM position: retain the symbol type of each visible member. */
+.shared-position-marker__back.is-diamond,.shared-position-marker__front.is-diamond{border-radius:2px!important;transform:rotate(45deg)!important}

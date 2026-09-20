@@ -27,3 +27,8 @@
 .editorial-appearances li{margin:5px 0;padding:3px 5px;border-radius:4px}
 .editorial-appearances li.is-current-appearance{background:#e6ece7;color:var(--ink);font-weight:750}
 .selected-appearance-note{margin-top:9px!important;padding-top:8px;border-top:1px solid #ded7cb;color:#53625b;font-size:10px!important}
+
+/* UI preview: geometries stay unchanged; only toponym glyphs differ. */
+.swatch.layer-3,.legend-dot.layer-3{border-radius:2px;transform:rotate(45deg);transform-origin:center}
+.toponym-marker-icon{background:transparent!important;border:0!important}
+.toponym-marker-diamond{position:absolute;top:2px;left:2px;display:block;width:14px;height:14px;box-sizing:border-box;border:2px solid #FFF8E7;border-radius:2px;background:var(--toponym-color,#FF9F1C);box-shadow:0 1px 4px rgba(23,61,52,.22);transform:rotate(45deg)}
