@@ -28,3 +28,11 @@
   .detail-share{margin-bottom:15px}
 }
 @media(prefers-reduced-motion:reduce){.book-navigation *{scroll-behavior:auto}}
+
+/* CC-0033: fallback is an actual selectable, keyboard-operable URI input. */
+.atlas-link-notice input[readonly]{
+  display:block;width:100%;min-width:0;max-width:100%;box-sizing:border-box;
+  background:#fff;color:#243b31;border:1px solid #bdcdbf;border-radius:6px;
+  padding:9px 8px;margin:5px 0 8px;font:12px/1.35 system-ui,sans-serif;
+}
+.atlas-link-notice input[readonly]:focus-visible{outline:3px solid #b98439;outline-offset:2px}
