@@ -97,6 +97,11 @@
   replaceExact("if(value !== undefined && value !== null && value !== '') return typeof value === 'object' ? JSON.stringify(value) : String(value);","if(value !== undefined && value !== null && value !== ''){\n      const raw=typeof value === 'object' ? JSON.stringify(value) : String(value);\n      return key==='WeigandPages' ? printedPagesForLoc(properties) : stripPDFPageReferences(raw);\n    }","remove PDF page labels from UI field access");
   replaceExact("const pageBits=field(properties,'WeigandPages')&&`p. ${field(properties,'WeigandPages')}`;","const pageBits=field(properties,'WeigandPages');","no duplicate p. on citation");
 
+  replaceExact("function technicalList(properties){","function technicalList(properties,record=null){","pass geometry into technical list");
+  replaceExact("    if(value) dl.append(element('dt',label),element('dd',value));","    if(value) dl.append(element('dt',label),element('dd',value));\n    if(key==='id'&&Array.isArray(record?.coordinates)){\n      const [longitude,latitude]=record.coordinates;\n      if(Number.isFinite(latitude)&&Number.isFinite(longitude)){\n        dl.append(element('dt','Latitudine (°N)'),element('dd',String(latitude)),element('dt','Longitudine (°E)'),element('dd',String(longitude)));\n      }\n    }","insert original OSM coordinates after entity ID");
+  replaceExact("technicalList(properties)); body.append(tech);","technicalList(properties,record)); body.append(tech);","showDetail forwards selected record");
+  replaceExact("const record={index,properties,category,name,layer,positionKey:","const record={index,properties,category,name,layer,coordinates:[lon,lat],positionKey:","save raw feature coordinates on record");
+
   (0, eval)(source + '\n//# sourceURL=app-v16-runtime.js');
 })().catch(error => {
   const status=typeof document!=='undefined'?document.getElementById('status'):null;
