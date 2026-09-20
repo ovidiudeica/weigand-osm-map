@@ -17,4 +17,7 @@
 .leaflet-container:not(.osm-labels-visible) .shared-position-icon:focus-visible .shared-position-marker__label{opacity:1;visibility:visible}
 
 /* Shared OSM position: retain the symbol type of each visible member. */
-.shared-position-marker__back.is-diamond,.shared-position-marker__front.is-diamond{border-radius:2px!important;transform:rotate(45deg)!important}
+.shared-position-marker__back.is-triangle,.shared-position-marker__front.is-triangle{border:0!important;border-radius:0!important;transform:none!important;background:#FFF8E7!important;clip-path:polygon(50% 0,100% 100%,0 100%)!important;box-shadow:none!important}
+.shared-position-marker__back.is-triangle::after,.shared-position-marker__front.is-triangle::after{content:"";position:absolute;inset:3px 3px 2px;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.shared-position-marker__back.is-triangle::after{background:var(--shared-back,var(--green))}
+.shared-position-marker__front.is-triangle::after{background:var(--shared-front,var(--green))}

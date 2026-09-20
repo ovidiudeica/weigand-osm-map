@@ -106,7 +106,7 @@
     return response;
   };
 
-  // Shared label lifecycle for SVG circles and DOM-backed toponym diamonds.
+  // Shared label lifecycle for SVG circles and DOM-backed toponym triangles.
   const attachPlaceLabel = (layer, key) => {
     const labels = labelsByPosition.get(key) || [];
     const ordinal = markerOrdinal.get(key) || 0;
@@ -163,7 +163,7 @@
         colors.push(match?.[1] || '#FF9F1C');
         seenColors.set(key, colors);
         const shapes = seenShapes.get(key) || [];
-        shapes.push('diamond');
+        shapes.push('triangle');
         seenShapes.set(key, shapes);
         const layer = originalMarker.call(this, latlng, options);
         attachPlaceLabel(layer, key);
@@ -185,9 +185,9 @@
         );
 
         html = html.replace('class="shared-position-marker__back"',
-          'class="shared-position-marker__back'+(shapes[0] === 'diamond' ? ' is-diamond' : '')+'"');
+          'class="shared-position-marker__back'+(shapes[0] === 'triangle' ? ' is-triangle' : '')+'"');
         html = html.replace('class="shared-position-marker__front"',
-          'class="shared-position-marker__front'+(shapes[1] === 'diamond' ? ' is-diamond' : '')+'"');
+          'class="shared-position-marker__front'+(shapes[1] === 'triangle' ? ' is-triangle' : '')+'"');
 
         const labelHTML = labels.slice(0, 2).map((label, index) =>
           `<span class="shared-position-marker__label shared-position-marker__label--${index}">${escapeHTML(label)}</span>`

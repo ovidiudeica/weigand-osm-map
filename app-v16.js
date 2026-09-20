@@ -73,11 +73,11 @@
   replaceExact("color:'#7b4aad'","color:'#A66BE8'",'paletă mixt');
   replaceExact("color:'#2f8a4a'","color:'#FF9F1C'",'paletă Toponime');
   // Keep the Leaflet marker data, selection and canonical coordinates unchanged.
-  // Only the toponym category gets a CSS diamond; other layers retain circleMarker.
+  // Only toponyms use a CSS triangle; other layers retain circleMarker.
   replaceExact(
     "const [lon,lat]=feature.geometry.coordinates;const layer=L.circleMarker([lat,lon],{radius:7,color:'#fff',weight:2,fillColor:color,fillOpacity:.94});",
-    "const [lon,lat]=feature.geometry.coordinates;const layer=category===3?L.marker([lat,lon],{icon:L.divIcon({className:'toponym-marker-icon',iconSize:[18,18],iconAnchor:[9,9],html:'<span class=\\\"toponym-marker-diamond\\\" style=\\\"--toponym-color:'+color+'\\\" aria-hidden=\\\"true\\\"></span>'}),keyboard:true,title:name}):L.circleMarker([lat,lon],{radius:7,color:'#FFF8E7',weight:2,fillColor:color,fillOpacity:.94});",
-    'romb portocaliu Toponime, cercuri pentru celelalte categorii'
+    "const [lon,lat]=feature.geometry.coordinates;const layer=category===3?L.marker([lat,lon],{icon:L.divIcon({className:'toponym-marker-icon',iconSize:[18,18],iconAnchor:[9,9],html:'<span class=\\\"toponym-marker-triangle\\\" style=\\\"--toponym-color:'+color+'\\\" aria-hidden=\\\"true\\\"></span>'}),keyboard:true,title:name}):L.circleMarker([lat,lon],{radius:7,color:'#FFF8E7',weight:2,fillColor:color,fillOpacity:.94});",
+    'triunghi portocaliu Toponime, cercuri pentru celelalte categorii'
   );
 
   (0, eval)(source + '\n//# sourceURL=app-v16-runtime.js');
