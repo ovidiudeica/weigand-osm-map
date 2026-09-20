@@ -105,6 +105,8 @@
   replaceExact("function field(properties,key){","function publicWeigandSource(value){\n  return stripPDFPageReferences(value)\n    .replace(/\\[[^\\]]*\\]\\(\\s*https?:\\/\\/[^)\\s]+\\s*\\)/gi,'')\n    .replace(/\\s*(?:[—–-]\\s*)?https?:\\/\\/\\S+/gi,'')\n    .replace(/\\s*[—–-]\\s*$/g,'')\n    .replace(/\\s*[;,]\\s*$/g,'')\n    .replace(/\\s{2,}/g,' ')\n    .trim();\n}\nfunction field(properties,key){","sursă Weigand publică fără URL");
   replaceExact("return key==='WeigandPages' ? printedPagesForLoc(properties) : stripPDFPageReferences(raw);","return key==='WeigandPages' ? printedPagesForLoc(properties) : key==='sources' ? publicWeigandSource(raw) : stripPDFPageReferences(raw);","filtru direct în câmpul sursă din lista tehnică");
 
+  replaceExact("    const pageBits=field(properties,'WeigandPages');\n    if(source||pageBits) body.append(detailCard('Citare Weigand 1907',[pageBits,source],'citation'));","    if(source) body.append(detailCard('Citare Weigand 1907',[source],'citation'));",'o singură citare bibliografică fără rând separat de pagini');
+
   (0, eval)(source + '\n//# sourceURL=app-v16-runtime.js');
 })().catch(error => {
   const status=typeof document!=='undefined'?document.getElementById('status'):null;

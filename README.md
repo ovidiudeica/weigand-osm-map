@@ -70,3 +70,5 @@ Interfața v1.6 afișează exclusiv paginile tipărite ale cărții Weigand 1907
 **Coordonate în fișă:** „Date tehnice și QA” afișează latitudinea și longitudinea (grade zecimale) preluate direct din `feature.geometry.coordinates` al GeoJSON-ului OSM v1.5 pentru înregistrarea `WG_LOC` selectată. Ordinea GeoJSON `[longitudine, latitudine]` este inversată numai la etichetare. Nu se recalculează sau rotunjesc coordonatele; pentru poziții partajate, fiecare fișă folosește propria geometrie. Datele și exporturile rămân nemodificate.
 
 **Afișare Sursă Weigand:** atât citarea publică, cât și câmpul din „Date tehnice și QA” omit linkurile către fișierul digitalizat (inclusiv linkul Google Drive), păstrând referința bibliografică. Valorile-sursă v1.5 nu se modifică.
+
+**Citare Weigand 1907:** cardul public afișează o singură citare bibliografică, fără un rând separat cu `p.` / `pp.` din `WeigandPages`. Câmpul „Pagini Weigand” din „Date tehnice și QA” și contextul editorial rămân distincte. Nu se schimbă numerele de pagină din sursa bibliografică ori din proiecția editorială; diferențele între acestea necesită audit separat.
