@@ -107,6 +107,11 @@
 
   replaceExact("    const pageBits=field(properties,'WeigandPages');\n    if(source||pageBits) body.append(detailCard('Citare Weigand 1907',[pageBits,source],'citation'));","    if(source) body.append(detailCard('Citare Weigand 1907',[source],'citation'));",'o singură citare bibliografică fără rând separat de pagini');
 
+  replaceExact("    if(source) body.append(detailCard('Citare Weigand 1907',[source],'citation'));","","elimină cardul de citare separat");
+  replaceExact("    if(editorial.length){","    if(editorial.length||source){","afișează sursa și fără apariții legate");
+  replaceExact("      card.append(element('h3','Apare la Weigand în:'));","      card.append(element('h3','Sursa descrierii · Weigand 1907'));\n      if(source) card.append(element('p',source,'source-bibliography'));","citare bibliografică în cardul aparițiilor");
+  replaceExact("      card.append(list);","      if(editorial.length) card.append(list);","fără listă goală la sursă fără apariții");
+
   (0, eval)(source + '\n//# sourceURL=app-v16-runtime.js');
 })().catch(error => {
   const status=typeof document!=='undefined'?document.getElementById('status'):null;

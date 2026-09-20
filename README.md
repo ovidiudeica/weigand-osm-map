@@ -72,3 +72,5 @@ Interfața v1.6 afișează exclusiv paginile tipărite ale cărții Weigand 1907
 **Afișare Sursă Weigand:** atât citarea publică, cât și câmpul din „Date tehnice și QA” omit linkurile către fișierul digitalizat (inclusiv linkul Google Drive), păstrând referința bibliografică. Valorile-sursă v1.5 nu se modifică.
 
 **Citare Weigand 1907:** cardul public afișează o singură citare bibliografică, fără un rând separat cu `p.` / `pp.` din `WeigandPages`. Câmpul „Pagini Weigand” din „Date tehnice și QA” și contextul editorial rămân distincte. Nu se schimbă numerele de pagină din sursa bibliografică ori din proiecția editorială; diferențele între acestea necesită audit separat.
+
+**Sursa descrierii · Weigand 1907:** vechile carduri „Citare Weigand 1907” și „Apare la Weigand în:” formează acum un singur card public. În acesta, bibliografia publică (fără link Drive) precedă aparițiile editoriale ordonate din carte, cu paginile tipărite sau titlul planșei Sofiei și evidențierea contextului selectat. Nu se modifică datele-sursă, semantica WG_LOC, coordonatele sau valorile citării bibliografice (eventualele discrepanțe de paginare necesită audit separat).
