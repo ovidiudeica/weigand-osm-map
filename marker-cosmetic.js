@@ -8,8 +8,6 @@
   const LABEL_ZOOM = 9;
   const labelsByPosition = new Map();
   const markerOrdinal = new Map();
-  const seenColors = new Map();
-  const seenShapes = new Map();
 
   const positionKey = value => {
     const ll = L.latLng(value);
@@ -140,13 +138,6 @@
   L.circleMarker = function(latlng, options = {}) {
     const key = positionKey(latlng);
 
-    const colors = seenColors.get(key) || [];
-    colors.push(options.fillColor || options.color || '#286eaf');
-    seenColors.set(key, colors);
-
-    const shapes = seenShapes.get(key) || [];
-    shapes.push('circle');
-    seenShapes.set(key, shapes);
     const layer = originalCircleMarker.call(this, latlng, options);
     attachPlaceLabel(layer, key);
     return layer;
@@ -158,13 +149,6 @@
       const iconOptions = options.icon?.options;
       if (iconOptions?.className === 'toponym-marker-icon') {
         const key = positionKey(latlng);
-        const match = String(iconOptions.html || '').match(/--toponym-color:(#[0-9a-fA-F]{6})/);
-        const colors = seenColors.get(key) || [];
-        colors.push(match?.[1] || '#FF9F1C');
-        seenColors.set(key, colors);
-        const shapes = seenShapes.get(key) || [];
-        shapes.push('triangle');
-        seenShapes.set(key, shapes);
         const layer = originalMarker.call(this, latlng, options);
         attachPlaceLabel(layer, key);
         return layer;
@@ -173,21 +157,8 @@
         const key = positionKey(latlng);
         const countMatch = String(options.title || '').match(/de\s+(\d+)\s+entități/);
         const count = Math.max(2, Number(countMatch?.[1] || 2));
-        const colors = (seenColors.get(key) || []).slice(-count);
-        const shapes = (seenShapes.get(key) || []).slice(-count);
         const labels = (labelsByPosition.get(key) || []).slice(0, count);
-        const back = colors[0] || '#286eaf';
-        const front = colors[1] || back;
-
-        let html = iconOptions.html.replace(
-          'class="shared-position-marker"',
-          `class="shared-position-marker" style="--shared-back:${back};--shared-front:${front}"`
-        );
-
-        html = html.replace('class="shared-position-marker__back"',
-          'class="shared-position-marker__back'+(shapes[0] === 'triangle' ? ' is-triangle' : '')+'"');
-        html = html.replace('class="shared-position-marker__front"',
-          'class="shared-position-marker__front'+(shapes[1] === 'triangle' ? ' is-triangle' : '')+'"');
+        let html = iconOptions.html;
 
         const labelHTML = labels.slice(0, 2).map((label, index) =>
           `<span class="shared-position-marker__label shared-position-marker__label--${index}">${escapeHTML(label)}</span>`
