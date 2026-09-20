@@ -64,8 +64,18 @@
   share.addEventListener('click',async()=>{
     const active=context();if(!active||!validWG.has(active.wgLoc))return;
     const url=absolute(active.wgLoc,currentMode(),appearanceFor(active.wgLoc,active.appearanceId)?.id||'').href;
-    try{await navigator.clipboard.writeText(url);inform('Link copiat pentru '+active.wgLoc+'.');}
-    catch(e){inform('Copiază linkul: '+url);}
+    try{
+      if(!navigator.clipboard?.writeText)throw Error('Clipboard API indisponibil');
+      await navigator.clipboard.writeText(url);
+      inform('Link copiat pentru '+active.wgLoc+'.');
+    }catch(e){
+      notice.replaceChildren();notice.hidden=false;
+      const p=document.createElement('p');p.textContent='Copierea automată nu este disponibilă. Selectează linkul de mai jos și copiază-l manual:';
+      const input=document.createElement('input');input.id='atlas-copy-link';input.type='text';input.readOnly=true;input.value=url;input.setAttribute('aria-label','Link direct către '+active.wgLoc);
+      const select=document.createElement('button');select.type='button';select.textContent='Selectează linkul';
+      select.addEventListener('click',()=>{input.focus();input.select();});
+      notice.append(p,input,select);input.focus();input.select();
+    }
   });
   const ready=()=>new Promise((resolve,reject)=>{
     if(isReady())return resolve();
