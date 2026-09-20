@@ -281,7 +281,7 @@ async function start(){
     }
     renderList();
   }
-  function fit(){if(group.getLayers().length)map.fitBounds(group.getBounds(),{padding:[30,30],maxZoom:13});}
+  function fit(){if(group.getLayers().length)map.fitBounds(group.getBounds(),{padding:[30,30],maxZoom:13,animate:false});}
   async function loadMode(){
     const request=++sequence;records=[];render();setStatus('Se verifică setul selectat…');const current=mode,config=configs[current];
     try{
