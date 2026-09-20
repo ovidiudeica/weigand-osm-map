@@ -102,6 +102,9 @@
   replaceExact("technicalList(properties)); body.append(tech);","technicalList(properties,record)); body.append(tech);","showDetail forwards selected record");
   replaceExact("const record={index,properties,category,name,layer,positionKey:","const record={index,properties,category,name,layer,coordinates:[lon,lat],positionKey:","save raw feature coordinates on record");
 
+  replaceExact("function field(properties,key){","function publicWeigandSource(value){\n  return stripPDFPageReferences(value)\n    .replace(/\\[[^\\]]*\\]\\(\\s*https?:\\/\\/[^)\\s]+\\s*\\)/gi,'')\n    .replace(/\\s*(?:[—–-]\\s*)?https?:\\/\\/\\S+/gi,'')\n    .replace(/\\s*[—–-]\\s*$/g,'')\n    .replace(/\\s*[;,]\\s*$/g,'')\n    .replace(/\\s{2,}/g,' ')\n    .trim();\n}\nfunction field(properties,key){","sursă Weigand publică fără URL");
+  replaceExact("return key==='WeigandPages' ? printedPagesForLoc(properties) : stripPDFPageReferences(raw);","return key==='WeigandPages' ? printedPagesForLoc(properties) : key==='sources' ? publicWeigandSource(raw) : stripPDFPageReferences(raw);","filtru direct în câmpul sursă din lista tehnică");
+
   (0, eval)(source + '\n//# sourceURL=app-v16-runtime.js');
 })().catch(error => {
   const status=typeof document!=='undefined'?document.getElementById('status'):null;
