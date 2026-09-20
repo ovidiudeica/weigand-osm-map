@@ -38,7 +38,7 @@ Aceste verificări nu transformă proiectul într-o ediție finală și nu afirm
 
 Interfața activă este `index.html` → `app-v16.js` → `app.js` (runtime legacy protejat). `app-v16.js` validează proiecția editorială `data/weigand-public-order-v1.0.json` înainte de încărcarea atlasului. Ierarhia Explorer urmează **Capitol → Sublistă → apariție în ordinea Weigand**, cu **266 apariții documentate** pentru **236 entități canonice WG_LOC** și **un slot contextual Vadin (Cap. 4, p. 50), ne-selectabil și fără WG_LOC propriu**. Aparițiile multiple selectează întotdeauna aceeași entitate canonică. Căutarea, filtrarea și restrângerea la viewport nu reordonează aparițiile rămase.
 
-Paleta markerelor OSM Standard este: **Români/Dacoromâni — albastru `#1F5A8A`; Aromâni — roșu `#A63D32`; Români + Aromâni — violet `#6C4A8B`; Toponime — ocru `#8C5A08`**; contur ivory `#FFF8E7`. Harta publică utilizează numai basemap-ul OpenStreetMap Standard / OSM Carto, cu atribuire vizibilă.
+Paleta markerelor OSM Standard este: **Români/Dacoromâni — albastru `#1F5A8A`; Aromâni — roșu `#A63D32`; Români + Aromâni — violet `#6C4A8B`; Toponime — verde `#2F8A4A`**; contur ivory `#FFF8E7`. Harta publică utilizează numai basemap-ul OpenStreetMap Standard / OSM Carto, cu atribuire vizibilă.
 
 Datele descărcabile **nu au fost reconstruite pentru v1.6**:
 - `transport-shim-v15.js` reconstruiește determinist fluxurile gzip v1.5 din fragmentele Base64 din `data/transport-v15/`;

@@ -71,7 +71,7 @@
   replaceExact("color:'#286eaf'","color:'#1F5A8A'",'paletă Români / Dacoromâni');
   replaceExact("color:'#cf4d9b'","color:'#A63D32'",'paletă Aromâni');
   replaceExact("color:'#7b4aad'","color:'#6C4A8B'",'paletă mixt');
-  replaceExact("color:'#2f8a4a'","color:'#8C5A08'",'paletă Toponime');
+  replaceExact("color:'#2f8a4a'","color:'#2F8A4A'",'paletă Toponime');
   replaceExact("color:'#fff',weight:2,fillColor:color","color:'#FFF8E7',weight:2,fillColor:color",'casing marker ivory');
 
   (0, eval)(source + '\n//# sourceURL=app-v16-runtime.js');
