@@ -74,6 +74,13 @@
   replaceExact("color:'#2f8a4a'","color:'#00C853'",'paletă Toponime');
   replaceExact("color:'#fff',weight:2,fillColor:color","color:'#FFF8E7',weight:2,className:'wg-thematic-marker',fillColor:color",'casing marker ivory');
 
+  replaceExact("    if(source||pageBits) body.append(detailCard('Citare Weigand 1907',[pageBits,source],'citation'));","    const citationCard=element('section',undefined,'detail-card citation source-evidence');\n    citationCard.append(element('h3','Sursă: Weigand 1907'));\n    const knownPages=(field(properties,'WeigandPages').match(/\\d+/g)||[]);\n    const sourceNumbers=(source.match(/\\d+/g)||[]);\n    const sourceHasPages=knownPages.length>0&&/\\bpp?\\.\\s*\\d/i.test(source)&&knownPages.every(n=>sourceNumbers.includes(n));\n    if(source) citationCard.append(element('p',source));\n    if(pageBits&&!sourceHasPages) citationCard.append(element('p',pageBits));\n    const citationDisplayed=Boolean(source||pageBits);\n    if(citationDisplayed) body.append(citationCard);","CC0031 uniune citare în unicul card de sursă");
+  replaceExact("      const card=element('section',undefined,'detail-card editorial-context');","      const card=citationCard;","CC0031 refolosire card sursă");
+  replaceExact("      card.append(element('h3','Apare la Weigand în:'));","      card.append(element('h4','Apariții în carte'));","CC0031 subtitlu apariții");
+  replaceExact("          const text=[parent?.publicTitle,group?.publicTitle,page].filter(Boolean).join(' → ');","          const text=[parent?.publicTitle,group?.publicTitle,(editorial.length===1&&sourceHasPages?'':page)].filter(Boolean).join(' → ');","CC0031 fără pagină duplicată la apariție unică");
+  replaceExact("        const selected=element('p','Context selectat: '+(appearance.sourceName||field(properties,'name'))+' · '+selectedPage,'selected-appearance-note');","        const selected=element('p','Context selectat: '+(appearance.sourceName||field(properties,'name'))+(editorial.length===1&&sourceHasPages?'':' · '+selectedPage),'selected-appearance-note');","CC0031 context selectat fără duplicare");
+  replaceExact("      body.append(card);\n    }\n    const modern=field(properties,'ModernIdentification');","      if(!citationDisplayed) body.append(card);\n    }\n    const modern=field(properties,'ModernIdentification');","CC0031 card unic în fișă");
+
   (0, eval)(source + '\n//# sourceURL=app-v16-runtime.js');
 })().catch(error => {
   const status=typeof document!=='undefined'?document.getElementById('status'):null;
