@@ -3,6 +3,7 @@
    Uses only the validated public-order projection and currently rendered WG_LOC buttons.
    It never alters canonical data, map geometry, or the source-order payload. */
 (() => {
+  function launch(){
   const $=id=>document.getElementById(id);
   const order=window.__WEIGAND_PUBLIC_ORDER__;
   if(!order || order.schemaVersion!=='1.0') throw Error('Ordinea editorială verificată nu este disponibilă.');
@@ -116,4 +117,14 @@
   if(isReady()){restore();}
   else ready().then(()=>restore()).catch(e=>inform('Navigarea nu este disponibilă: '+e.message));
   update();
+  }
+  const status=document.getElementById('status');
+  if(!status)throw Error('Starea atlasului lipsește.');
+  if(status.dataset.state==='ready')launch();
+  else {
+    const observer=new MutationObserver(()=>{
+      if(status.dataset.state==='ready'){observer.disconnect();launch();}
+    });
+    observer.observe(status,{attributes:true,attributeFilter:['data-state']});
+  }
 })();
