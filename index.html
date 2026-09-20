@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="marker-cosmetic.css?v=1.7.1">
   <link rel="stylesheet" href="atlas-layout-cc0030.css?v=0.1.0">
   <link rel="stylesheet" href="atlas-adjustments-cc0031.css?v=0.1.0">
+  <link rel="stylesheet" href="atlas-experience-cc0032.css?v=0.1.0">
   <style>.detail-card p{overflow-wrap:anywhere}</style>
   <script>
     (() => {
@@ -33,6 +34,7 @@
         await loadScript('transport-shim-v17.js?v=1.7.0');
         await loadScript('marker-cosmetic.js?v=1.7.1');
         await loadScript('app-v16.js?v=1.7.1');
+        await loadScript('atlas-experience-cc0032.js?v=0.1.0');
       };
       const start = () => boot().catch(error => {
         const status=document.getElementById('status');
@@ -103,6 +105,11 @@
       </section>
 
       <div class="results-head"><h3>Listă rezultate</h3><p id="count" aria-live="polite"></p></div>
+      <nav class="book-navigation" aria-label="Navigare în ordinea cărții">
+        <strong>Urmărește cartea</strong>
+        <div><button id="book-prev" type="button" disabled>← Anterioara</button><span id="book-position" aria-live="polite">Se încarcă ordinea…</span><button id="book-next" type="button" disabled>Următoarea →</button></div>
+      </nav>
+      <div id="atlas-link-notice" class="atlas-link-notice" role="status" aria-live="polite" hidden></div>
       <p id="status" role="status" aria-live="polite">Se încarcă datele…</p>
       <ul id="results" aria-label="Rezultate"></ul>
     </aside>
@@ -122,6 +129,7 @@
       <button id="detail-close" class="icon-button detail-close" type="button" aria-label="Închide fișa">×</button>
       <div class="detail-heading"><p class="kicker">FIȘĂ CANONICĂ</p><h2 id="detail-title">Selectează o localitate</h2><p id="detail-meta"></p></div>
       <div id="detail-body" class="detail-body"><p class="empty-detail">Selectează un punct de pe hartă sau un rezultat din listă pentru a deschide fișa.</p></div>
+      <button id="detail-share" class="detail-share" type="button" disabled>Copiază linkul WG_LOC</button>
     </aside>
   </main>
 
