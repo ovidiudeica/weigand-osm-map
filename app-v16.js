@@ -81,6 +81,9 @@
   replaceExact("        const selected=element('p','Context selectat: '+(appearance.sourceName||field(properties,'name'))+' · '+selectedPage,'selected-appearance-note');","        const selected=element('p','Context selectat: '+(appearance.sourceName||field(properties,'name'))+(editorial.length===1&&sourceHasPages?'':' · '+selectedPage),'selected-appearance-note');","CC0031 context selectat fără duplicare");
   replaceExact("      body.append(card);\n    }\n    const modern=field(properties,'ModernIdentification');","      if(!citationDisplayed) body.append(card);\n    }\n    const modern=field(properties,'ModernIdentification');","CC0031 card unic în fișă");
 
+  replaceExact("    highlight(record,appearance?.id||'');showDetail(record.properties,record,appearance);","    highlight(record,appearance?.id||'');showDetail(record.properties,record,appearance);\n    window.dispatchEvent(new CustomEvent('weigand:selection',{detail:{wgLoc:field(record.properties,'id'),appearanceId:appearance?.id||''}}));",'CC0032 signal linked selection');
+  replaceExact("    const tech=element('details',undefined,'detail-card technical'); tech.append(element('summary','Date tehnice și QA'),technicalList(properties)); body.append(tech);","    const tech=element('details',undefined,'detail-card technical'); tech.append(element('summary','Date de cercetare'),element('h4','Date tehnice și QA','research-qa-label'),technicalList(properties)); body.append(tech);",'CC0032 research detail level two');
+
   (0, eval)(source + '\n//# sourceURL=app-v16-runtime.js');
 })().catch(error => {
   const status=typeof document!=='undefined'?document.getElementById('status'):null;
