@@ -1,0 +1,127 @@
+/*
+ * CC-0030 — approved §23 three-state atlas layout candidate.
+ * PRESENTATION ONLY: no WG_LOC, coordinates, data, source order, or basemap changes.
+ * Authentic OSM/browser/a11y QA is required before release.
+ */
+:root{
+  --ink:#20362d;--ink-2:#315548;--muted:#657368;
+  --paper:#f7f5ee;--panel:#fffdf8;--line:#dbe0d5;
+  --soft:#f5f6f0;--accent:#24493b;
+  --blue:#1683FF;--pink:#FF3347;--violet:#944DFF;--green:#00C853;
+  --shadow:0 16px 55px rgba(31,52,44,.14);
+}
+.site-header{
+  height:79px;
+  grid-template-columns:minmax(285px,1fr) auto auto;
+  gap:20px;padding:9px 32px;
+  background:rgba(255,253,248,.97);
+}
+.brand-mark{
+  width:48px;height:48px;border-radius:50%;
+  background:#e9efe4;border-color:#557360;
+  box-shadow:none;font-size:18px;letter-spacing:-.055em;
+}
+.brand h1{font-size:27px;letter-spacing:-.03em;font-weight:600}
+.brand p{font-size:12px;letter-spacing:.005em}
+.edition{background:#fff3d8;border-color:#e6d9a5;color:#6b592b;font-weight:800}
+.osm-badge{background:#24493b;border-color:#24493b}
+.atlas-shell{
+  height:calc(100dvh - 119px);
+  min-height:520px;
+  grid-template-columns:337px minmax(0,1fr);
+}
+.explorer{
+  background:var(--panel);padding:20px 17px 0;
+  box-shadow:3px 0 12px rgba(31,52,44,.035);
+}
+.explorer h2,.detail-panel h2{font-size:26px;font-weight:500;letter-spacing:-.025em}
+.explorer-head>p:last-child{font-size:12px;color:var(--muted);margin-bottom:15px}
+.search-wrap input{background:#f7f8f2;border-color:#d8dfd7;border-radius:8px;height:45px;font-size:12px}
+.segmented{padding:3px;gap:3px;border-color:#d8ded3;background:#f5f6f0;border-radius:8px;margin-bottom:15px}
+.segmented span{border-radius:6px;padding:9px 7px;font-size:12px}
+.filter-section{border-color:var(--line)}
+.filter-section fieldset label{font-size:12px}
+.corpus-stats{background:#f4f7f1;border-color:#dbe0d5;margin-bottom:13px}
+.corpus-stats strong{font-size:20px}
+.results-head{border-color:var(--line)}
+.chapter-details>summary{
+  border:1px solid #dce1d7;border-radius:8px;
+  background:#fff;padding:11px 10px;
+}
+.chapter-details[open]>summary{border-radius:8px 8px 0 0}
+.sublist-details{border-left:0;margin:0 0 8px 0}
+.sublist-details>summary{
+  background:#f7f8f4;padding:10px 12px;
+  border:1px solid #edf0e9;
+  color:#3c594c;
+}
+.appearance-list{padding-left:0}
+#results button{border-color:#f1f2eb;border-radius:0;padding:11px 12px}
+#results button[aria-current=true]{background:#eef4ea;border-left:3px solid var(--accent);padding-left:9px}
+.map-stage{background:#e9efe2}
+.map-title{top:18px;left:54px;border-radius:7px;background:rgba(255,253,248,.94)}
+.map-legend{width:172px;right:16px;top:18px;border-color:var(--line);border-radius:8px;background:rgba(255,253,248,.96)}
+.legend-dot,.swatch{box-shadow:0 0 0 1.8px #fff8e7,0 0 0 2.7px #2d332f}
+.detail-panel{
+  width:min(372px,39vw);padding:24px 20px 20px;
+  background:rgba(255,253,248,.985);border-color:var(--line);
+  box-shadow:-12px 0 38px rgba(31,52,44,.12);
+}
+.detail-card{background:#fff;border-color:var(--line);border-radius:9px}
+.citation{background:#f7f8f3}
+.detail-actions a,.detail-actions button{background:#fffdf8}
+#results button:focus-visible,.chapter-details>summary:focus-visible,.sublist-details>summary:focus-visible{
+  outline:3px solid #b98439;outline-offset:2px
+}
+@media(max-width:1050px) and (min-width:761px){
+  .site-header{padding:9px 18px;grid-template-columns:1fr auto}
+  .detail-panel{width:min(372px,45vw)}
+}
+@media(max-width:760px){
+  .site-header{height:70px;padding:9px 12px;gap:8px}
+  .brand{gap:8px}
+  .brand-mark{width:41px;height:41px;font-size:16px}
+  .brand h1{font-size:21px}
+  .brand p{display:none}
+  .header-meta{gap:4px}
+  .osm-badge{padding:6px 7px;font-size:10px}
+  .atlas-shell{height:calc(100dvh - 70px);min-height:0;display:block}
+  .map-stage{height:100%}
+  .explorer{
+    left:8px;right:8px;bottom:8px;top:auto;
+    height:min(52dvh,440px);max-height:calc(100dvh - 115px);
+    padding:15px 13px 0;box-shadow:0 -12px 38px rgba(31,52,44,.15);
+    border-radius:13px;overscroll-behavior:contain;
+  }
+  .explorer-head{padding:0 2px}
+  .explorer-head h2{font-size:21px}
+  .explorer-head>.kicker{font-size:9px}
+  .search-wrap{margin-bottom:9px}
+  .segmented{margin-bottom:7px}
+  .mobile-actions{top:-15px;padding:6px 0 8px}
+  .mobile-actions>button,.mobile-downloads>summary{min-height:42px;background:#f5f6f0}
+  .map-title{left:50px;top:10px;right:10px;padding:6px 8px}
+  .map-legend{
+    width:142px;right:10px;top:62px;
+    font-size:10px;padding:8px;max-width:calc(100vw - 65px);
+  }
+  .detail-panel{
+    left:8px;right:8px;bottom:8px;width:auto;
+    height:min(70dvh,640px);padding:20px 16px;
+    border-radius:13px;box-shadow:0 -12px 38px rgba(31,52,44,.18);
+  }
+  .detail-panel h2{font-size:24px}
+  .detail-card{padding:12px}
+  footer{display:none}
+}
+@media(max-width:350px){
+  .site-header{padding:8px}
+  .brand h1{font-size:19px}
+  .explorer{left:5px;right:5px;bottom:5px;padding:13px 10px 0}
+  .map-legend{top:58px;width:132px}
+  .mobile-actions{gap:5px}
+  .mobile-actions>button,.mobile-downloads>summary{font-size:11px;padding:8px 4px}
+}
+@media(prefers-reduced-motion:reduce){
+  .detail-panel{transition:none}
+}
