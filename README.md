@@ -60,3 +60,7 @@ Fișierele și runtime-urile versiunilor anterioare sunt păstrate în repositor
 Weigand 1907 rămâne autoritatea istorică și semantică. OpenStreetMap și alte surse moderne sunt folosite pentru identificare și geometrie modernă, fără a rescrie afirmația istorică și fără a transforma automat un obiect modern într-o dovadă a localizării istorice exacte.
 
 Hash-urile payload-urilor tehnice curente sunt în `PUBLICATION_MANIFEST.csv`. Denumirea istorică a fișierului nu schimbă statutul editorial de **DRAFT / work in progress** al proiectului.
+
+### Referințe bibliografice afișate în website
+
+Interfața v1.6 afișează exclusiv paginile tipărite ale cărții Weigand 1907, cu `p.` / `pp.`. Apariția `WG_APP_0266` / `WG_LOC_0229` (Vlasi) de pe planșa atașată fără pagină proprie este citată ca „Planșa: Alte Rumänische Ortsnamen bei Sofia”. Paginile PDF se păstrează numai în proiecția editorială internă pentru audit și nu apar în lista rezultatelor sau în fișe. Această regulă modifică numai afișarea și documentația, nu corpusul, ordinea sau geometriile v1.5.
