@@ -104,7 +104,7 @@
     return response;
   };
 
-  // Shared label lifecycle for SVG circles and DOM-backed toponym triangles.
+  // Shared label lifecycle for SVG circles and shared-position DOM markers.
   const attachPlaceLabel = (layer, key) => {
     const labels = labelsByPosition.get(key) || [];
     const ordinal = markerOrdinal.get(key) || 0;
@@ -147,12 +147,6 @@
   L.marker = function(latlng, options = {}) {
     try {
       const iconOptions = options.icon?.options;
-      if (iconOptions?.className === 'toponym-marker-icon') {
-        const key = positionKey(latlng);
-        const layer = originalMarker.call(this, latlng, options);
-        attachPlaceLabel(layer, key);
-        return layer;
-      }
       if (iconOptions?.className === 'shared-position-icon' && typeof iconOptions.html === 'string') {
         const key = positionKey(latlng);
         const countMatch = String(options.title || '').match(/de\s+(\d+)\s+entități/);

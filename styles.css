@@ -28,8 +28,3 @@
 .editorial-appearances li.is-current-appearance{background:#e6ece7;color:var(--ink);font-weight:750}
 .selected-appearance-note{margin-top:9px!important;padding-top:8px;border-top:1px solid #ded7cb;color:#53625b;font-size:10px!important}
 
-/* UI preview: geometry unchanged; toponyms use an upward-facing triangle. */
-.swatch.layer-3,.legend-dot.layer-3{border-radius:0;transform:none;clip-path:polygon(50% 0,100% 100%,0 100%)}
-.toponym-marker-icon{background:transparent!important;border:0!important}
-.toponym-marker-triangle{position:absolute;top:1px;left:1px;display:block;width:16px;height:16px;box-sizing:border-box;background:#FFF8E7;clip-path:polygon(50% 0,100% 100%,0 100%);filter:drop-shadow(0 0 1px rgba(36,47,53,.85))}
-.toponym-marker-triangle::after{content:"";position:absolute;inset:3px 3px 2px;background:var(--toponym-color,#FFD400);clip-path:polygon(50% 0,100% 100%,0 100%)}

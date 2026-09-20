@@ -73,11 +73,11 @@
   replaceExact("color:'#7b4aad'","color:'#A66BE8'",'paletă mixt');
   replaceExact("color:'#2f8a4a'","color:'#FFD400'",'paletă Toponime');
   // Keep the Leaflet marker data, selection and canonical coordinates unchanged.
-  // Only toponyms use a CSS triangle; other layers retain circleMarker.
+  // All four themes use SVG circleMarkers; shared positions retain the two-colour dot.
   replaceExact(
     "const [lon,lat]=feature.geometry.coordinates;const layer=L.circleMarker([lat,lon],{radius:7,color:'#fff',weight:2,fillColor:color,fillOpacity:.94});",
-    "const [lon,lat]=feature.geometry.coordinates;const layer=category===3?L.marker([lat,lon],{icon:L.divIcon({className:'toponym-marker-icon',iconSize:[18,18],iconAnchor:[9,9],html:'<span class=\\\"toponym-marker-triangle\\\" style=\\\"--toponym-color:'+color+'\\\" aria-hidden=\\\"true\\\"></span>'}),keyboard:true,title:name}):L.circleMarker([lat,lon],{radius:7,color:'#FFF8E7',weight:2,fillColor:color,fillOpacity:.94});",
-    'triunghi galben Toponime, cercuri pentru celelalte categorii'
+    "const [lon,lat]=feature.geometry.coordinates;const layer=L.circleMarker([lat,lon],{radius:7,color:'#FFF8E7',weight:2,fillColor:color,fillOpacity:.94});",
+    'buline colorate pentru toate categoriile'
   );
 
   // One shared OSM coordinate => one coloured dot and distinct canonical cards.

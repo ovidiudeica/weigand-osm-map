@@ -14,4 +14,4 @@
 .leaflet-container:not(.osm-labels-visible) .shared-position-icon:focus .shared-position-marker__label,
 .leaflet-container:not(.osm-labels-visible) .shared-position-icon:focus-visible .shared-position-marker__label{opacity:1;visibility:visible}
 
-/* Shared positions are represented by one dot; standalone toponyms remain triangles. */
+/* Shared positions use a single two-colour dot; all standalone categories use SVG circles. */
