@@ -1,0 +1,14 @@
+/* CC-0038: design candidate only; preserve approved fills and round markers. */
+.leaflet-overlay-pane svg .wg-marker-interior-plus{
+  fill:none!important;
+  stroke:#FFF8E7!important;
+  stroke-width:1.8px!important;
+  stroke-linecap:round!important;
+  pointer-events:none!important;
+}
+.legend-dot.layer-2,.swatch.layer-2{position:relative}
+.legend-dot.layer-2::after,.swatch.layer-2::after{
+  content:'+';position:absolute;inset:-2px 0 0;
+  display:grid;place-items:center;color:#FFF8E7;
+  font:800 11px/1 Arial,sans-serif;pointer-events:none;
+}
