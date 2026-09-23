@@ -6,8 +6,16 @@
   <meta name="description" content="DRAFT / work in progress — atlas digital de cercetare: Gustav Weigand, Rumänen und Aromunen in Bulgarien (1907), corpus canonic WG_LOC și localizare OpenStreetMap · versiunea tehnică v1.6 (CC-0007).">
   <title>Gustav Weigand · Atlas digital OSM · DRAFT v1.6</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" onerror="this.onerror=null;this.href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'">
-  <link rel="stylesheet" href="styles.css?v=1.6.6">
-  <link rel="stylesheet" href="marker-cosmetic.css?v=1.5.6">
+  <link rel="stylesheet" href="styles.css?v=1.7.2">
+  <link rel="stylesheet" href="marker-cosmetic.css?v=1.7.1">
+  <link rel="stylesheet" href="atlas-layout-cc0030.css?v=0.1.0">
+  <link rel="stylesheet" href="atlas-adjustments-cc0031.css?v=0.1.0">
+  <link rel="stylesheet" href="atlas-experience-cc0032.css?v=0.1.0">
+  <link rel="stylesheet" href="atlas-marker-cues-cc0036.css?v=0.1.0">
+  <link rel="stylesheet" href="atlas-marker-interior-cc0038.css?v=0.1.0">
+  <link rel="stylesheet" href="atlas-green-casing-cc0040.css?v=0.1.0">
+  <link rel="stylesheet" href="atlas-shared-mobile-cc0044.css?v=0.1.0">
+  <link rel="stylesheet" href="atlas-shared-mobile-cc0048.css?v=0.1.0">
   <style>.detail-card p{overflow-wrap:anywhere}</style>
   <script>
     (() => {
@@ -28,9 +36,17 @@
           try{await loadScript(src);if(window.L)break;}catch(error){lastError=error;}
         }
         if(!window.L) throw lastError || new Error('Leaflet nu este disponibil.');
-        await loadScript('transport-shim-v15.js?v=1.5.1');
-        await loadScript('marker-cosmetic.js?v=1.5.4');
-        await loadScript('app-v16.js?v=1.6.14');
+        await loadScript('transport-shim-v17.js?v=1.7.0');
+        await loadScript('marker-cosmetic.js?v=1.7.1');
+        await loadScript('atlas-marker-interior-cc0038.js?v=0.1.0');
+        await loadScript('atlas-green-casing-cc0040.js?v=0.1.0');
+        await loadScript('atlas-mobile-visibility-cc0042.js?v=0.1.0');
+        await loadScript('atlas-shared-mobile-cc0044.js?v=0.1.0');
+        await loadScript('atlas-shared-mobile-cc0046.js?v=0.1.0');
+        await loadScript('atlas-shared-keyboard-cc0047.js?v=0.1.0');
+        await loadScript('atlas-shared-mobile-cc0048.js?v=0.1.0');
+        await loadScript('app-v16.js?v=1.7.1');
+        await loadScript('atlas-experience-cc0032.js?v=0.1.0');
       };
       const start = () => boot().catch(error => {
         const status=document.getElementById('status');
@@ -39,6 +55,7 @@
       if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',start,{once:true}); else start();
     })();
   </script>
+  <script defer src="mobile-controls.js?v=1.7.2"></script>
 </head>
 <body>
   <header class="site-header">
@@ -75,7 +92,19 @@
         </div>
       </fieldset>
 
-      <section class="filter-section">
+      <div class="mobile-actions" aria-label="Comenzi pentru mobil">
+        <button id="mobile-show-filters" type="button" aria-controls="mobile-filter-panel" aria-expanded="false">Filtre tematice</button>
+        <details class="mobile-downloads">
+          <summary>Descărcări</summary>
+          <nav aria-label="Descărcări pe mobil">
+            <a href="#" data-mobile-download="full" aria-disabled="true">GeoJSON complet 236</a>
+            <a href="#" data-mobile-download="strict" aria-disabled="true">GeoJSON strict 184</a>
+            <a href="#" data-mobile-download="semantic" aria-disabled="true">Registru semantic 236</a>
+          </nav>
+        </details>
+      </div>
+
+      <section class="filter-section" id="mobile-filter-panel">
         <div class="section-row"><h3>Straturi</h3><button id="fit" class="text-button" type="button">Arată toate</button></div>
         <fieldset id="filters"><legend class="sr-only">Straturi tematice</legend></fieldset>
         <label class="viewport"><input id="in-view" type="checkbox"> Doar în zona vizibilă</label>
@@ -88,6 +117,11 @@
       </section>
 
       <div class="results-head"><h3>Listă rezultate</h3><p id="count" aria-live="polite"></p></div>
+      <nav class="book-navigation" aria-label="Navigare în ordinea cărții">
+        <strong>Urmărește cartea</strong>
+        <div><button id="book-prev" type="button" disabled>← Anterioara</button><span id="book-position" aria-live="polite">Se încarcă ordinea…</span><button id="book-next" type="button" disabled>Următoarea →</button></div>
+      </nav>
+      <div id="atlas-link-notice" class="atlas-link-notice" role="status" aria-live="polite" hidden></div>
       <p id="status" role="status" aria-live="polite">Se încarcă datele…</p>
       <ul id="results" aria-label="Rezultate"></ul>
     </aside>
@@ -107,6 +141,7 @@
       <button id="detail-close" class="icon-button detail-close" type="button" aria-label="Închide fișa">×</button>
       <div class="detail-heading"><p class="kicker">FIȘĂ CANONICĂ</p><h2 id="detail-title">Selectează o localitate</h2><p id="detail-meta"></p></div>
       <div id="detail-body" class="detail-body"><p class="empty-detail">Selectează un punct de pe hartă sau un rezultat din listă pentru a deschide fișa.</p></div>
+      <button id="detail-share" class="detail-share" type="button" disabled>Copiază linkul WG_LOC</button>
     </aside>
   </main>
 
@@ -122,15 +157,15 @@
 
   <dialog id="missing-dialog" aria-labelledby="dialog-title">
     <form method="dialog"><button class="close" aria-label="Închide dialogul">Închide ×</button></form>
-    <p class="kicker">CORPUS CANONIC</p><h2 id="dialog-title">0 entități fără geometrie în starea tehnică v1.5</h2>
-    <p>Toate cele 236 de entități canonice au geometrie publicabilă în starea tehnică verificată v1.5. WG_LOC_0236 Kostel este localizat prin obiectul OSM nativ verificat; proveniența și limitele interpretative rămân documentate separat.</p>
+    <p class="kicker">CORPUS CANONIC</p><h2 id="dialog-title">0 entități fără geometrie în datele candidate v1.7</h2>
+    <p>Toate cele 236 de entități canonice au geometrie în datele candidate v1.7 (CC-0012, nepublicate). WG_LOC_0236 Kostel este localizat prin obiectul OSM nativ verificat; proveniența și limitele interpretative rămân documentate separat.</p>
     <div id="missing-content" role="status"></div>
   </dialog>
 
   <dialog id="about-dialog" aria-labelledby="about-title">
     <form method="dialog"><button class="close" aria-label="Închide dialogul">Închide ×</button></form>
     <p class="kicker">DESPRE ATLAS</p><h2 id="about-title">Sursa istorică și localizarea modernă</h2>
-    <p><strong>Statut editorial: DRAFT / work in progress.</strong> Acest atlas este un instrument public de cercetare aflat în lucru, supus revizuirii; versiunea tehnică v1.5 nu reprezintă o ediție digitală finală.</p>
+    <p><strong>Statut editorial: DRAFT / work in progress.</strong> Acest atlas este un instrument public de cercetare aflat în lucru, supus revizuirii; datele geografice candidate v1.7 nu reprezintă o ediție digitală finală sau un release publicat.</p>
     <p>Atlasul pornește de la Gustav Weigand, <cite>Rumänen und Aromunen in Bulgarien</cite> (1907). Identitățile istorice, descrierile și citările sunt păstrate separat de geometria modernă.</p>
     <p>Geometria OpenStreetMap este un strat editorial modern de localizare. Ea nu înlocuiește sursa istorică și nu dovedește automat poziția istorică exactă.</p>
     <p><strong>Complet</strong> include toate cele 236 de geometrii publicabile în starea curentă a cercetării. <strong>Strict</strong> include cele 184 de geometrii cu obiect OSM nativ/validat. WG_LOC_0236 Kostel este inclus pe baza obiectului OSM nativ verificat, cu proveniența modernă păstrată separat de afirmația istorică.</p>

@@ -1,0 +1,8 @@
+/* CC-0048 candidate: the fixed map legend must not cover a shared popup on mobile. */
+/* The legend returns when the popup closes; other popup types and desktop are unchanged. */
+@media (max-width:760px) {
+  .map-stage:has(.leaflet-popup .shared-position-popup) > .map-legend {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}

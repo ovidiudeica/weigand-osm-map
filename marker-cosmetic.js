@@ -8,6 +8,7 @@
   const LABEL_ZOOM = 9;
   const labelsByPosition = new Map();
   const markerOrdinal = new Map();
+  const seenColors = new Map();
 
   const positionKey = value => {
     const ll = L.latLng(value);
@@ -82,13 +83,14 @@
   window.fetch = async (...args) => {
     const response = await originalFetch(...args);
     const url = String(args[0]?.url || args[0] || '');
-    if (/weigand-osm-v1\.(?:0|4|5)(?:-strict)?\.geojson\.gz(?:[?#].*)?$/.test(url)) {
+    if (/weigand-osm-v1\.(?:0|4|5|7)(?:-strict)?\.geojson\.gz(?:[?#].*)?$/.test(url)) {
       try {
         const clone = response.clone();
         const stream = clone.body.pipeThrough(new DecompressionStream('gzip'));
         const data = JSON.parse(await new Response(stream).text());
         labelsByPosition.clear();
         markerOrdinal.clear();
+        seenColors.clear();
         for (const feature of data.features || []) {
           if (feature?.geometry?.type !== 'Point') continue;
           const [lon, lat] = feature.geometry.coordinates || [];
@@ -104,42 +106,49 @@
     return response;
   };
 
-  // Shared label lifecycle for SVG circles and shared-position DOM markers.
-  const attachPlaceLabel = (layer, key) => {
-    const labels = labelsByPosition.get(key) || [];
-    const ordinal = markerOrdinal.get(key) || 0;
-    markerOrdinal.set(key, ordinal + 1);
-    const label = labels[ordinal] || labels[0];
-    if (!label) return;
-    layer.bindTooltip(label, {
-      permanent: true, direction: 'right', offset: [9, 0],
-      className: 'osm-place-label', opacity: 1, interactive: false
-    });
-    const forceLabel = () => {
-      const tooltip = layer.getTooltip?.();
-      if (!tooltip?.isOpen?.()) layer.openTooltip();
-      tooltip?.getElement?.()?.classList.add('osm-label-force');
-    };
-    const releaseLabel = () => {
-      layer.getTooltip?.()?.getElement?.()?.classList.remove('osm-label-force');
-    };
-    layer.on('mouseover', forceLabel);
-    layer.on('mouseout', releaseLabel);
-    layer.on('add', () => {
-      const element = layer.getElement?.();
-      if (!element || element.dataset.osmLabelFocusBound === 'true') return;
-      element.dataset.osmLabelFocusBound = 'true';
-      element.addEventListener('focus', forceLabel);
-      element.addEventListener('blur', releaseLabel);
-    });
-  };
-
   const originalCircleMarker = L.circleMarker;
   L.circleMarker = function(latlng, options = {}) {
     const key = positionKey(latlng);
 
+    const colors = seenColors.get(key) || [];
+    colors.push(options.fillColor || options.color || '#1683FF');
+    seenColors.set(key, colors);
+
     const layer = originalCircleMarker.call(this, latlng, options);
-    attachPlaceLabel(layer, key);
+    const labels = labelsByPosition.get(key) || [];
+    const ordinal = markerOrdinal.get(key) || 0;
+    markerOrdinal.set(key, ordinal + 1);
+    const label = labels[ordinal] || labels[0];
+
+    if (label) {
+      layer.bindTooltip(label, {
+        permanent: true,
+        direction: 'right',
+        offset: [9, 0],
+        className: 'osm-place-label',
+        opacity: 1,
+        interactive: false
+      });
+
+      const forceLabel = () => {
+        const tooltip = layer.getTooltip?.();
+        if (!tooltip?.isOpen?.()) layer.openTooltip();
+        tooltip?.getElement?.()?.classList.add('osm-label-force');
+      };
+      const releaseLabel = () => {
+        layer.getTooltip?.()?.getElement?.()?.classList.remove('osm-label-force');
+      };
+
+      layer.on('mouseover', forceLabel);
+      layer.on('mouseout', releaseLabel);
+      layer.on('add', () => {
+        const element = layer.getElement?.();
+        if (!element || element.dataset.osmLabelFocusBound === 'true') return;
+        element.dataset.osmLabelFocusBound = 'true';
+        element.addEventListener('focus', forceLabel);
+        element.addEventListener('blur', releaseLabel);
+      });
+    }
     return layer;
   };
 
@@ -151,8 +160,15 @@
         const key = positionKey(latlng);
         const countMatch = String(options.title || '').match(/de\s+(\d+)\s+entități/);
         const count = Math.max(2, Number(countMatch?.[1] || 2));
+        const colors = (seenColors.get(key) || []).slice(-count);
         const labels = (labelsByPosition.get(key) || []).slice(0, count);
-        let html = iconOptions.html;
+        const back = colors[0] || '#1683FF';
+        const front = colors[1] || back;
+
+        let html = iconOptions.html.replace(
+          'class="shared-position-marker"',
+          `class="shared-position-marker" style="--shared-back:${back};--shared-front:${front}"`
+        );
 
         const labelHTML = labels.slice(0, 2).map((label, index) =>
           `<span class="shared-position-marker__label shared-position-marker__label--${index}">${escapeHTML(label)}</span>`

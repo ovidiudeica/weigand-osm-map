@@ -38,7 +38,7 @@ Aceste verificări nu transformă proiectul într-o ediție finală și nu afirm
 
 Interfața activă este `index.html` → `app-v16.js` → `app.js` (runtime legacy protejat). `app-v16.js` validează proiecția editorială `data/weigand-public-order-v1.0.json` înainte de încărcarea atlasului. Ierarhia Explorer urmează **Capitol → Sublistă → apariție în ordinea Weigand**, cu **266 apariții documentate** pentru **236 entități canonice WG_LOC** și **un slot contextual Vadin (Cap. 4, p. 50), ne-selectabil și fără WG_LOC propriu**. Aparițiile multiple selectează întotdeauna aceeași entitate canonică. Căutarea, filtrarea și restrângerea la viewport nu reordonează aparițiile rămase.
 
-Paleta markerelor OSM Standard este: **Români/Dacoromâni — albastru `#2F95ED`; Aromâni — roșu `#F25752`; Români + Aromâni — violet `#A66BE8`; Toponime — galben intens `#FFD400`**; contur ivory `#FFF8E7`. Pentru prezentarea vizuală, toate cele patru categorii sunt reprezentate prin **buline colorate**, inclusiv **toponimele galbene**; aceeași formă este utilizată în legendă, filtre și lista de rezultate. Pozițiile OSM partajate sunt afișate prin **o singură bulină**: culoare simplă pentru aceeași categorie sau două semicercuri colorate, separate de o linie ivory fină pentru categorii diferite. Clickul deschide fișele WG_LOC individuale, ordonate după prima apariție în Weigand. Geometriile și coordonatele canonice nu se modifică. Datele geografice v1.5 și ordinea editorială nu sunt modificate. Harta publică utilizează numai basemap-ul OpenStreetMap Standard / OSM Carto, cu atribuire vizibilă.
+Paleta markerelor OSM Standard este: **Români/Dacoromâni — albastru `#1F5A8A`; Aromâni — roșu `#A63D32`; Români + Aromâni — violet `#6C4A8B`; Toponime — ocru `#8C5A08`**; contur ivory `#FFF8E7`. Harta publică utilizează numai basemap-ul OpenStreetMap Standard / OSM Carto, cu atribuire vizibilă.
 
 Datele descărcabile **nu au fost reconstruite pentru v1.6**:
 - `transport-shim-v15.js` reconstruiește determinist fluxurile gzip v1.5 din fragmentele Base64 din `data/transport-v15/`;
@@ -60,17 +60,3 @@ Fișierele și runtime-urile versiunilor anterioare sunt păstrate în repositor
 Weigand 1907 rămâne autoritatea istorică și semantică. OpenStreetMap și alte surse moderne sunt folosite pentru identificare și geometrie modernă, fără a rescrie afirmația istorică și fără a transforma automat un obiect modern într-o dovadă a localizării istorice exacte.
 
 Hash-urile payload-urilor tehnice curente sunt în `PUBLICATION_MANIFEST.csv`. Denumirea istorică a fișierului nu schimbă statutul editorial de **DRAFT / work in progress** al proiectului.
-
-### Referințe bibliografice afișate în website
-
-Interfața v1.6 afișează exclusiv paginile tipărite ale cărții Weigand 1907, cu `p.` / `pp.`. Apariția `WG_APP_0266` / `WG_LOC_0229` (Vlasi) de pe planșa atașată fără pagină proprie este citată ca „Planșa: Alte Rumänische Ortsnamen bei Sofia”. Paginile PDF se păstrează numai în proiecția editorială internă pentru audit și nu apar în lista rezultatelor sau în fișe. Această regulă modifică numai afișarea și documentația, nu corpusul, ordinea sau geometriile v1.5.
-
-**Corecție de afișare:** și câmpurile publice din fișa principală, citarea „Weigand 1907”, secțiunea tehnică și textele asociate utilizează referințe fără `PDF p.` / `PDF pp.`. Valoarea publică a `WeigandPages` este derivată din aparițiile editoriale și afișează `p.` / `pp.` tipărite sau titlul planșei pentru `WG_LOC_0229`. Datele-sursă și exporturile v1.5 sunt nemodificate.
-
-**Coordonate în fișă:** „Date tehnice și QA” afișează latitudinea și longitudinea (grade zecimale) preluate direct din `feature.geometry.coordinates` al GeoJSON-ului OSM v1.5 pentru înregistrarea `WG_LOC` selectată. Ordinea GeoJSON `[longitudine, latitudine]` este inversată numai la etichetare. Nu se recalculează sau rotunjesc coordonatele; pentru poziții partajate, fiecare fișă folosește propria geometrie. Datele și exporturile rămân nemodificate.
-
-**Afișare Sursă Weigand:** atât citarea publică, cât și câmpul din „Date tehnice și QA” omit linkurile către fișierul digitalizat (inclusiv linkul Google Drive), păstrând referința bibliografică. Valorile-sursă v1.5 nu se modifică.
-
-**Citare Weigand 1907:** cardul public afișează o singură citare bibliografică, fără un rând separat cu `p.` / `pp.` din `WeigandPages`. Câmpul „Pagini Weigand” din „Date tehnice și QA” și contextul editorial rămân distincte. Nu se schimbă numerele de pagină din sursa bibliografică ori din proiecția editorială; diferențele între acestea necesită audit separat.
-
-**Sursa descrierii · Weigand 1907:** vechile carduri „Citare Weigand 1907” și „Apare la Weigand în:” formează acum un singur card public. În acesta, bibliografia publică (fără link Drive) precedă aparițiile editoriale ordonate din carte, cu paginile tipărite sau titlul planșei Sofiei și evidențierea contextului selectat. Nu se modifică datele-sursă, semantica WG_LOC, coordonatele sau valorile citării bibliografice (eventualele discrepanțe de paginare necesită audit separat).

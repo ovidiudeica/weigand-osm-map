@@ -1,0 +1,9 @@
+/* CC-0044 isolated UI prototype: responsive popup exclusively for shared-position marker. */
+@media(max-width:760px){
+ .leaflet-popup:has(.shared-position-popup){max-width:calc(100vw - 16px)!important;}
+ .leaflet-popup:has(.shared-position-popup) .leaflet-popup-content-wrapper{max-width:calc(100vw - 16px)!important;}
+ .leaflet-popup:has(.shared-position-popup) .leaflet-popup-content{width:calc(100vw - 76px)!important;max-width:calc(100vw - 76px)!important;margin:8px 12px!important;}
+ .leaflet-popup .shared-position-popup h3{font-size:15px;line-height:1.12;margin:0 0 3px;}
+ .leaflet-popup .shared-position-popup p{font-size:11px;line-height:1.2;margin:0 0 4px;}
+ .leaflet-popup .shared-position-popup button{box-sizing:border-box;width:100%;min-width:0;min-height:30px;margin:2px 0!important;padding:5px 7px!important;font-size:12px;overflow-wrap:anywhere;}
+}

@@ -1,0 +1,12 @@
+/* CC-0040 visual prototype only: opaque dark ring behind ordinary green marker. */
+.leaflet-overlay-pane svg .wg-green-contrast-ring {
+  fill:none!important;
+  stroke:#2D332F!important;
+  stroke-width:2.6px!important;
+  opacity:1!important;
+  pointer-events:none!important;
+}
+.legend-dot.layer-3,.swatch.layer-3 {
+  outline:2px solid #2D332F;
+  outline-offset:1px;
+}

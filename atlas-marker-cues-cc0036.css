@@ -1,0 +1,24 @@
+/* CC-0036 visual-prototype ONLY: category differentiation independent of fill hue.
+   Exact approved BLUE #1683FF, VIOLET #944DFF and all other fill tokens unchanged.
+   This is a candidate for authentic OSM/CVD and owner visual evaluation,
+   NOT a universal accessibility certification or released design token. */
+.leaflet-interactive.wg-thematic-marker[fill="#1683FF"]{
+  stroke-dasharray:none!important;
+  stroke-linecap:round;
+}
+.leaflet-interactive.wg-thematic-marker[fill="#944DFF"]{
+  stroke-dasharray:2.2 2.2!important;
+  stroke-linecap:round;
+  stroke-width:2.6px!important;
+}
+.legend-dot.layer-2,.swatch.layer-2{
+  outline:2px dashed #2D332F;
+  outline-offset:1px;
+}
+.legend-dot.layer-0,.swatch.layer-0{
+  outline:1px solid #2D332F;
+  outline-offset:1px;
+}
+.leaflet-interactive.wg-thematic-marker:focus-visible{
+  filter:drop-shadow(0 0 2px #2D332F) drop-shadow(0 0 2px #FFF8E7);
+}
